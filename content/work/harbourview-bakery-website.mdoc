@@ -1,0 +1,77 @@
+---
+title: "Harbourview Bakery: a warm WordPress bakery website"
+summary: >-
+  A neighbourhood bakery's WordPress site with real bakery photography, a menu,
+  custom cake orders with a recent cakes gallery, opening hours and a map, a
+  blog, and a spot for ordering ahead. The owner edits it in the page builder
+  she already knows, and it loads fast on a phone.
+categories:
+  - websites
+stack:
+  - WordPress
+  - PHP
+  - Elementor
+  - Contact Form 7
+featured: false
+order: 4
+findable:
+  measured: >-
+    Lighthouse 13.6.0, mobile with simulated slow 4G, home page, median of
+    three runs. SEO checks pass except indexing, which is switched off on
+    purpose because this is a demo.
+  performance: 96
+  accessibility: 100
+  bestPractices: 100
+  structuredData:
+    - Bakery
+    - PostalAddress
+    - GeoCoordinates
+    - OpeningHoursSpecification
+    - Menu link
+  resultTitle: Harbourview Bakery | Sourdough, pastries and custom cakes in Toronto
+  resultUrl: harbourview-bakery.example
+  resultDescription: >-
+    Neighbourhood bakery by the Toronto harbour. Naturally leavened bread,
+    croissants and custom celebration cakes, baked by hand every morning.
+  resultDetails: 48 Harbour Lane, Toronto · Open Tue to Fri 7 AM to 6 PM
+---
+Harbourview Bakery is a fictional bakery near the water in Toronto, baking sourdough, croissants and celebration cakes since 2014. The photos are real bakery photos from Unsplash, credited on the site.
+
+## Problem
+
+A bakery's website has a few simple jobs: make people hungry, tell them what's on the counter today, say when the doors are open, and take cake orders without a phone call. Most bakery owners also want to update it themselves, in the editor they already use, without paying a developer for every price change.
+
+## What it does
+
+- **Photos that make you hungry.** A full-width hero of fresh sourdough, then the three things people come in for: the Country Sourdough, the Butter Croissant and the Cardamom Cinnamon Bun, each linking to its part of the menu.
+- **A menu.** Bread, viennoiserie, sweet things and celebration cakes, each with its price.
+- **Custom cake orders.** A cake order form with the event date, cake size (from a 6 inch round to two tiers and up) and a description, with the notice needed for celebration and wedding cakes. A Recent Cakes gallery shows what the bakery has made.
+- **About.** The bakery's story, from a weekend market stall to a team of eleven, still using the same sourdough starter.
+- **Visit Us.** Address, phone, hours for each day, parking and transit notes, and a map. The hours are also in the footer on every page.
+- **A blog.** Posts like how to feed a sourdough starter, planning your wedding cake and the holiday order guide.
+- **A site-wide banner** for news such as holiday pre-orders.
+- **Order ahead.** A spot on the home page and the Custom Cakes page that shows the phone number and cake form today, and takes an online ordering button like the one on [Northwind Coffee](/work/northwind-coffee-ordering) when the bakery is ready.
+- **A support chat** button for quick questions, from the [website support bot](/work/docs-chat) project.
+
+## How it helps your business
+
+- **More cake orders.** The form works, is easy to fill in on a phone, and every request lands in the bakery's inbox.
+- **Fewer "are you open?" calls,** because the hours are on every page.
+- **Found on Google.** Every page has a proper title and description, and the address, hours and menu are marked up so search engines can show them.
+- **No new editor to learn.** It's the same WordPress, theme and page builder the owner already uses.
+
+## How it's built
+
+- **WordPress with OceanWP and Elementor,** a small child theme, and a handful of must-use plugins instead of a pile of extras.
+- **Fast after a rescue.** The site started out slow, with a broken form and hidden from Google. [How this site was made fast](/work/site-rescue), with before and after Lighthouse numbers, is its own project.
+- **Photos sized for the screen.** Every photo is cropped to the shape it's shown in and served as WebP, with smaller versions for phones.
+- **Accessible.** Labelled form fields, visible keyboard focus and text colours that pass WCAG AA contrast.
+- **Rebuilt from scripts.** The whole site can be recreated from scratch in Docker, so every change is reviewable.
+
+## Stack
+
+WordPress, PHP, the OceanWP theme with Elementor, Contact Form 7 with mail sent through a real mail service, page caching, and Docker for local builds.
+
+## Outcome
+
+A warm, quick bakery website the owner can keep editing herself: browse the menu, start a cake order for a birthday, check Sunday hours and the map, then read about why the croissants take three days. The full story of the speed and repair work is in the [site rescue project](/work/site-rescue).

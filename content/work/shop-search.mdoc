@@ -1,0 +1,39 @@
+---
+title: "shop-search: turning plain-English requests into filters"
+summary: >-
+  Type "waterproof women's hiking boots under $150, size 8" and the AI turns it
+  into filter chips you can see, edit and remove. Every answer is checked
+  against a schema, and an eval suite measures accuracy before any prompt or
+  model change ships.
+categories:
+  - ai
+stack:
+  - Next.js
+  - TypeScript
+  - Zod
+  - Claude API
+  - OpenAI API
+  - Tailwind CSS
+featured: false
+order: 12
+---
+## Problem
+
+Shoppers describe what they want in sentences, for example "waterproof women's hiking boots under $150, size 8, 4 stars and up". Keyword search handles that badly, and adding AI search that guesses wrong is worse than not having it.
+
+## Approach
+
+- **One filter schema.** A single Zod schema defines every filter the store supports. The model's output has to match it, or it's rejected.
+- **Editable chips.** What the search understood is shown as chips that you can remove or edit, so you can correct it without retyping.
+- **Honest about gaps.** Words that couldn't be mapped to a filter are shown, so it's clear why the results look the way they do.
+- **Normal search still works.** Facets, sorting, pagination, and shareable URLs, like a real storefront.
+- **Two providers and an offline mode.** Claude and OpenAI sit behind one small interface, and an offline parser keeps the demo working without API keys.
+- **Evals.** An evaluation suite runs from the command line and scores the parser per provider.
+
+## Stack
+
+Next.js, TypeScript, Zod, the Claude and OpenAI APIs, and Tailwind CSS.
+
+## Outcome
+
+A public, runnable version of the natural-language filter pattern I've shipped in production, described in the [marketplace search project](/work/marketplace-search). You can try the demo, read the code, and run the evals yourself.

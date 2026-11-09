@@ -1,0 +1,91 @@
+---
+title: "Site rescue: a slow bakery website made fast, without a rebuild"
+summary: >-
+  A slow, dated WordPress bakery site, fixed in place: home page from 47.0 MB
+  to 567 KB, mobile Lighthouse from 62 to 96, a working order form and a design
+  refresh. Same theme and editor, plus a support chat.
+categories:
+  - fixing
+  - websites
+stack:
+  - WordPress
+  - PHP
+  - Docker
+  - Lighthouse
+  - Shopify Liquid
+featured: true
+order: 6
+---
+Harbourview Bakery is a fictional business. The site, its problems and the fixes are real WordPress, real free plugins and real measurements, rebuilt from scripts so anyone can check the work. The photos are real bakery photos from Unsplash, credited on the site and in the repo.
+
+## Problem
+
+The bakery's site was built a few years ago by a freelancer who has since moved on. Since then the owner added photos straight from her phone, installed a few plugins that "might be useful", and pasted in a holiday banner. What she said:
+
+- "The site feels slow on my phone, especially the home page."
+- "Nobody has used the cake order form in months." It had been failing silently: customers saw an error and gave up.
+- "We don't show up on Google when people search for us."
+- "I'd like a chat button and online ordering, but I can't afford a new website."
+
+## What I found
+
+- **A 47.0 MB home page.** Three camera photos 6000 to 6800 pixels wide in an auto-playing slider and a 23.5 MB PNG background, on a phone screen about 400 pixels wide.
+- **8 active plugins**, most loading their files on every page, and seven font families in every weight.
+- **Hidden from Google.** "Discourage search engines" was still on, there was no sitemap, and every page had the same title.
+- **A broken form.** The cake order form tried to send email in a way the host doesn't allow, so every submission failed.
+- **Hard to read and use.** Light gold text on cream, no labels on form fields, no visible keyboard focus, and a newsletter popup on every page with no newsletter behind it.
+
+## What I changed
+
+Everything was done on the existing site: same theme, same page builder, same pages. The owner keeps editing exactly the way she did before.
+
+- Removed 6 unused plugins and 2 inactive leftovers.
+- Replaced the slider with one hero photo, loaded first, and cropped and resized every photo to WebP with smaller versions for phones.
+- Cut seven font families to two, hosted on the site.
+- Added page caching and browser caching rules.
+- Let search engines in, turned on the sitemap, and gave every page a real title, description and structured data (address, hours, menu).
+- Fixed the form: proper labels, email through a real mail service from the bakery's own address.
+- Fixed contrast, headings, alt text and keyboard focus so all text passes WCAG AA contrast.
+
+## The numbers
+
+Measured with Lighthouse 13.6.0 on the same laptop and the same pages, before and after runs interleaved, three runs each, median shown. Mobile uses Lighthouse's simulated slow 4G.
+
+| Page | Device | Performance | Largest Contentful Paint | Page weight |
+|---|---|---|---|---|
+| Home | Mobile | 62 → 96 | 143.3 s → 2.7 s | 47.0 MB → 567 KB |
+| Home | Desktop | 49 → 99 | 18.9 s → 0.8 s | 47.3 MB → 490 KB |
+| Menu | Mobile | 69 → 92 | 6.4 s → 3.2 s | 2.3 MB → 484 KB |
+| Blog post | Mobile | 85 → 96 | 3.5 s → 2.6 s | 3.6 MB → 285 KB |
+
+On every measured page, Accessibility went from 90 to 92 up to 100, Best Practices from 77 to 100, and layout shift to almost 0. Every SEO check passes except indexing, which this demo copy switches off on purpose so a fictional bakery stays out of Google (Lighthouse scores that alone as 69; with indexing on, as on a real job, these pages scored 100). The cake form now delivers every time, checked by an automated test.
+
+**How to read these numbers honestly:**
+
+- **They are lab numbers, not real visitors.** Both sites ran on my laptop with no real network distance. Real-user data needs two to four weeks of traffic after the change, and that is what I'd report back to a client.
+- **The 143 second load time before is a simulation** of downloading 47 MB over a slow 4G connection. On good Wi-Fi the old page appeared much faster.
+- **The photos are real photos** from Unsplash, uploaded at full size the way an owner uploads camera files, so the image savings are real. This home page is on the heavy side: with ordinary phone photos a page like this is more often 10 to 30 MB before the fix.
+- **The after site includes the new chat widget** (about 10 KB of script), because the client asked for it.
+- **Measured after the design refresh** (below), which added photos and sections: the home page is a little heavier than right after the rescue and scores the same.
+- **The table shows the median of each number** across three runs; the report images show the single median run, so a value can differ (the simulated "before" load time is 143.3 s in the table and 117.6 s in that one report).
+
+## A design refresh, same tools
+
+Once it was fast, the site still looked dated. The Home, Menu, Custom Cakes and About pages were redesigned in the same theme and page builder: a full-width photo hero, product cards with prices, a menu with photos by category, cake sizes and a three-step ordering guide, and a real story page. No new plugins, fonts or scripts, so the owner still edits everything the same way and the speed held.
+
+## Added without rebuilding
+
+- **A support chat button,** added with one script tag and loaded after the page. On a real job the bakery gets its own [support bot](/work/docs-chat) built from its menu, hours, cake ordering FAQ and policies.
+- **An "Order ahead" spot** on the home page and the Custom Cakes page. For now it shows the phone number and the cake form; an online ordering button like the one on [Northwind Coffee](/work/northwind-coffee-ordering) goes into that box, no redesign needed.
+
+## Shopify too
+
+The same job for Shopify stores is prepared: a playbook, ready-to-apply theme code checked against Shopify's Dawn theme, and an app clean-up checklist. Measuring it on a real store is still pending, so there are no Shopify numbers yet.
+
+## Stack
+
+WordPress with the existing OceanWP theme and Elementor, a cleaned-up child theme, five small must-use plugins, and scripts that rebuild both sites in Docker from the same starting point. Lighthouse runs from a script, and Shopify Liquid for the store version.
+
+## Outcome
+
+For a site like this one I'd quote about 3.5 days of work, fixed price after a short audit. A rebuild would typically cost three to five times as much, take weeks, and mean learning a new editor. The owner keeps the site she knows, and it is fast, findable, and taking cake orders again.

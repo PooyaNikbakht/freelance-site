@@ -1,0 +1,66 @@
+---
+title: "Is your WordPress or Shopify site slow? A 10-minute check you can do yourself"
+description: >-
+  A step-by-step PageSpeed Insights walkthrough for small business owners on
+  WordPress or Shopify: what the main numbers mean, the usual causes of a slow
+  site, and what fixing it typically involves.
+date: 2026-09-15
+draft: false
+---
+"The site feels slow" is one of the most common things owners tell me. Usually they're right, but a feeling is hard to act on. The good news is that you can get a clear, honest picture in about ten minutes, for free, without touching your site's settings.
+
+Here's how, in plain words.
+
+## Step 1: Run the test
+
+1. Go to **pagespeed.web.dev**. This is PageSpeed Insights, a free tool from Google.
+2. Paste in your home page address and press **Analyze**.
+3. Wait about a minute. Make sure the **Mobile** tab is selected. That's the one that matters most, because most of your visitors are likely on phones, and phones are where slow sites hurt.
+
+Then test one or two other important pages, like your menu or booking page. The home page isn't always the worst one.
+
+## Step 2: Read the top section (real visitors)
+
+The first section shows how your site performed for real Chrome users over the past few weeks. Google only shows this when a site has enough visitors, so many small business sites will see "no data" here. That's normal, not a bad sign. Skip to the next section.
+
+If you do have data, look for whether it says the Core Web Vitals assessment **passed** or **failed**. Core Web Vitals are three measurements Google uses to judge how a page feels to use.
+
+## Step 3: Read the score and the main numbers (the lab test)
+
+Below that is a score from 0 to 100, from a simulated test on a mid-range phone with a slower connection. Roughly, 90 and up is green and good, 50 to 89 is orange and needs work, and under 50 is red.
+
+Don't obsess over the exact score, which moves a few points between runs. The numbers underneath tell you more:
+
+- **Largest Contentful Paint (LCP):** how long until the biggest thing on screen, usually your main photo or headline, appears. Google recommends under about 2.5 seconds.
+- **Total Blocking Time:** how long the page is too busy running code to respond to taps. High numbers mean the page looks ready but feels stuck.
+- **Cumulative Layout Shift (CLS):** how much things jump around while loading, like a button moving just as you tap it. Google suggests keeping it under 0.1.
+
+## Step 4: Look at the suggestions
+
+Scroll down and you'll see a list of suggestions with names like "Improve image delivery" or "Reduce unused JavaScript." They're written for developers, but that's fine. Note the top three or four, especially any that mention images, and any that list file names from plugins or apps.
+
+## The usual suspects
+
+On small WordPress and Shopify sites, the same few causes come up again and again.
+
+**Huge photos.** This is the most common one by far. A photo straight from a modern phone or camera can be several megabytes and thousands of pixels wide, while a phone screen is only a few hundred pixels wide. The visitor downloads all of it anyway.
+
+**Too many plugins or apps.** Each WordPress plugin or Shopify app can add its own code to every page, even pages that don't use it. Apps you uninstalled on Shopify can sometimes leave code behind in your theme.
+
+**Sliders and carousels.** An auto-playing slider at the top of the home page usually means several large photos load before anything else. Most visitors never see slide three.
+
+**Too many fonts.** Every font family and weight is another file to download.
+
+**Pop-ups and widgets.** Chat bubbles, newsletter pop-ups, review badges and social feeds all add weight.
+
+## What fixing it usually involves
+
+The good news: a slow site almost never needs a full rebuild. Fixing it usually means resizing and converting photos to a modern, lighter format, removing plugins or apps nobody uses, replacing a slider with one good photo, cutting fonts down to one or two, turning on caching (keeping ready-made copies of pages so they don't have to be rebuilt for every visitor), and loading widgets after the main content.
+
+To give you a sense of scale, here's a project I published: a [slow WordPress bakery site](/work/site-rescue), fixed in place with the same theme and editor. The home page went from 47.0 MB to 456 KB, the mobile Lighthouse performance score from 62 to 96, and Largest Contentful Paint on mobile from 143.3 seconds to 2.7 seconds. Those are lab numbers from Lighthouse (the same engine behind PageSpeed Insights), and the 143 seconds is a simulation of downloading that huge page over slow 4G, so real visitors on good Wi-Fi saw it faster. The weight savings, though, are real. That site also had 8 active plugins, and 6 of them could simply be removed.
+
+## What to do next
+
+Save a screenshot of your results so you have a "before." If your mobile score is in the red, or your LCP is well over 2.5 seconds, there's very likely an easy win waiting, usually starting with the photos.
+
+If you'd like someone to do the fixing, that's what my [fixing and improving your existing website](/services/fix-and-speed-up) service is for: small, well-scoped work on the site you already have, with before and after numbers so you can see what changed. Send me your PageSpeed results and I'll tell you what I'd look at first.

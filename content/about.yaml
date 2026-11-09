@@ -1,0 +1,245 @@
+title: Hi, I'm Pooya Nikbakht
+lead: >-
+  A senior full-stack engineer in Toronto who builds websites, web apps and AI
+  tools for small businesses and startups.
+metaDescription: >-
+  Senior full-stack engineer with 10+ years of experience: former startup
+  founder and product owner, MSc in Computer Science (University of Manitoba)
+  with published research on bin packing, BSc in Software Engineering. Available
+  evenings and weekends, Eastern Time.
+intro:
+  - >-
+    I've spent more than 10 years building web products, and I've seen them from
+    every side. I started by founding my own startup, then led product and
+    delivery as a product owner and Scrum Master on one of the top Persian news
+    apps. Today I'm a senior full-stack engineer at ApplyBoard, an international
+    education marketplace used by hundreds of thousands of students, working on
+    high-traffic search over hundreds of thousands of programs, recommendation
+    systems, microservices on AWS, and AI features used every day.
+  - >-
+    Underneath that is a strong technical foundation: an MSc in Computer Science
+    with a perfect GPA and peer-reviewed research on optimization algorithms,
+    and an AWS Certified Solutions Architect certification.
+  - >-
+    What that means for you: I start from your customers and your business, not
+    the tech. Then I build it the way large teams do, with clean architecture,
+    fast pages, and AI that is tested before it ships, sized to what your
+    business actually needs.
+howIWork:
+  - title: Plan in writing.
+    text: >-
+      After a short call I send a written plan with scope, milestones, and
+      price.
+  - title: Ship small.
+    text: >-
+      Work lands in small milestones you can see and test, not in one big reveal
+      at the end.
+  - title: Communicate async.
+    text: I send clear written updates you can read at the start of your day.
+  - title: Sweat the details.
+    text: >-
+      Nothing ships half-baked, including the parts you never see: the code, the
+      data, and the edge cases get the same care as the screens.
+  - title: Do it right, at the price we agreed.
+    text: >-
+      If doing something properly takes me longer than planned, that's on me.
+      You pay what we agreed, not a surprise bill.
+  - title: Leave it maintainable.
+    text: Clean code, a README, and a handoff, so the next developer can pick it up.
+  - title: Stay after launch.
+    text: >-
+      Launch is the start, not the end. I stay available for fixes, questions,
+      and the next round of improvements once real customers start using it.
+activity:
+  title: Track record
+  intro: >-
+    A few numbers from my current full-time position, to show how I work day to day. The
+    contribution graphs come from my work GitHub account. Across all projects in my domain, I've
+    finished more tickets than anyone while also writing
+    a large share of the plan. Colleagues' names are hidden.
+  graphs:
+    - year: '2026'
+      contributions: 706
+      image: /about/github-2026
+    - year: '2025'
+      contributions: 767
+      image: /about/github-2025
+    - year: '2024'
+      contributions: 677
+      image: /about/github-2024
+    - year: '2023'
+      contributions: 573
+      image: /about/github-2023
+  ticketCharts:
+    - title: Tickets completed
+      note: Engineering tickets assigned and delivered, top six across all projects in my domain.
+      bars:
+        - name: Me
+          value: 525
+          me: true
+        - name: Colleague A
+          value: 431
+          me: false
+        - name: Colleague B
+          value: 374
+          me: false
+        - name: Colleague C
+          value: 351
+          me: false
+        - name: Colleague D
+          value: 86
+          me: false
+        - name: Colleague E
+          value: 54
+          me: false
+    - title: Tickets written
+      note: Product, architecture and technical tickets created, top six across all projects in my domain.
+      bars:
+        - name: Colleague C
+          value: 624
+          me: false
+        - name: Colleague B
+          value: 483
+          me: false
+        - name: Me
+          value: 478
+          me: true
+        - name: Colleague A
+          value: 475
+          me: false
+        - name: Colleague F
+          value: 183
+          me: false
+        - name: Colleague E
+          value: 159
+          me: false
+experience:
+  - title: Senior full-stack engineer
+    org: ApplyBoard, an international education marketplace
+    link: https://www.applyboard.com
+    startYear: '2022'
+    startMonth: '2'
+    endMonth: '1'
+    body: >
+      A platform used by hundreds of thousands of students and thousands of institutions
+      worldwide, with hundreds of thousands of programs to search. Full-stack
+      work across several products: the search and recommendation
+      engine that connects international students with institutions, LLM
+      features, internal CMS tooling, SEO-focused public pages in Next.js, and
+      APIs and microservices on AWS. The [marketplace search
+      project](/work/marketplace-search) covers one of them.
+  - title: Research assistant
+    org: GADA lab, University of Manitoba
+    link: https://home.cs.umanitoba.ca/~gada/
+    startYear: '2018'
+    startMonth: '12'
+    endYear: '2021'
+    endMonth: '10'
+    body: >
+      Researched optimization algorithms, mainly bin packing and its
+      applications, leading to several peer-reviewed papers (see
+      Publications below).
+  - title: Software engineer, Scrum Master, and product owner
+    org: Chitva
+    startYear: '2015'
+    startMonth: '3'
+    endYear: '2018'
+    endMonth: '2'
+    body: >
+      Contributed to KhabarAzMa, one of the largest Persian news aggregators at
+      the time, across engineering, the team's Scrum process, and product
+      ownership.
+  - title: Founder
+    org: ShahrAgah
+    startYear: '2013'
+    startMonth: '4'
+    endYear: '2015'
+    endMonth: '3'
+    body: >
+      Founded a startup and led the team building
+      [ShahrAgah](/work/research/shahragah-a-social-network-for-businesses), a
+      social network that connected local businesses and their customers. The
+      business plan was named "best promising project" at the IUT
+      Entrepreneurship Festival.
+  - title: Computer science instructor
+    org: High school
+    startYear: '2012'
+    startMonth: '10'
+    endYear: '2013'
+    endMonth: '10'
+    body: |
+      Taught Computer Science Fundamentals.
+education:
+  - degree: MSc in Computer Science
+    school: University of Manitoba
+    startYear: '2019'
+    startMonth: '1'
+    endYear: '2021'
+    endMonth: '9'
+    meta: GPA 4.5 / 4.5
+    body: >
+      Member of the [GADA lab](https://home.cs.umanitoba.ca/~gada/), researching
+      optimization algorithms. My thesis, [Applications and Extensions of the
+      Bin Packing
+      Problem](https://mspace.lib.umanitoba.ca/server/api/core/bitstreams/a4a362db-ba40-4eda-8f8b-fb00a5461985/content).
+      I also taught algorithm design and data structures, and took advanced
+      courses in algorithms, data science, and machine learning.
+  - degree: BSc in Software Engineering
+    school: Isfahan University of Technology
+    startYear: '2009'
+    startMonth: '9'
+    endYear: '2014'
+    endMonth: '9'
+    meta: 90% average in core courses
+    body: >
+      Final project in data mining and machine learning: [predicting hospital
+      length of
+      stay](/work/research/medical-data-mining-for-predicting-the-length-of-stay-at-the-hospital)
+      from patient records. Member of the university's team for the ACM
+      International Collegiate Programming Contest (ICPC).
+publicationsIntro: >
+  Peer-reviewed papers on algorithms and optimization from my MSc. Full list on
+  [Google
+  Scholar](https://scholar.google.com/citations?user=OlblXBsAAAAJ&hl=en).
+publications:
+  - title: Online square packing with rotation
+    venue: CCCG 2022
+    link: >-
+      https://www.ryerson.ca/content/dam/canadian-conference-computational-geometry-2022/papers/CCCG2022_paper_62.pdf
+    order: 1
+  - title: A randomized algorithm for non-crossing matching of online points
+    venue: CCCG 2022
+    link: >-
+      https://www.ryerson.ca/content/dam/canadian-conference-computational-geometry-2022/papers/CCCG2022_paper_65.pdf
+    order: 2
+  - title: On the fault-tolerant online bin packing problem
+    venue: ALGOCLOUD 2021
+    link: https://link.springer.com/chapter/10.1007/978-3-030-93043-1_1
+    order: 3
+  - title: Applications and extensions of the bin packing problem
+    venue: MSc thesis 2021
+    link: https://mspace.lib.umanitoba.ca/handle/1993/36164
+    order: 4
+  - title: 'Cutting stock with rotation: packing square items into square bins'
+    venue: COCOA 2020
+    link: https://link.springer.com/chapter/10.1007/978-3-030-64843-5_36
+    order: 5
+stack:
+  - label: Frontend
+    items: React, Next.js, TypeScript, JavaScript, HTML, CSS (Tailwind), accessible mobile-first UI
+  - label: Backend and APIs
+    items: >-
+      Python (FastAPI, Django), Node (NestJS), Ruby on Rails, REST and GraphQL
+      APIs, auth, payments, integrations
+  - label: Databases and search
+    items: PostgreSQL, MySQL, MongoDB, DynamoDB, Redis, OpenSearch/Elasticsearch
+  - label: Architecture
+    items: >-
+      Microservices, modular monoliths, system design, search and
+      recommendation systems
+  - label: Async and messaging
+    items: Queues, background jobs, scheduled tasks, pub/sub (SQS, SNS)
+  - label: Cloud and DevOps
+    items: AWS (Lambda, EKS), Kubernetes, Docker, Cloudflare, Vercel, CI/CD
+  - label: AI
+    items: OpenAI and Claude APIs, function calling, RAG, evaluation suites

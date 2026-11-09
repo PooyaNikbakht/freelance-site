@@ -1,0 +1,56 @@
+---
+title: "Maple Paws Vet: a vet clinic website with pet records and vaccination reminders"
+summary: >-
+  A friendly website for a small animal clinic. Owners book by pet and reason
+  for the visit, the clinic keeps a record for each pet, and vaccination
+  reminders go out on their own with a link that opens booking already filled
+  in.
+categories:
+  - websites
+  - booking
+  - dashboards
+stack:
+  - Next.js
+  - TypeScript
+  - Tailwind CSS
+  - Cloudflare Workers
+  - Cloudflare D1
+  - Zod
+featured: false
+order: 8
+---
+Maple Paws Vet is a fictional clinic in Leslieville, Toronto, for dogs, cats and rabbits, with three vets and sample pets.
+
+## Problem
+
+A vet clinic's calendar depends on reminders: vaccines, dental checks, yearly exams. When reminders are a sticky note or a spreadsheet, they go out late or not at all, and the owner who does get one still has to call, explain who their pet is, and wait on hold to book.
+
+## What it does
+
+- **Booking by pet.** Owners start with the kind of pet, then see only the visits and vets for it. A cats-only vet never shows up for a dog.
+- **Visits with clear prices.** Wellness exam, vaccination visit, dental check, sick visit, puppy or kitten first visit and nail trim, each with its length and price.
+- **Pet records.** Each pet has a profile with breed, birth date, weight, notes and its vaccine history, linked to its owner.
+- **Vaccination reminders.** Record a vaccine and the next due date is worked out from the clinic's schedule. A reminder goes out 14 days before, at 9 a.m. clinic time.
+- **One-tap booking from the reminder.** The link in the reminder opens booking with the pet, the owner and the vaccination visit already filled in.
+- **A "due soon" list** of overdue and upcoming vaccines, with a button to send a reminder again.
+
+## How it helps your business
+
+- **More pets come back on time,** because reminders go out without anyone remembering to send them.
+- **Booking takes seconds** for returning clients: the link knows who they are and why they're coming.
+- **No wrong bookings.** Owners only see the vets and visits that fit their pet.
+- **Your whole patient list in one place,** on a phone, instead of a binder at the desk.
+
+## How it's built
+
+- **Due dates follow the calendar,** with months clamped to month ends, and a newer dose cancels the older reminder.
+- **Private by design.** Public booking never reveals which pets an email address has on file. Known pets are booked through the secret link in their reminder.
+- **Tested.** Automated tests cover due dates, reminder timing and the booking rules for each kind of pet.
+
+## Stack
+
+Next.js (App Router), TypeScript, Tailwind CSS, Cloudflare Workers, Cloudflare D1 with Drizzle ORM, Zod and Vitest.
+
+## Outcome
+
+A working vet clinic site: book a wellness exam for a new cat, then log in as the clinic owner, record a vaccine on the pet's profile and find the reminder, with its pre-filled booking link, in the message log.

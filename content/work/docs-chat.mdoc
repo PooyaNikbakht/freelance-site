@@ -1,0 +1,52 @@
+---
+title: "Website support bot and booking receptionist"
+summary: >-
+  A chat widget that answers website visitors from a business's own help
+  documents with the source, and books appointments from real open times in
+  the business's booking system. One script tag installs it on any site.
+categories:
+  - ai
+  - booking
+  - fixing
+stack:
+  - Next.js
+  - TypeScript
+  - Python
+  - FastAPI
+  - Claude API
+  - OpenAI API
+featured: true
+order: 5
+---
+## Problem
+
+Small businesses answer the same questions every day: shipping times, returns, subscriptions, opening hours. The answers already sit in a help page or a policy PDF, but visitors don't read them, and a generic chatbot that makes things up is worse than no chatbot at all.
+
+## Approach
+
+- **A widget on the client's own site.** One `<script>` tag adds a chat bubble to Shopify, WordPress, Webflow, Squarespace or a custom site. It renders in a Shadow DOM, so the site's CSS can't break it and its CSS can't leak out, and it weighs about 10 KB gzipped.
+- **Answers only from the business's documents.** The backend finds the most relevant passages in the help center, and the model answers from those alone, in a few friendly sentences.
+- **Sources visitors can check.** Each answer shows the page it came from, and a tap opens the exact passage with the quoted words highlighted.
+- **Hands off instead of guessing.** When the documents don't cover a question, the bot says so and offers a "Talk to a human" link. Off-topic questions never reach the model, so they cost nothing.
+- **A believable demo.** A sample site for a fictional coffee roaster, with its own brand, loads the widget through the same snippet a client would paste. The site and the help center PDF are generated from one fact sheet, so they always agree.
+- **Try it on your own PDF.** Prospects upload a document and see a bot built on it in seconds.
+- **Two providers and a demo mode.** Claude and OpenAI sit behind one interface with native citations. Usage caps and an automatic fallback to a built-in demo mode keep the public demo free to run and never broken.
+
+## Booking receptionist
+
+Answers are useful, but a visitor who wants an appointment should be able to get one right there. For a fictional barbershop, the same chat works as a 24/7 front desk:
+
+- **Real open times only.** Asked "Is Saturday afternoon open for a skin fade?", it checks the business's booking system through a tool call and offers the open times as buttons. Any reply that names a time the booking system didn't return is replaced, so it can't invent availability.
+- **Confirm before booking.** The visitor picks a time and gives a name and email, which are checked, and nothing is booked until they press Book it. These rules live in code, not in the prompt.
+- **Handles the awkward cases.** A full day points to the next day with openings, a time someone else takes first gets fresh options, and if the booking system is down the bot offers the phone number.
+- **Works without an API key.** A built-in receptionist runs the same booking flow for the free demo and the tests.
+
+The booking side sits behind a small interface, so it can connect to the booking system a business already uses.
+
+## Stack
+
+A Python FastAPI backend with tests, a vanilla TypeScript widget bundled with esbuild and unit tested, and a Next.js sample site. Claude and OpenAI through their official SDKs.
+
+## Outcome
+
+A working support bot a small business could put on its site this week: grounded answers with sources, a clear handoff to a person, a one-line install, and a codebase that grows into multiple bots, more documents and helpdesk integration.

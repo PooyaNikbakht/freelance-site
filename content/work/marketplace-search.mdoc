@@ -1,0 +1,46 @@
+---
+title: A high-traffic marketplace search and catalog app at ApplyBoard
+summary: >-
+  Full-stack work on the core search of a marketplace used by millions of
+  students: a React and TypeScript catalog with 150k+ listings and 50+
+  filters, saved searches and compare, a NestJS API layer over OpenSearch, and
+  natural-language filters.
+categories:
+  - ai
+  - mvp
+stack:
+  - React
+  - TypeScript
+  - NestJS
+  - OpenSearch
+  - LLM function calling
+  - AWS
+featured: false
+order: 13
+---
+This is a public-level summary of work I did at ApplyBoard as a senior full-stack engineer on a product team. It leaves out internal names, code, screenshots, and metrics that aren't public.
+
+## Problem
+
+Search is how most people find what they want on a marketplace. With 150k+ listings and 50+ filters, the hard part is helping people narrow things down without getting lost in options, and keeping the code easy to change as new filters and features are added.
+
+## Approach
+
+- **Frontend rewrite.** I rebuilt the search experience in React and TypeScript: the filters, the result cards, saved searches, and side-by-side comparison.
+- **A backend for the frontend.** A NestJS BFF sits between the UI and the search layer, so each page gets data in the shape it needs and the search internals can change behind it.
+- **Search.** OpenSearch handles querying and ranking across the catalog.
+- **Natural-language filters.** An LLM feature turns plain-English requests into structured search filters through function calling. Every response is validated against the filter schema before it reaches search, and an evaluation suite checks the results so a prompt or model change can't quietly make things worse.
+
+## Stack
+
+React, TypeScript, NestJS, OpenSearch, LLM function calling, and AWS.
+
+## Outcome
+
+The rewrite shipped in production with search across 150k+ listings, 50+ filters, saved searches, and compare. The natural-language filters shipped with validation and an evaluation suite.
+
+I can't share internal code or screenshots, so I built [shop-search](/work/shop-search) to show the natural-language filter pattern in public code, with its own eval suite.
+
+## What carries over to your project
+
+If you have a catalog, a directory, or any list people need to filter, the same ideas apply at a smaller scale: a clear filter schema, URLs you can share, a thin API layer shaped for the UI, and AI search that is validated and tested before it ships.

@@ -1,0 +1,58 @@
+---
+title: 'Kingsway Cuts: a barbershop website with online booking'
+summary: >-
+  A bold website for a three-chair barbershop where customers pick a barber (or
+  the first one free), book a time at midnight, and check the walk-in wait
+  before they leave home. The owner runs the day from a calendar on his phone,
+  and reminders go out on their own.
+categories:
+  - websites
+  - booking
+  - dashboards
+stack:
+  - Next.js
+  - TypeScript
+  - Tailwind CSS
+  - Cloudflare Workers
+  - Cloudflare D1
+  - Drizzle ORM
+featured: true
+order: 1
+---
+Kingsway Cuts is a fictional barbershop on Bloor West in Toronto, with three barbers and sample data, so you can book a cut and then see it from the owner's side.
+
+## Problem
+
+A busy barbershop loses customers in two ways: people who call while every barber has clippers in hand, and people who walk past because they can't tell how long the wait is. Paper appointment books and a phone that rings mid-fade make both worse, and no-shows cost a full slot each time.
+
+## What it does
+
+- **Choose your barber.** Customers pick a service (classic haircut, skin fade, haircut and beard, hot towel shave, kids cut) and then a barber, or "First available" to see every open time across the shop.
+- **Walk-in wait times.** A board on the site shows whether the shop is open and how long the wait is right now. The owner updates it from his phone in two taps.
+- **Move or cancel without calling.** The confirmation has a link where customers can change their time themselves, so a cancelled slot goes back on the calendar instead of sitting empty.
+- **Reminders.** A confirmation goes out right away and a reminder 24 hours before the appointment, by email and by text when the customer gives a number.
+- **An owner calendar.** The day by barber, the next customer, bookings and booked value for today, and every message each customer was sent.
+- **Edit it yourself.** Prices, opening hours, barbers' hours and breaks, and the text on the home page are all changed in the admin, without a developer.
+- **A "Book a chair" button anywhere.** One line of code adds the same booking to another website, such as an existing WordPress or Squarespace site.
+
+## How it helps your business
+
+- **Customers book at 11 p.m.** instead of calling during your busiest hour.
+- **No double bookings.** If two people try to take the last slot at the same moment, only one gets it and the other simply sees fresh times.
+- **Fewer no-shows.** Reminders go out on their own, and a cancelled appointment frees the chair for someone else.
+- **Walk-ins come in when it's quiet,** because they can see the wait before they leave home.
+
+## How it's built
+
+- **Times are worked out on the server** from each barber's hours, breaks and the length of each service, with daylight saving time handled properly.
+- **A dark, editorial design** with real photos, tuned so text over the photos still meets accessibility contrast.
+- **Automated tests** cover the availability rules, two customers racing for the same slot, and reminders.
+- **Cheap to run.** Next.js on Cloudflare Workers with a D1 database, and a scheduled job that sends due reminders every five minutes.
+
+## Stack
+
+Next.js (App Router), TypeScript, Tailwind CSS, Cloudflare Workers, Cloudflare D1 with Drizzle ORM, Zod and Vitest.
+
+## Outcome
+
+A working barbershop site you can try end to end: book a skin fade with the first available barber, move it from the confirmation link, then log in as the owner and see the booking, the customer and every message on the calendar. The sample data resets every hour.

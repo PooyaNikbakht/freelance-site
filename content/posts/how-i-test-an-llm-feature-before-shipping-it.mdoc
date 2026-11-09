@@ -1,0 +1,49 @@
+---
+title: How I test an LLM feature before shipping it
+description: >-
+  The checks I run before an LLM feature goes in front of users: a strict
+  schema, a small eval set built from real requests, a score I can compare, and
+  a fallback for when the model gets it wrong.
+date: 2026-10-20
+draft: false
+---
+Most LLM features look great in a demo. You type the three examples you had in mind, the model gets them right, and it feels done. Then real users type things you never imagined, and the feature starts quietly doing the wrong thing.
+
+I've built an LLM feature in production that turns plain-English requests into structured search filters. Here is roughly how I test that kind of feature before anyone else sees it.
+
+## 1. Define the output before the prompt
+
+I start with a schema, not a prompt. For a search feature, that's every filter the product supports, with types and allowed values. The model has to return something that matches the schema, and anything that doesn't is rejected before it reaches the rest of the app.
+
+This does two things. It turns a vague question ("is the answer good?") into a checkable one ("did it pick the right filters?"). It also means a bad response fails loudly in one place instead of leaking into search results.
+
+## 2. Build a small eval set from real requests
+
+Next I write down test cases: an input and the output I expect. I try to cover a few kinds:
+
+- **Easy cases.** The obvious requests that must always work.
+- **Ambiguous cases.** Requests where a person would ask a follow-up question. I decide what the right behavior is and write it down.
+- **Out of scope.** Things the product can't do. The right answer is usually "no filter" plus a note, not a guess.
+- **Tricky wording.** Negations ("not leather"), ranges ("under 150"), and typos.
+
+I start with a few dozen cases. As soon as real usage exists, I add the requests that went wrong. That set becomes more valuable than any prompt.
+
+## 3. Score it the same way every time
+
+The eval runs from the command line and compares the model's output to the expected output field by field. I want a number I can compare between runs, plus a list of the cases that failed so I can read them.
+
+I run it every time I change the prompt, the schema, or the model. Without that, every prompt tweak is a guess. With it, I can see that a change fixed two cases and broke one, and decide whether that's a good trade.
+
+## 4. Test the code around the model without the model
+
+Most bugs aren't in the model's answer. They're in the code around it: parsing, retries, timeouts, and how the UI shows partial results. I keep a deterministic offline mode that returns known outputs, so normal unit tests can cover all of that quickly and without API keys.
+
+## 5. Plan for being wrong
+
+Even with good evals, the model will sometimes be wrong or unavailable. So I decide up front what happens then. For search, that means showing what the model understood in a way the user can edit, and falling back to plain keyword search if the call fails. The feature should degrade, not break.
+
+## 6. Keep watching after launch
+
+After launch, I log the requests where the user immediately changed what the model picked. Those are the best new eval cases, and they show where the feature needs work next.
+
+None of this is complicated. It's the same discipline as testing any other feature. The difference is that with an LLM, skipping it is much easier to get away with in a demo, and much harder to get away with in production.

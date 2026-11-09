@@ -1,0 +1,51 @@
+---
+title: "Workflow runner: multi-step AI jobs with a queue, live progress and human review"
+summary: >-
+  Start a multi-step AI workflow and watch it run live: a separate worker runs
+  each step from a job queue, retries what fails, and pauses for a person to
+  approve, edit or reject the AI's draft before anything is sent.
+categories:
+  - ai
+  - mvp
+stack:
+  - Python
+  - FastAPI
+  - Next.js
+  - TypeScript
+  - SQLite
+  - Server-Sent Events
+  - Claude API
+featured: false
+order: 10
+---
+## Problem
+
+Real AI features are rarely one model call. They are a chain of steps: look something up, have the model analyse it, draft something, let a person check it, then send it to another system. Run all of that inside a web request and it times out, a hiccup in one step loses the whole job, and a retry can send the same email twice.
+
+## What it does
+
+Two sample workflows run on the same engine:
+
+- **Lead outreach.** Lead intake, company lookup, pain points extracted by the AI, a draft email, a human review, then delivery to a webhook.
+- **Support ticket triage.** Classify the ticket, suggest a reply, review it, send it.
+
+You start a run and watch each step move from queued to running to done, with a live log. When the draft is ready the run pauses and a review drawer opens: approve it, edit it, or reject it. Approved results go to a webhook receiver that stands in for a CRM or help desk.
+
+## How it's built
+
+- **Queue and worker, not the web request.** The API saves the run, queues the first step and returns right away. A separate worker process, which can run as several copies, picks up jobs from a queue with leases, so a crashed worker's job is picked up again.
+- **Retries with backoff.** The company lookup fails once on purpose, and you can watch it retry live. A step that keeps failing ends the run cleanly instead of hanging.
+- **Safe to retry.** Each step's state change, its log and the next job are saved together in one transaction. Jobs have unique keys, finished steps are never run twice, and the webhook carries an idempotency key the receiver checks, so a retried send never shows up twice.
+- **Human in the loop.** A paused run doesn't hold a worker. The reviewer's decision, and any note, is saved to the run's history.
+- **Live updates.** The stepper and log stream over Server-Sent Events and pick up where they left off after a dropped connection. Step changes are announced to screen readers.
+- **AI with checked outputs.** Claude returns structured output validated against a schema before the next step uses it. Without an API key, a built-in demo mode runs the same workflows.
+
+The queue sits behind a small interface backed by SQLite, so it runs anywhere with no extra services; the README explains how to move it to Redis or SQS.
+
+## Stack
+
+A Python FastAPI API and worker with 66 tests, a Next.js and TypeScript frontend, SQLite, Server-Sent Events, and Claude through the official SDK.
+
+## Outcome
+
+A working pattern for the multi-step AI features startups and product teams ask for: lead research, ticket triage, document processing or internal approvals, with the reliability parts (queues, retries, idempotency and human review) built in from the start.

@@ -1,0 +1,41 @@
+---
+title: "This site: a fast Next.js site with a git-based CMS"
+summary: >-
+  The site you're reading. Statically generated Next.js, content edited in a
+  CMS admin, and a full technical SEO layer.
+categories:
+  - websites
+stack:
+  - Next.js
+  - TypeScript
+  - Keystatic
+  - Markdoc
+  - Tailwind CSS
+  - Cloudflare Workers
+featured: false
+order: 14
+---
+## Problem
+
+I needed one place to send people from freelance marketplaces and LinkedIn. It had to explain what I offer quickly, load fast on a phone, be easy for search engines and AI answer engines to read, and let me add posts and projects without editing code.
+
+## Approach
+
+- **Static by default.** Every page is generated at build time from content in the repo, so there's no database to run or pay for.
+- **A git-based CMS.** Services, projects, posts, and site settings are edited in a Keystatic admin UI. Changes are saved as files in the repo, so content has the same history and review flow as code.
+- **Technical SEO.** Per-page titles, descriptions, and canonical URLs; generated social share images; JSON-LD for the person, services, posts, and breadcrumbs; a sitemap built from the content; and an RSS feed.
+- **Very little JavaScript.** The only client component is the mobile menu toggle. Fonts load through `next/font`, so text doesn't jump around while the page loads.
+- **Cheap hosting.** It runs on Cloudflare Workers through the OpenNext adapter, on a free plan that allows commercial use.
+
+## Stack
+
+Next.js (App Router), TypeScript, Keystatic, Markdoc, Tailwind CSS, and Cloudflare Workers.
+
+## Outcome
+
+A site that I can update in a few minutes and that a client can inspect as a working example of the "fast, SEO-ready Next.js website" service.
+
+Lighthouse scores, measured on a local production build:
+
+- **Mobile:** Performance 96 to 99, Accessibility 100, Best Practices 100, SEO 100
+- **Desktop:** 100 in all four categories

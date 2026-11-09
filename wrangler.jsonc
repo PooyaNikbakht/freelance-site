@@ -1,0 +1,39 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "freelance-site",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  // Contact form messages (the /admin/messages inbox). Schema in migrations/.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "pooya-site",
+      "database_id": "88074cc8-7121-45a3-8bec-b87ccb07ef6e",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  },
+  // Non-secret settings for the contact form. Secrets are set with `wrangler secret put`:
+  // RESEND_API_KEY, CONTACT_TO_EMAIL (kept out of the repo), TURNSTILE_SECRET_KEY (optional),
+  // ADMIN_PASSWORD and ADMIN_SESSION_SECRET (the admin), and the KEYSTATIC_* values
+  // (the content editor in GitHub mode). See README.
+  "vars": {
+    "CONTACT_FROM_EMAIL": "Pooya's site <contact@pooya.website>"
+  },
+  // Served only on pooya.website, where the zone's DDoS and rate-limit rules apply.
+  "workers_dev": false,
+  "preview_urls": false,
+  // Caps CPU per request (Workers Paid), so one runaway or abusive request can't run up usage.
+  "limits": { "cpu_ms": 100 },
+  "routes": [
+    { "pattern": "pooya.website", "custom_domain": true },
+    { "pattern": "www.pooya.website", "custom_domain": true }
+  ]
+}

@@ -1,0 +1,58 @@
+---
+title: Next.js performance checklist for small business sites
+description: >-
+  A practical checklist I use to keep small business sites on Next.js fast:
+  static pages, images, fonts, third-party scripts, client JavaScript, and how
+  to measure it.
+date: 2026-10-27
+draft: false
+---
+Small business sites don't usually get slow because of one big mistake. They get slow one widget at a time: a chat bubble, a heavy hero video, three analytics scripts, a carousel nobody uses. Next.js gives you good defaults, but it can't stop you from adding things.
+
+Here is the checklist I run through on a typical marketing or content site.
+
+## Render as much as possible ahead of time
+
+- **Make pages static.** Most small business pages don't change per visitor. If a page can be generated at build time, it can be served from a CDN close to the user, which is about as fast as the web gets.
+- **Be careful with anything that makes a page dynamic.** Reading cookies or headers in a layout, for example, can turn every page into a server render. Check the build output to see which routes are static.
+
+## Images
+
+- **Use `next/image`** with explicit width and height, so the browser reserves space and the layout doesn't jump.
+- **Size images for where they're shown.** A 4000px photo in a 600px card is the most common performance problem I see.
+- **Only mark the main hero image as priority.** Everything below the fold can load lazily.
+
+## Fonts
+
+- **Load fonts with `next/font`.** It self-hosts the files and adjusts the fallback font to reduce layout shift.
+- **Use one or two families** and only the weights you actually need.
+
+## Third-party scripts
+
+This is usually where the biggest wins are.
+
+- **List every script on the site** and ask who uses its data. Remove the ones nobody looks at.
+- **Load the rest late.** Chat widgets and similar tools can wait until the page is interactive, or until the user clicks a button that opens them.
+- **Prefer simple embeds.** A link to a booking page is lighter than an embedded calendar on every page.
+
+## Client JavaScript
+
+- **Keep components on the server by default.** Only add `"use client"` where you need state or browser APIs, like a menu toggle.
+- **Push client components down the tree.** A small interactive button shouldn't turn the whole page into client code.
+- **Watch your dependencies.** A date library or an icon pack can quietly add a lot to every page.
+
+## SEO basics that overlap with speed
+
+- A unique title and description on every page.
+- A sitemap and a robots file.
+- Real headings in order, descriptive link text, and alt text on images.
+
+These don't make a site faster, but they're cheap to get right, and Lighthouse checks them alongside performance.
+
+## Measure the right way
+
+- **Run Lighthouse in mobile mode,** in an incognito window, against a production build. Development mode is much slower and the numbers mean little.
+- **Check field data too.** Lab tests are a snapshot. Search Console's Core Web Vitals report shows what real visitors experience over time.
+- **Measure before and after each change,** with the same setup, so you know what actually helped.
+
+Most of these fixes take hours, not weeks. If your site feels slow and you're not sure where to start, the third-party scripts and the images are usually the first place to look.

@@ -1,0 +1,43 @@
+---
+title: 'A sentiment analysis: predicting communicative intention in code review questions'
+summary: >-
+  Classification models that predict the intention behind a code review question, such as asking for
+  a clarification, suggesting an improvement, or asking why something was built a certain way, using
+  the question's words plus key-question, sentiment, and length features.
+type: data-science
+year: '2021'
+when: Winter 2021
+authors: Pooya Nikbakht
+context: ''
+tags:
+  - Machine learning
+  - NLP
+  - Python
+  - scikit-learn
+  - XGBoost
+links:
+  - label: Full report (PDF)
+    url: https://1drv.ms/b/s!AjN-uQTznIfQhd5mVz-OcUkSLJo8gw?e=vbgUaF
+  - label: Code on GitHub
+    url: https://github.com/PooyaNikbakht/predicting-code-review-intention
+order: 4
+---
+## Background
+
+This project builds on "Communicative Intention in Code Review Questions" by Ebert et al. In code review, developers ask questions to request clarifications, suggest improvements, or ask for explanations about implementation choices. Ebert et al. ran an exploratory case study, manually classifying 499 questions extracted from 399 Android code reviews.
+
+## Goal
+
+Build classification models that predict the communicative intention of new code review comments and questions. Besides the words of each question, the study derives three features from the raw questions and looks at how each one affects model accuracy:
+
+- **Key question:** the key question inside each raw comment, which carries its intention.
+- **Question sentiment:** the sentiment of each question.
+- **Question length:** the length of each question.
+
+## Tools
+
+- Python.
+- scikit-learn and XGBoost to build the classification models and predict the test data, and scikit-learn to evaluate them by accuracy, precision, and recall.
+- NumPy and pandas for data manipulation and analysis.
+- NLTK for sentiment analysis.
+- A Jupyter Notebook, so the code and results can be read together.

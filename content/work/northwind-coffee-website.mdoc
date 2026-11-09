@@ -1,0 +1,75 @@
+---
+title: "Northwind Coffee Co.: a photo-rich café and roaster website"
+summary: >-
+  A warm, photo-led website for a coffee roaster with three cafés: the coffees
+  with tasting notes and prices, subscriptions, brew guides, the story behind
+  the roastery, and each café's hours. Fast on a phone, cheap to host, and with
+  a support chat that answers from the business's own help center.
+categories:
+  - websites
+stack:
+  - Next.js
+  - TypeScript
+  - Tailwind CSS
+  - Cloudflare Workers
+featured: true
+order: 2
+findable:
+  measured: >-
+    Lighthouse 13.6.0, mobile with simulated slow 4G, home page, production
+    build, median of three runs. SEO checks pass except indexing, which is
+    switched off on purpose because this is a demo.
+  performance: 93
+  accessibility: 100
+  bestPractices: 100
+  structuredData:
+    - Organization
+    - CafeOrCoffeeShop (3 cafés)
+    - PostalAddress
+    - OpeningHoursSpecification
+  resultTitle: "Northwind Coffee Co.: small-batch coffee from Halifax"
+  resultUrl: northwind.example
+  resultDescription: >-
+    Small-batch coffee, roasted by the harbour. Three cafés in Halifax and
+    Dartmouth, fresh beans, subscriptions and brew guides.
+  resultDetails: 112 Harbour Street, Halifax · Open today 7 AM to 6 PM
+---
+Northwind Coffee Co. is a fictional coffee roaster in Halifax, founded in 2014, with three cafés, six coffees and real coffee photography.
+
+## Problem
+
+A small roaster sells on taste and atmosphere, and both are hard to get across on a slow, generic template. Customers want to know what a coffee tastes like, how fresh it is, where the cafés are and when they're open, and they usually check on a phone. If the photos load slowly or the hours are buried, they move on.
+
+## What it does
+
+- **A photo hero that sets the mood.** The home page opens on the roaster at work, with the promise up front: roasted to order Monday to Thursday, free shipping in Canada over $45, and subscribers save 10%.
+- **A shop page for every coffee.** Origin, region, process, roast level, tasting notes, what it's best for and the price for a 340 g bag, plus digital gift cards.
+- **Subscriptions explained plainly.** Delivery every 1, 2, 3 or 4 weeks, how to skip, pause or cancel, and the 10% saving.
+- **Brew guides.** Pour-over, French press and espresso with the ratio, dose, grind, water temperature and time, plus how to store beans.
+- **The story.** An About page on the founders, the sourcing and Old Tom, the 15 kg drum roaster.
+- **Café locations.** Harbour Street, the Roastery and Willow Row, each with a photo, address, opening hours by day and what makes it different (pickup point, Saturday roastery tours, a quiet reading room).
+- **Contact.** Customer support and wholesale details, with a contact form.
+- **A support chat.** A chat button in the corner answers questions about shipping, subscriptions and returns from the roaster's help center and shows where each answer came from. It's the [website support bot](/work/docs-chat), added with one line of code.
+
+## How it helps your business
+
+- **It sells the coffee before the first sip.** Big, warm photos and tasting notes do the work a barista does at the counter.
+- **Fast on a phone.** Visitors on a café's Wi-Fi or a bus see photos right away instead of waiting.
+- **Fewer repeat questions.** Hours, shipping and subscription rules are easy to find, and the chat handles the rest at any hour.
+- **Low running costs.** No CMS subscription and no database: the site is served as static pages.
+
+## How it's built
+
+- **Pre-sized WebP photos.** All 29 Unsplash photos are cropped, lightly colour graded and exported as WebP at fixed widths ahead of time, and a small image loader picks the right size for each screen. There is no image service to pay for.
+- **One source for the facts.** Coffees, prices, hours and policies live in one fact sheet that feeds both the website and the support bot's help center, so the two never disagree.
+- **No CMS to maintain.** Plain static Next.js pages with no plugins to update. Changes are made in code, which suits a menu that changes a few times a year.
+- **Built for phones and keyboards.** A mobile menu, large tap targets, a skip link, and a dark wash over the hero photo so the headline stays readable.
+- **Photographers credited** on a Photo credits page.
+
+## Stack
+
+Next.js (App Router), TypeScript and Tailwind CSS, with Fraunces and Inter fonts hosted with the site, deployed to Cloudflare Workers. The support chat is a separate script from the [website support bot](/work/docs-chat) project.
+
+## Outcome
+
+A complete café and roaster website you can click through: browse the six coffees, read the pour-over guide, check when Willow Row opens on Sunday, then ask the chat whether they ship to the US. The same café chain also has [online ordering with pickup times](/work/northwind-coffee-ordering). The shop shows prices but has no checkout yet; a cart or the ordering system plugs into the same pages.

@@ -1,0 +1,40 @@
+---
+title: 'SCoR: an online Stack Overflow code recommender'
+summary: >-
+  A desktop application that takes a developer's question, collects Stack Overflow results in real
+  time, then ranks and clusters the code snippets in the answers so the useful ones are quick to find.
+type: research-paper
+year: ''
+when: ''
+authors: Pooya Nikbakht, Amir Mahdi Nassiri
+context: ''
+tags:
+  - Software engineering
+  - Information retrieval
+  - Clustering
+links:
+  - label: Full paper (PDF)
+    url: https://1drv.ms/b/s!AjN-uQTznIfQhclKFSZtPFgZDbg_7g?e=HydFcz
+  - label: Source code on GitLab
+    url: https://gitlab.com/AmirMahdiNassiri/scor
+order: 3
+---
+## The problem
+
+Stack Overflow is one of the main places developers learn how to use libraries, APIs, and programming concepts. Finding the right answer often means reading through many results, which costs time and money.
+
+Earlier tools such as Google Code Search, MAPO, and Strathcona re-rank code snippets, but each is limited to certain projects, APIs, languages, or IDEs.
+
+## How SCoR works
+
+SCoR (Stack Overflow Code Recommender) is a desktop application with a graphical interface. It takes the user's query and a few other inputs, then:
+
+1. collects Stack Overflow results in real time,
+2. extracts the code snippets and other features from all the answers,
+3. ranks the code snippets based on those features,
+4. clusters similar answers into groups, and
+5. recommends clusters of refined code snippets, with related comments where they exist.
+
+## Result
+
+Initial evaluations showed a considerable reduction in the effort developers spent searching Stack Overflow results.

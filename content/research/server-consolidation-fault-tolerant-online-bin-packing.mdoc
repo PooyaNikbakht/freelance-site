@@ -1,0 +1,35 @@
+---
+title: On the fault-tolerant online bin packing problem (server consolidation)
+summary: >-
+  A research paper on placing replicated tenants onto as few cloud servers as possible while staying
+  safe when a server fails. Tenants arrive one at a time and can't be moved later, so this is an
+  online bin packing problem with fault tolerance built in.
+type: research-paper
+year: '2021'
+when: July 2021
+authors: Shahin Kamali, Pooya Nikbakht
+context: MSc research, University of Manitoba
+tags:
+  - Algorithms
+  - Online algorithms
+  - Cloud computing
+links:
+  - label: Paper on Springer
+    url: https://link.springer.com/chapter/10.1007/978-3-030-93043-1_1
+  - label: MSc thesis (PDF)
+    url: https://mspace.lib.umanitoba.ca/server/api/core/bitstreams/a4a362db-ba40-4eda-8f8b-fb00a5461985/content
+order: 2
+---
+## The problem
+
+Server consolidation means packing tenants (such as applications or databases) onto as few servers as possible. Energy and operating costs are a large share of what it costs to run a data center, so better packing saves real money.
+
+In cloud data centers, tenants arrive one at a time and each one has to be placed right away, without moving it later. That makes it an online bin packing problem: items are tenants, and bins are servers of the same capacity.
+
+## Fault tolerance
+
+Servers fail on a regular basis, so a valid packing has to survive the failure of a certain number of servers. The work builds on a primary-secondary replication model: each tenant has one primary replica and several secondary replicas, and the primary carries a higher load, by a factor called η. When a server fails, a secondary replica of each affected tenant is promoted to primary, and the packing has to guarantee that this never overloads a server.
+
+## What we showed
+
+The best existing online algorithm had a competitive ratio of at most 2, in a setting where servers only fail after packing is finished. We study the more practical setting where servers may fail while packing is still in progress, and give an algorithm with an improved competitive ratio of at most 1.75 for that general setting.

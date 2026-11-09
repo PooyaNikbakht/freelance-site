@@ -1,0 +1,45 @@
+---
+title: 'Data analysis on the outbreak of COVID-19: the world, Iran, Canada, and Canada''s provinces'
+summary: >-
+  Visualizations and regression forecasts of the early COVID-19 outbreak, from 22 January to 7 April
+  2020, using Johns Hopkins CSSE data, comparing polynomial, Bayesian ridge, and support vector
+  regression.
+type: data-science
+year: '2020'
+when: Winter 2020
+authors: Pooya Nikbakht
+context: ''
+tags:
+  - Data analysis
+  - Visualization
+  - Regression
+  - Python
+links:
+  - label: Full report (PDF)
+    url: https://1drv.ms/b/s!AjN-uQTznIfQhck9ZVQ8f8GvBGfA4g?e=4lv8gh
+  - label: Code on GitHub
+    url: https://github.com/PooyaNikbakht/covid19-analysis-and-prediction-for-world-canada-iran
+order: 5
+---
+## Background
+
+COVID-19 had been spreading around the world since December 2019, when the first case was reported in Wuhan, China. Data scientists were analyzing the trends and building prediction models to help policymakers decide how to slow the spread. Regression is one of several ways to predict where an outbreak is heading.
+
+## Data and scope
+
+- Regions: the entire world, Iran, Canada, and Canada's provinces.
+- Time window: 22 January to 7 April 2020.
+- Data from the CSSE at Johns Hopkins University.
+
+## Part 1: visualization and analysis
+
+For each region, visualizations and explanations of:
+
+- cumulative infected, recovered, and dead cases, both in absolute numbers and per population, and
+- the mortality rate and recovery rate over time,
+
+to find what the overall trends had to say.
+
+## Part 2: prediction
+
+Three regression models, Polynomial Regression, Bayesian Ridge Regression, and Support Vector Regression, each modelled the total infected cases for the world, Iran, and Canada separately. The project predicts the future situation in each area and compares the three models, to show how their strengths differ from one dataset to another.

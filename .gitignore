@@ -1,0 +1,20 @@
+node_modules/
+.next/
+.open-next/
+.wrangler/
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+coverage/
+
+# Next.js and TypeScript
+next-env.d.ts
+*.tsbuildinfo
+out/
+.dev.vars

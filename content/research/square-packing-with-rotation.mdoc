@@ -1,0 +1,34 @@
+---
+title: 'Cutting stock with rotation: packing square items into square bins'
+summary: >-
+  A research paper on square packing, a two-dimensional version of bin packing where square items go
+  into as few square bins as possible. Unlike earlier models, items may be rotated, which matches how
+  stock cutting works in practice.
+type: research-paper
+year: '2020'
+when: December 2020
+authors: Shahin Kamali, Pooya Nikbakht
+context: MSc research, University of Manitoba
+tags:
+  - Algorithms
+  - Bin packing
+  - Approximation schemes
+links:
+  - label: Paper on Springer
+    url: https://link.springer.com/chapter/10.1007/978-3-030-64843-5_36
+  - label: MSc thesis (PDF)
+    url: https://mspace.lib.umanitoba.ca/server/api/core/bitstreams/a4a362db-ba40-4eda-8f8b-fb00a5461985/content
+order: 1
+---
+## The problem
+
+In the square packing problem, the items are squares of different side lengths and the bins are unit squares. The goal is to place every item, without overlaps, into the smallest number of bins. It models cutting stock: a supplier cuts wooden boards into the pieces customers ask for and wants to use as few boards as possible.
+
+The problem had been studied before, but the existing models didn't allow items to be rotated. In real cutting, a piece can be cut at any angle, so this work allows rotation by any degree.
+
+## What we showed
+
+- The offline problem is NP-hard when rotation is allowed.
+- Under a resource-augmented setting, where the algorithm may use bins slightly larger than the optimal solution's bins, we give an asymptotic polynomial-time approximation scheme (APTAS). Its solutions can be encoded in a poly-logarithmic number of bits.
+
+My MSc thesis also covers the online version of the problem, with an online algorithm whose competitive ratio is at most 2.306, and a related problem of packing "tans" (half-square triangles) into unit squares, with an online algorithm whose competitive ratio is at most 1.897.

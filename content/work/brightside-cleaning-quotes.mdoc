@@ -1,0 +1,61 @@
+---
+title: "Brightside Cleaning: an instant quote calculator with a leads inbox"
+summary: >-
+  A cleaning company website where customers price their own clean in under a
+  minute, or start from a photo of the space, with every line shown and tax separate, then send the quote in one
+  click. Every request lands in a leads inbox the owner works from new to won
+  to booked.
+categories:
+  - websites
+  - quotes
+  - ai
+  - booking
+  - mvp
+  - dashboards
+stack:
+  - Next.js
+  - TypeScript
+  - Tailwind CSS
+  - Cloudflare Workers
+  - Cloudflare D1
+  - Zod
+featured: false
+order: 9
+---
+Brightside Cleaning is a fictional home and office cleaning company in Toronto's east end, with sample prices and leads.
+
+## Problem
+
+Most cleaning companies answer "how much?" with "it depends", then trade emails for two days to work out a price. Many customers don't wait that long. The ones who do end up scattered across an inbox, texts and a notebook, and nobody remembers to follow up.
+
+## What it does
+
+- **Price it yourself.** Customers choose house, condo or office, bedrooms and bathrooms (or square feet), the kind of clean, how often, and extras like inside the oven or pets at home.
+- **Or start from a photo.** Customers can add 1 to 3 photos of the space instead. The AI suggests the rooms, size, condition, kind of clean and extras, each with a short reason, and fills in the calculator. The price always comes from the business's own price list, shown as a range the business confirms, and the customer can change any answer.
+- **Every line shown.** The breakdown lists each part of the price, the discount for regular cleans, add-ons, and HST shown separately, plus a likely range so there are no surprises.
+- **Send it in one click.** The customer adds their name, email, area and preferred days, and gets a copy of the quote by email.
+- **A leads inbox.** Each request arrives with the quote exactly as the customer saw it. The owner moves it from New to Contacted, Quoted, Won or Lost, adds notes and follow-up dates, and replies from the admin.
+- **From won to booked.** A won lead turns into a booking with the customer, the clean and their preferred day already filled in.
+- **Change your prices yourself.** The price list is edited in the admin with a live preview of a sample job. New prices apply to new quotes only.
+
+## How it helps your business
+
+- **More customers get a price** at the moment they're ready to book, not two days later.
+- **Fewer surprises.** The online price is itemised, so customers know what they're paying for.
+- **No lost leads.** Every request is in one inbox with a follow-up list for today.
+- **You see what's working:** leads this month, win rate, and the value of open and won quotes.
+
+## How it's built
+
+- **One pricing engine** runs in the browser for the live breakdown and again on the server when the quote is sent, so the price can't be tampered with. Rounding is done the same way at every step, so the lines always add up.
+- **Each lead keeps a snapshot** of the quote it was given, so changing the price list never rewrites history.
+- **The AI never sets the price.** Claude vision returns structured data checked against a schema, and the pricing engine turns it into a quote. Uploads are checked for type, size and count, location data is stripped, and photos are never stored. Without an API key a built-in sample analyzer keeps the demo working.
+- **Tested.** Automated tests cover every price rule, discounts, minimums, tax and rounding, and the lead pipeline.
+
+## Stack
+
+Next.js (App Router), TypeScript, Tailwind CSS, Cloudflare Workers, Cloudflare D1 with Drizzle ORM, Zod and Vitest.
+
+## Outcome
+
+A working quote and leads flow: price a two-bedroom deep clean every two weeks with the oven and pets, request it, then log in as the owner and take the lead from new to won to a booking.
