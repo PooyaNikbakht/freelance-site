@@ -29,8 +29,8 @@ export async function SiteHeader() {
           <span className="min-w-0 leading-tight">
             <span className="block font-semibold tracking-tight">{siteConfig.name}</span>
             <span className="block text-xs text-muted sm:hidden">{taglineMobile}</span>
-            <span className="hidden text-xs text-muted sm:block lg:hidden">{taglineShort}</span>
             <span className="hidden text-xs text-muted lg:block">{tagline}</span>
+            <span className="hidden text-xs text-muted sm:block">{taglineShort}</span>
           </span>
         </Link>
         <nav aria-label="Main" className="hidden md:block">
