@@ -119,7 +119,7 @@ export type Post = {
 };
 
 const fallbackSettings: Settings = {
-  headline: "Websites and smart tools for small businesses.",
+  headline: "Websites, web apps and AI, built end to end.",
   subline: "Booking and online ordering, fast websites, and AI assistants that answer your customers, built for small businesses and startups.",
   availability: "Available evenings and weekends, Eastern Time.",
   tagline: "Senior Software Engineer · AWS Solutions Architect · MSc Computer Science · AI Expert",

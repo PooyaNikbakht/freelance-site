@@ -29,14 +29,14 @@ const steps = [
 ];
 
 const credentials = [
-  { big: "10+ years", caption: "building web products" },
-  { big: "Founder", caption: "of a startup, then product owner" },
-  { big: "MSc CS", caption: "research in optimization algorithms" },
+  { big: "10+ years", caption: "building web products, from a startup to a large marketplace" },
+  { big: "End to end", caption: "design, frontend, backend, database and cloud" },
+  { big: "Try it live", caption: "every project here has a working demo" },
   { big: "AWS certified", caption: "Solutions Architect" },
 ] as const;
 
 // The phrase in the headline that gets the amber underline, if the CMS headline contains it.
-const highlightPhrase = "small businesses";
+const highlightPhrase = "end to end";
 
 function Headline({ text }: { text: string }) {
   const i = text.indexOf(highlightPhrase);
@@ -51,7 +51,7 @@ function Headline({ text }: { text: string }) {
 }
 
 export default async function HomePage() {
-  const [settings, services, featured] = await Promise.all([getSettings(), getServices(), getFeaturedWork(4)]);
+  const [settings, services, featured] = await Promise.all([getSettings(), getServices(), getFeaturedWork(6)]);
 
   return (
     <>
@@ -75,6 +75,12 @@ export default async function HomePage() {
                 See my work
               </ButtonLink>
             </div>
+            <p className="mt-6 text-[0.9375rem] text-muted">
+              Hiring for a startup or a product team?{" "}
+              <Link href="/for-teams" className="font-semibold text-ink underline underline-offset-4 hover:text-accent">
+                See how I work with teams
+              </Link>
+            </p>
           </div>
           <HeroCollage />
         </Container>
@@ -102,8 +108,8 @@ export default async function HomePage() {
           <div className="flex flex-wrap items-end justify-between gap-x-8">
             <SectionHeading id="services-heading" eyebrow="Services" title="What I do">
               <p>
-                Full-stack web work, from frontend to backend, databases, APIs and cloud architecture. These are the most
-                common starting points, each backed by real projects.
+                Websites, web apps, AI features and fixes for sites you already have, for local businesses, startups
+                and product teams. These are the most common starting points, each backed by a project you can try.
               </p>
             </SectionHeading>
             <Link
@@ -120,7 +126,9 @@ export default async function HomePage() {
         <section aria-labelledby="work-heading" className="pt-20 sm:pt-24">
           <div className="flex flex-wrap items-end justify-between gap-x-8">
             <SectionHeading id="work-heading" eyebrow="Selected projects" title="Recent projects">
-              <p>Built the way I&apos;d build yours: try them live, read how they work, and see the numbers.</p>
+              <p>
+                One for each kind of work: try them live, read how they were built, and see the numbers.
+              </p>
             </SectionHeading>
             <Link
               href="/work"
@@ -132,7 +140,7 @@ export default async function HomePage() {
           </div>
           <div className="grid gap-5 md:grid-cols-2">
             {featured.map((w) => (
-              <WorkCard key={w.slug} work={w} sizes="(min-width: 768px) 50vw, 100vw" />
+              <WorkCard key={w.slug} work={w} sizes="(min-width: 768px) 50vw, 100vw" showStack={false} />
             ))}
           </div>
         </section>

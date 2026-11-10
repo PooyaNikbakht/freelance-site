@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/site.config";
 
 export const siteDescription =
-  "Senior full-stack engineer. I build MVPs, fast SEO-ready Next.js sites, and AI features, and I fix and improve existing WordPress, Shopify, React, and Next.js sites.";
+  "Senior full-stack engineer building websites, web apps and AI features end to end, for local businesses, startups and product teams. I also fix and speed up existing WordPress, Shopify, React and Next.js sites.";
 
 export function absoluteUrl(path = "/"): string {
   return path === "/" ? siteConfig.url : `${siteConfig.url}${path}`;

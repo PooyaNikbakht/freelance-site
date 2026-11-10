@@ -22,7 +22,7 @@ export function SiteFooter() {
             {siteConfig.name}
           </Link>
           <p className="mt-4 max-w-xs leading-relaxed">
-            {siteConfig.role}. I build websites, web apps and AI tools for small businesses and startups.
+            {siteConfig.role}. I build websites, web apps and AI features for businesses, startups and product teams.
           </p>
           <p className="mt-6">
             Built by{" "}

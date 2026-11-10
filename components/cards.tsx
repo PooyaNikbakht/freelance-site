@@ -66,10 +66,13 @@ export function WorkCard({
   work,
   headingLevel = "h3",
   sizes = "(min-width: 768px) 33vw, 100vw",
+  showStack = true,
 }: {
   work: Work;
   headingLevel?: "h2" | "h3";
   sizes?: string;
+  /** The stack tags help technical readers; the home page leaves them off. */
+  showStack?: boolean;
 }) {
   const H = headingLevel;
   return (
@@ -82,9 +85,11 @@ export function WorkCard({
           </Link>
         </H>
         <p className="mt-2 flex-1 text-[0.9375rem] leading-relaxed text-muted">{work.summary}</p>
-        <div className="mt-5">
-          <TagList items={work.stack.slice(0, 4)} label={`Stack for ${work.title}`} />
-        </div>
+        {showStack ? (
+          <div className="mt-5">
+            <TagList items={work.stack.slice(0, 4)} label={`Stack for ${work.title}`} />
+          </div>
+        ) : null}
       </div>
     </article>
   );
