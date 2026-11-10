@@ -53,11 +53,12 @@ export default config({
         }),
         tagline: fields.text({
           label: "Header tagline (desktop)",
-          description: "Under your name in the header on wide screens.",
+          description: "Under your name on wide screens, above the tablet tagline.",
           validation: { length: { min: 1 } },
         }),
         taglineShort: fields.text({
           label: "Header tagline (tablet)",
+          description: "Under your name on tablets. On wide screens it's the third line.",
           validation: { length: { min: 1 } },
         }),
         taglineMobile: fields.text({
