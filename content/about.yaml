@@ -53,10 +53,10 @@ howIWork:
 activity:
   title: Track record
   intro: >-
-    A few numbers from my current full-time position, to show how I work day to day. The
-    contribution graphs come from my work GitHub account. Across all projects in my domain, I've
-    finished more tickets than anyone while also writing
-    a large share of the plan. Colleagues' names are hidden.
+    A few numbers from my current full-time position, to show how I work day to
+    day. The contribution graphs come from my work GitHub account. Across all
+    projects in my domain, I've finished more tickets than anyone while also
+    writing a large share of the plan. Colleagues' names are hidden.
   graphs:
     - year: '2026'
       contributions: 706
@@ -72,7 +72,9 @@ activity:
       image: /about/github-2023
   ticketCharts:
     - title: Tickets completed
-      note: Engineering tickets assigned and delivered, top six across all projects in my domain.
+      note: >-
+        Engineering tickets assigned and delivered, top six across all projects
+        in my domain.
       bars:
         - name: Me
           value: 525
@@ -93,7 +95,9 @@ activity:
           value: 54
           me: false
     - title: Tickets written
-      note: Product, architecture and technical tickets created, top six across all projects in my domain.
+      note: >-
+        Product, architecture and technical tickets created, top six across all
+        projects in my domain.
       bars:
         - name: Colleague C
           value: 624
@@ -114,21 +118,21 @@ activity:
           value: 159
           me: false
 experience:
-  - title: Senior full-stack engineer
+  - title: Senior Full-stack Engineer
     org: ApplyBoard, an international education marketplace
     link: https://www.applyboard.com
     startYear: '2022'
     startMonth: '2'
     endMonth: '1'
     body: >
-      A platform used by hundreds of thousands of students and thousands of institutions
-      worldwide, with hundreds of thousands of programs to search. Full-stack
-      work across several products: the search and recommendation
+      A platform used by hundreds of thousands of students and thousands of
+      institutions worldwide, with hundreds of thousands of programs to search.
+      Full-stack work across several products: the search and recommendation
       engine that connects international students with institutions, LLM
       features, internal CMS tooling, SEO-focused public pages in Next.js, and
       APIs and microservices on AWS. The [marketplace search
       project](/work/marketplace-search) covers one of them.
-  - title: Research assistant
+  - title: Research Assistant
     org: GADA lab, University of Manitoba
     link: https://home.cs.umanitoba.ca/~gada/
     startYear: '2018'
@@ -137,9 +141,9 @@ experience:
     endMonth: '10'
     body: >
       Researched optimization algorithms, mainly bin packing and its
-      applications, leading to several peer-reviewed papers (see
-      Publications below).
-  - title: Software engineer, Scrum Master, and product owner
+      applications, leading to several peer-reviewed papers (see Publications
+      below).
+  - title: Software engineer, Scrum Master, and Product Owner
     org: Chitva
     startYear: '2015'
     startMonth: '3'
@@ -161,8 +165,8 @@ experience:
       social network that connected local businesses and their customers. The
       business plan was named "best promising project" at the IUT
       Entrepreneurship Festival.
-  - title: Computer science instructor
-    org: High school
+  - title: Computer Science Instructor
+    org: Sama High School
     startYear: '2012'
     startMonth: '10'
     endYear: '2013'
@@ -226,7 +230,9 @@ publications:
     order: 5
 stack:
   - label: Frontend
-    items: React, Next.js, TypeScript, JavaScript, HTML, CSS (Tailwind), accessible mobile-first UI
+    items: >-
+      React, Next.js, TypeScript, JavaScript, HTML, CSS (Tailwind), accessible
+      mobile-first UI
   - label: Backend and APIs
     items: >-
       Python (FastAPI, Django), Node (NestJS), Ruby on Rails, REST and GraphQL
@@ -235,8 +241,8 @@ stack:
     items: PostgreSQL, MySQL, MongoDB, DynamoDB, Redis, OpenSearch/Elasticsearch
   - label: Architecture
     items: >-
-      Microservices, modular monoliths, system design, search and
-      recommendation systems
+      Microservices, modular monoliths, system design, search and recommendation
+      systems
   - label: Async and messaging
     items: Queues, background jobs, scheduled tasks, pub/sub (SQS, SNS)
   - label: Cloud and DevOps
