@@ -118,7 +118,7 @@ activity:
           value: 159
           me: false
 experience:
-  - title: Senior Full-stack Engineer
+  - title: Senior Full-Stack Engineer
     org: ApplyBoard, an international education marketplace
     link: https://www.applyboard.com
     startYear: '2022'
@@ -143,7 +143,7 @@ experience:
       Researched optimization algorithms, mainly bin packing and its
       applications, leading to several peer-reviewed papers (see Publications
       below).
-  - title: Software engineer, Scrum Master, and Product Owner
+  - title: Software Engineer, Scrum Master, and Product Owner
     org: Chitva
     startYear: '2015'
     startMonth: '3'
