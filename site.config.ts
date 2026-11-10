@@ -2,7 +2,7 @@ export type ProjectLinks = {
   liveUrl: string | null;
   repoUrl: string | null;
   localUrl?: string;
-  admin?: { url: string | null; localUrl: string };
+  admin?: { url: string | null; localUrl?: string };
 };
 
 /**
@@ -54,44 +54,38 @@ export const siteConfig = {
    * admin adds a "Try the owner admin" box with a demo login, linking to that business's
    * own admin on its own host. Its url is null until the demo is deployed; localUrl is
    * only shown during `npm run dev`.
-   * TODO: the repos are private for now, so every repoUrl is null. Restore them
-   * (https://github.com/PooyaNikbakht/<repo>) once the repos are public.
+   * repoUrl null hides the "View code" link.
    */
   projects: {
     "kingsway-cuts": {
       liveUrl: "https://kingsway.pooya.website",
       repoUrl: null,
-      localUrl: "http://kingsway.localhost:3030",
-      admin: { url: "https://kingsway.pooya.website/admin", localUrl: "http://kingsway.localhost:3030/admin" },
+      admin: { url: "https://kingsway.pooya.website/admin" },
     },
     "harbourview-physio": {
       liveUrl: "https://harbourview.pooya.website",
       repoUrl: null,
-      localUrl: "http://harbourview.localhost:3030",
-      admin: { url: "https://harbourview.pooya.website/admin", localUrl: "http://harbourview.localhost:3030/admin" },
+      admin: { url: "https://harbourview.pooya.website/admin" },
     },
     "maple-paws-vet": {
       liveUrl: "https://maplepaws.pooya.website",
       repoUrl: null,
-      localUrl: "http://maplepaws.localhost:3030",
-      admin: { url: "https://maplepaws.pooya.website/admin", localUrl: "http://maplepaws.localhost:3030/admin" },
+      admin: { url: "https://maplepaws.pooya.website/admin" },
     },
     "northwind-coffee-website": {
       liveUrl: "https://coffee.pooya.website",
-      repoUrl: null,
+      repoUrl: "https://github.com/PooyaNikbakht/docs-chat",
       localUrl: "http://localhost:3010",
     },
     "northwind-coffee-ordering": {
       liveUrl: "https://northwind.pooya.website",
       repoUrl: null,
-      localUrl: "http://northwind.localhost:3030",
-      admin: { url: "https://northwind.pooya.website/admin", localUrl: "http://northwind.localhost:3030/admin" },
+      admin: { url: "https://northwind.pooya.website/admin" },
     },
     "brightside-cleaning-quotes": {
       liveUrl: "https://brightside.pooya.website/quote",
       repoUrl: null,
-      localUrl: "http://brightside.localhost:3030/quote",
-      admin: { url: "https://brightside.pooya.website/admin", localUrl: "http://brightside.localhost:3030/admin" },
+      admin: { url: "https://brightside.pooya.website/admin" },
     },
     "owner-dashboards": {
       // Empty on purpose: the page links to each business's own admin instead.
@@ -100,35 +94,35 @@ export const siteConfig = {
     },
     "workflow-runner": {
       liveUrl: "https://runner.pooya.website",
-      repoUrl: null,
+      repoUrl: "https://github.com/PooyaNikbakht/workflow-runner",
       localUrl: "http://localhost:3050",
     },
     "paperwork-ai": {
       liveUrl: "https://paperwork.pooya.website",
-      repoUrl: null,
+      repoUrl: "https://github.com/PooyaNikbakht/paperwork-ai",
     },
     "harbourview-bakery-website": {
       liveUrl: "https://bakery.pooya.website",
-      repoUrl: null,
+      repoUrl: "https://github.com/PooyaNikbakht/site-rescue",
       localUrl: "http://localhost:8882",
     },
     "site-rescue": {
       // The rescued ("after") site is live as the bakery; the slow "before" copy stays local.
       liveUrl: "https://bakery.pooya.website",
-      repoUrl: null,
+      repoUrl: "https://github.com/PooyaNikbakht/site-rescue",
     },
     "shop-search": {
       liveUrl: "https://shop.pooya.website",
-      repoUrl: null,
+      repoUrl: "https://github.com/PooyaNikbakht/shop-search",
     },
     "docs-chat": {
       liveUrl: "https://coffee.pooya.website/try",
-      repoUrl: null,
+      repoUrl: "https://github.com/PooyaNikbakht/docs-chat",
     },
     "freelance-site": {
       // Empty on purpose: this site is the live demo.
       liveUrl: "",
-      repoUrl: null,
+      repoUrl: "https://github.com/PooyaNikbakht/freelance-site",
     },
   } as Record<string, ProjectLinks | undefined>,
 } as const;

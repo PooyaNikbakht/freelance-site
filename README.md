@@ -297,8 +297,8 @@ All of these are marked `TODO` in `site.config.ts`:
 - [ ] `links.github`: confirm `https://github.com/PooyaNikbakht`
 - [ ] `url` / `SITE_URL`: the `*.workers.dev` URL until DNS moves, then `https://pooya.website`
 - [ ] `projects[*].liveUrl` for shop-search (planned `shop.pooya.website`), docs-chat (planned `coffee.pooya.website`), paperwork-ai (planned `paperwork.pooya.website`) and the five small-business demos (planned `kingsway.`, `harbourview.`, `maplepaws.`, `northwind.` and `brightside.pooya.website`): set once the demos are live. site-rescue has no live demo on purpose.
-- [ ] `projects[*].admin.url` for the five small-business demos: each business's own admin, `https://<slug>.pooya.website/admin`. Until then the case studies and the owner dashboards page say the link is coming, and `npm run dev` links to each business's local admin (`http://<slug>.localhost:3030/admin`).
-- [ ] `projects[*].repoUrl`: the repos are private for now; make them public or set these to `null`
+- [x] `projects[*].admin.url`: each business's own admin, `https://<slug>.pooya.website/admin`
+- [x] `projects[*].repoUrl`: set for the public repos; `null` hides the "View code" link
 
 Content to confirm in the CMS:
 
