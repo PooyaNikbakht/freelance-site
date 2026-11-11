@@ -63,7 +63,7 @@ export default async function HomePage() {
         <DotGrid className="opacity-[0.035]" />
         <Container className="relative grid items-center gap-12 pb-16 pt-12 sm:pb-20 sm:pt-16 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-10 lg:pb-24 lg:pt-20">
           <div className="min-w-0">
-            <Eyebrow>Senior full-stack engineer, freelance</Eyebrow>
+            <Eyebrow>Senior full-stack & AI engineer, freelance</Eyebrow>
             <h1
               id="hero-heading"
               className="mt-5 text-[2.5rem] font-bold leading-[1.08] tracking-tight sm:text-[3.5rem] lg:text-[4rem]"
@@ -212,7 +212,7 @@ export default async function HomePage() {
                 Hi, I&apos;m Pooya
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-muted">
-                I&apos;m a senior full-stack engineer with 10+ years of experience, from founding a startup to building
+                I&apos;m a senior full-stack and AI engineer with 10+ years of experience, from founding a startup to building
                 large-scale products at bigger companies: one of the top Persian news apps, and a global marketplace with
                 high-traffic search, recommendation systems, microservices on AWS, and AI features. I bring that same care
                 for solid architecture and fast, reliable systems to every project, big or small.

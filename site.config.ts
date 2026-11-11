@@ -14,7 +14,7 @@ export const siteConfig = {
   // TODO: confirm display name.
   name: "Pooya Nikbakht",
   initials: "PN",
-  role: "Senior full-stack engineer",
+  role: "Senior full-stack & AI engineer",
   email: "contact@pooya.website",
   url: (process.env.SITE_URL ?? "https://pooya.website").replace(/\/$/, ""),
   locale: "en_US",
