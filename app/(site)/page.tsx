@@ -110,8 +110,8 @@ export default async function HomePage() {
           <div className="grid items-center lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] lg:gap-14 lg:[&>*:first-child]:mb-0">
             <SectionHeading id="intro-heading" eyebrow="Intro" title="Meet me in two minutes">
               <p>
-                Who I am, what I build, and how I can help your business. Real projects, real results, and how
-                we&apos;d work together.
+                Nice to meet you! Here&apos;s a short video about who I am, what I&apos;ve built, and how we could
+                work together.
               </p>
             </SectionHeading>
             <VideoPlayer
