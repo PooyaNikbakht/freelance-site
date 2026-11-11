@@ -3,9 +3,11 @@ import { ServiceGrid, WorkCard } from "@/components/cards";
 import { ContactCta } from "@/components/contact-cta";
 import { JsonLd } from "@/components/json-ld";
 import { HeroCollage } from "@/components/hero-collage";
+import { VideoPlayer } from "@/components/video-player";
 import { ButtonLink, Container, DotGrid, Eyebrow, Portrait, SectionHeading } from "@/components/ui";
 import { getFeaturedWork, getServices, getSettings } from "@/lib/content";
 import { pageMetadata, personLd, professionalServiceLd, siteDescription } from "@/lib/seo";
+import { introVideo } from "@/lib/videos";
 
 export const metadata = pageMetadata({ description: siteDescription, path: "/" });
 
@@ -104,6 +106,22 @@ export default async function HomePage() {
       </section>
 
       <Container>
+        <section aria-labelledby="intro-heading" className="pt-20 sm:pt-24">
+          <div className="grid items-center lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] lg:gap-14 lg:[&>*:first-child]:mb-0">
+            <SectionHeading id="intro-heading" eyebrow="Intro" title="Meet me in two minutes">
+              <p>
+                Who I am, what I build, and how I work, with a real Lighthouse report of this site and a before and
+                after from a site I rescued. Captions are on, so you can watch without sound.
+              </p>
+            </SectionHeading>
+            <VideoPlayer
+              video={introVideo}
+              sizes="(min-width: 1024px) 680px, 100vw"
+              className="rounded-[12px] border border-border"
+            />
+          </div>
+        </section>
+
         <section aria-labelledby="services-heading" className="pt-20 sm:pt-24">
           <div className="flex flex-wrap items-end justify-between gap-x-8">
             <SectionHeading id="services-heading" eyebrow="Services" title="What I do">
