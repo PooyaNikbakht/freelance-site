@@ -5,9 +5,11 @@ import { ContactCta } from "@/components/contact-cta";
 import { JsonLd } from "@/components/json-ld";
 import { MarkdocInline } from "@/components/markdoc-inline";
 import { Container, PageHeader, Portrait } from "@/components/ui";
+import { VideoPlayer } from "@/components/video-player";
 import { type AboutActivity, type AboutTimelineEntry, getAbout } from "@/lib/content";
 import { breadcrumbLd, pageMetadata } from "@/lib/seo";
 import { dateRange, tenure } from "@/lib/tenure";
+import { introVideo } from "@/lib/videos";
 import { siteConfig } from "@/site.config";
 
 // Everything on this page is edited in Keystatic (the "About page" singleton, content/about.yaml).
@@ -168,6 +170,17 @@ export default async function AboutPage() {
       <Container>
         <div className="grid gap-12 pt-12 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-16">
           <div className="min-w-0 space-y-16">
+            <section aria-labelledby="video-heading">
+              <h2 id="video-heading" className="text-[1.375rem] font-bold tracking-tight">
+                A short video about me and my work
+              </h2>
+              <VideoPlayer
+                video={introVideo}
+                sizes="(min-width: 1024px) 720px, 100vw"
+                className="mt-5 rounded-[12px] border border-border"
+              />
+            </section>
+
             {about.intro.length ? (
               <div className="prose">
                 {about.intro.map((p, i) => (
