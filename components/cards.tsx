@@ -22,7 +22,7 @@ export function ServiceCard({ service, headingLevel = "h3" }: { service: Service
       <p className="mt-2 flex-1 text-[0.9375rem] leading-relaxed text-muted">{service.summary}</p>
       <dl className="mt-6 flex flex-wrap items-end justify-between gap-x-6 gap-y-2 border-t border-border pt-5">
         <div>
-          <dt className="text-xs font-medium uppercase tracking-[0.12em] text-muted">Starting at</dt>
+          <dt className="text-xs font-medium uppercase tracking-[0.12em] text-muted">Starting at (USD)</dt>
           <dd className="mt-1 text-[1.75rem] font-bold leading-none tracking-tight text-accent">
             {formatPrice(service.startingPrice)}
           </dd>

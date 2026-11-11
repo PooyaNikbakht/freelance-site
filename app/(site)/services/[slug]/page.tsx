@@ -48,7 +48,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
           <div className="flex items-center gap-4 rounded-[12px] border border-border bg-surface py-3 pl-3 pr-6">
             <ServiceIcon slug={service.slug} />
             <dl>
-              <dt className="text-xs font-medium uppercase tracking-[0.12em] text-muted">Starting at</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.12em] text-muted">Starting at (USD)</dt>
               <dd className="mt-1 text-2xl font-bold leading-none text-accent">{formatPrice(service.startingPrice)}</dd>
             </dl>
           </div>

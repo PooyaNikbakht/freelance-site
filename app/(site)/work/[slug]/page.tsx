@@ -9,10 +9,12 @@ import { WorkMedia } from "@/components/work-media";
 import Link from "next/link";
 import { adminHref, DemoAdmin } from "@/components/demo-admin";
 import { OwnerDashboards } from "@/components/owner-dashboards";
+import { VideoPlayer } from "@/components/video-player";
 import { WorkParts } from "@/components/work-parts";
 import { workCategoryLabel } from "@/lib/categories";
 import { getWork, getWorkItem } from "@/lib/content";
 import { absoluteUrl, breadcrumbLd, pageMetadata } from "@/lib/seo";
+import { getWorkVideo } from "@/lib/videos";
 import { siteConfig } from "@/site.config";
 
 export const dynamicParams = false;
@@ -33,6 +35,7 @@ export default async function WorkItemPage({ params }: PageProps<"/work/[slug]">
   const work = await getWorkItem(slug);
   if (!work) notFound();
   const project = siteConfig.projects[slug];
+  const video = getWorkVideo(slug);
   const adminUrl = project?.admin ? adminHref(project.admin) : null;
   const hasLinks = Boolean(work.liveUrl || adminUrl || work.repoUrl);
   // The local demo URL is a shortcut for `npm run dev` only and never ships.
@@ -115,6 +118,15 @@ export default async function WorkItemPage({ params }: PageProps<"/work/[slug]">
       </PageHeader>
       <Container>
         <div className="pt-12">
+          {video ? (
+            <section aria-label="Video walkthrough" className="mb-12 max-w-4xl">
+              <VideoPlayer
+                video={video}
+                sizes="(min-width: 1024px) 896px, 100vw"
+                className="rounded-[12px] border border-border"
+              />
+            </section>
+          ) : null}
           <MarkdocBody node={work.body} />
           {work.findable ? <FindableCard findable={work.findable} /> : null}
           {slug === "owner-dashboards" ? <OwnerDashboards /> : null}
