@@ -16,6 +16,8 @@ stack:
   - Cloudflare Workers
   - Cloudflare D1
   - Drizzle ORM
+  - Stripe
+  - Twilio
 featured: true
 order: 1
 ---
@@ -29,8 +31,9 @@ A busy barbershop loses customers in two ways: people who call while every barbe
 
 - **Choose your barber.** Customers pick a service (classic haircut, skin fade, haircut and beard, hot towel shave, kids cut) and then a barber, or "First available" to see every open time across the shop.
 - **Walk-in wait times.** A board on the site shows whether the shop is open and how long the wait is right now. The owner updates it from his phone in two taps.
+- **A deposit holds the chair.** A $10 deposit by card (through Stripe) secures each online booking. The time is held while the customer pays, and the deposit is refunded if they cancel at least 24 hours ahead.
 - **Move or cancel without calling.** The confirmation has a link where customers can change their time themselves, so a cancelled slot goes back on the calendar instead of sitting empty.
-- **Reminders.** A confirmation goes out right away and a reminder 24 hours before the appointment, by email and by text when the customer gives a number.
+- **Reminders.** A confirmation goes out right away and a reminder 24 hours before the appointment, by email, and by text for customers who tick "Text me". Replying STOP turns texts off, and no reminder text goes out at night.
 - **An owner calendar.** The day by barber, the next customer, bookings and booked value for today, and every message each customer was sent.
 - **Edit it yourself.** Prices, opening hours, barbers' hours and breaks, and the text on the home page are all changed in the admin, without a developer.
 - **A "Book a chair" button anywhere.** One line of code adds the same booking to another website, such as an existing WordPress or Squarespace site.
@@ -39,7 +42,7 @@ A busy barbershop loses customers in two ways: people who call while every barbe
 
 - **Customers book at 11 p.m.** instead of calling during your busiest hour.
 - **No double bookings.** If two people try to take the last slot at the same moment, only one gets it and the other simply sees fresh times.
-- **Fewer no-shows.** Reminders go out on their own, and a cancelled appointment frees the chair for someone else.
+- **Fewer no-shows.** A deposit means people turn up, reminders go out on their own, and a cancelled appointment frees the chair for someone else.
 - **Walk-ins come in when it's quiet,** because they can see the wait before they leave home.
 
 ## How it's built
@@ -51,8 +54,8 @@ A busy barbershop loses customers in two ways: people who call while every barbe
 
 ## Stack
 
-Next.js (App Router), TypeScript, Tailwind CSS, Cloudflare Workers, Cloudflare D1 with Drizzle ORM, Zod and Vitest.
+Next.js (App Router), TypeScript, Tailwind CSS, Cloudflare Workers, Cloudflare D1 with Drizzle ORM, Stripe Checkout, Twilio, Zod and Vitest.
 
 ## Outcome
 
-A working barbershop site you can try end to end: book a skin fade with the first available barber, move it from the confirmation link, then log in as the owner and see the booking, the customer and every message on the calendar. The sample data resets every hour.
+A working barbershop site you can try end to end: book a skin fade with the first available barber and pay the deposit with Stripe's test card (4242 4242 4242 4242, no real money moves), move it from the confirmation link, then log in as the owner and see the booking, the customer and every message on the calendar. The sample data resets every hour.
