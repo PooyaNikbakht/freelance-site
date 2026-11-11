@@ -57,7 +57,7 @@ export default async function ServicesPage() {
       <PageHeader
         eyebrow="Services"
         title="What I can help with"
-        intro="Websites, online booking and quotes, and AI that saves you time, for local businesses that want more customers and less admin. Each service below is backed by working examples you can try. Prices are starting points for a well-scoped job, and every project starts with a short call and a written plan."
+        intro="Websites, online booking and quotes, and AI that saves you time, for local businesses that want more customers and less admin. Each service below is backed by working examples you can try. Prices are starting points in US dollars for a well-scoped job, and every project starts with a short call and a written plan."
       />
       <Container>
         <div className="mt-14">

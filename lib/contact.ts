@@ -11,7 +11,7 @@ export const needOptions = [
   "Something else",
 ] as const;
 
-export const budgetOptions = ["Under $1,000", "$1,000 to $3,000", "$3,000 to $10,000", "$10,000+", "Not sure yet"] as const;
+export const budgetOptions = ["Under US$1,000", "US$1,000 to US$3,000", "US$3,000 to US$10,000", "US$10,000+", "Not sure yet"] as const;
 
 export const timingOptions = ["As soon as possible", "In the next month", "In 1 to 3 months", "Just exploring"] as const;
 
