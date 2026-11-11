@@ -59,6 +59,13 @@ export function breadcrumbLd(crumbs: Crumb[]) {
   };
 }
 
+/** Based in Toronto, working with clients anywhere. */
+const toronto = {
+  "@type": "Place",
+  name: "Toronto, Ontario, Canada",
+  address: { "@type": "PostalAddress", addressLocality: "Toronto", addressRegion: "ON", addressCountry: "CA" },
+};
+
 export function personLd() {
   return {
     "@context": "https://schema.org",
@@ -81,10 +88,20 @@ export function personLd() {
       "Django",
       "Ruby on Rails",
       "AWS",
+      "Cloudflare Workers",
+      "PostgreSQL",
+      "WordPress",
       "Search",
       "LLM integration",
+      "Retrieval-augmented generation (RAG)",
+      "OpenAI API",
+      "Claude API",
+      "AI chatbots",
+      "Online booking systems",
+      "Core Web Vitals",
       "Technical SEO",
     ],
+    homeLocation: toronto,
     alumniOf: [siteConfig.education.msc, siteConfig.education.bsc].map((e) => ({
       "@type": "CollegeOrUniversity",
       name: e.school,
@@ -121,6 +138,7 @@ export function professionalServiceLd(services: { title: string; summary: string
     description: siteDescription,
     email: siteConfig.email,
     founder: { "@id": `${siteConfig.url}/#person` },
+    address: toronto.address,
     areaServed: "Worldwide",
     currenciesAccepted: "USD",
     hasOfferCatalog: {
