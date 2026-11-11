@@ -24,6 +24,9 @@ const workVideos: Record<string, Video> = {
   "northwind-coffee-ordering": video("coffee-shop-ordering", "2:11", "Video: a walkthrough of a coffee shop's online ordering"),
   "northwind-coffee-website": video("coffee-shop-website", "2:04", "Video: a walkthrough of a coffee shop's website"),
   "paperwork-ai": video("paperwork-ai", "3:04", "Video: a walkthrough of Paperwork AI"),
+  "shop-search": video("smart-product-search", "1:50", "Video: a walkthrough of the smart product search"),
+  "site-rescue": video("website-speed-rescue", "2:45", "Video: a walkthrough of the website speed rescue"),
+  "workflow-runner": video("ai-workflow-runner", "2:37", "Video: a walkthrough of the AI workflow runner"),
 };
 
 export function getWorkVideo(slug: string): Video | undefined {
