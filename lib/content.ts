@@ -122,9 +122,9 @@ const fallbackSettings: Settings = {
   headline: "Websites, web apps and AI, built end to end.",
   subline: "Booking and online ordering, fast websites, and AI assistants that answer your customers, built for small businesses and startups.",
   availability: "Available evenings and weekends, Eastern Time.",
-  tagline: "Senior full-stack engineer · AWS Certified Solutions Architect",
+  tagline: "Senior full-stack & AI engineer · AWS Certified Solutions Architect",
   taglineShort: "Websites, web apps and AI tools",
-  taglineMobile: "Senior full-stack engineer",
+  taglineMobile: "Full-stack & AI engineer",
 };
 
 export async function getSettings(): Promise<Settings> {

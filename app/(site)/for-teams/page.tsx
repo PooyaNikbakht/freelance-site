@@ -8,7 +8,7 @@ import { breadcrumbLd, pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "For startups and teams",
   description:
-    "A senior full-stack engineer for startups and product teams: React and Next.js frontends, Node and Python APIs, databases, microservices, async systems on AWS, and AI features that are tested before they ship.",
+    "A senior full-stack and AI engineer for startups and product teams: React and Next.js frontends, Node and Python APIs, databases, microservices, async systems on AWS, and AI features that are tested before they ship.",
   path: "/for-teams",
 });
 
@@ -52,7 +52,7 @@ export default async function ForTeamsPage() {
       <JsonLd data={breadcrumbLd([{ name: "For startups and teams", path: "/for-teams" }])} />
       <PageHeader
         eyebrow="For startups and teams"
-        title="A senior full-stack engineer for your team"
+        title="A senior full-stack and AI engineer for your team"
         intro="I've spent 10+ years building web products, most recently search, recommendations, microservices and AI features at ApplyBoard, a marketplace used by hundreds of thousands of students. I can join your team for a feature, a project or a few hours a week, and take work from idea to production."
       >
         <div className="mt-8 flex flex-wrap gap-3">

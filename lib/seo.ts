@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/site.config";
 
 export const siteDescription =
-  "Senior full-stack engineer building websites, web apps and AI features end to end, for local businesses, startups and product teams. I also fix and speed up existing WordPress, Shopify, React and Next.js sites.";
+  "Senior full-stack and AI engineer building websites, web apps and AI features end to end, for local businesses, startups and product teams. I also fix and speed up existing WordPress, Shopify, React and Next.js sites.";
 
 export function absoluteUrl(path = "/"): string {
   return path === "/" ? siteConfig.url : `${siteConfig.url}${path}`;
@@ -73,7 +73,7 @@ export function personLd() {
     "@id": `${siteConfig.url}/#person`,
     name: siteConfig.name,
     url: siteConfig.url,
-    jobTitle: "Senior Full-Stack Engineer",
+    jobTitle: "Senior Full-Stack & AI Engineer",
     image: `${siteConfig.url}/people/pooya-640.webp`,
     description: siteDescription,
     sameAs: sameAs(),
