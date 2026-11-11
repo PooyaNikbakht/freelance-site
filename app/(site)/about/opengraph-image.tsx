@@ -5,5 +5,5 @@ export const size = ogSize;
 export const contentType = ogContentType;
 
 export default function Image() {
-  return renderOg({ eyebrow: "About", title: "Senior full-stack engineer with 10+ years of experience" });
+  return renderOg({ eyebrow: "About", title: "Senior full-stack and AI engineer with 10+ years of experience" });
 }
