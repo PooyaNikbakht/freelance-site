@@ -427,6 +427,36 @@ const galleries: Record<string, { title: string; shots: Shot[] }> = {
       },
     ],
   },
+  "customer-assistant": {
+    title: "A closer look",
+    shots: [
+      {
+        src: "/work/customer-assistant-regular",
+        alt: "Three customer phone chats with a business account: opening hours answered after a typo-filled question, a French question answered in French, and a request for the exact address answered politely without giving it.",
+        caption: "Customers message the business's regular account, typos and all. No bot to find.",
+      },
+      {
+        src: "/work/customer-assistant-panel",
+        alt: "Three screens of the owner's private admin chat: a question card with a draft reply and Send, Change and Don't answer buttons, the redrafted answer after a few rough words, and the sent answer with a Remember this option.",
+        caption: "When it is not sure, the owner gets a draft in a private admin chat and approves with one tap.",
+      },
+      {
+        src: "/work/customer-assistant-booking",
+        alt: "A booking in three phone screens: the customer asks for a gel manicure tomorrow at 6 pm, the owner's admin chat shows a booking card with Approve, Other time and Full buttons, and the customer receives the confirmation.",
+        caption: "A booking request becomes a card with Approve, Other time and Decline.",
+      },
+      {
+        src: "/work/customer-assistant-sheet",
+        alt: "Three Google Sheets tabs: opening hours with breaks, rules written as plain sentences, and the bookings list.",
+        caption: "Hours, rules and bookings live in one Google Sheet. Change a cell and the next answer changes.",
+      },
+      {
+        src: "/work/customer-assistant-calendar",
+        alt: "A Google Calendar week showing a gel manicure booked for Friday 6 to 7 pm, next to the admin chat message saying the booking was added to Google Calendar.",
+        caption: "Approved bookings land in the owner's own Google Calendar.",
+      },
+    ],
+  },
   "workflow-runner": {
     title: "A closer look",
     shots: [
