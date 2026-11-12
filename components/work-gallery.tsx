@@ -397,6 +397,36 @@ const galleries: Record<string, { title: string; shots: Shot[] }> = {
       },
     ],
   },
+  "booking-assistant": {
+    title: "A closer look",
+    shots: [
+      {
+        src: "/work/booking-assistant-canvas",
+        alt: "The n8n workflow in four colored sections: intake, AI reads the note, safe so send it, and not sure so ask the owner, plus a section for the owner's button taps.",
+        caption: "The whole flow on one screen: each box is a simple step.",
+      },
+      {
+        src: "/work/booking-assistant-telegram",
+        alt: "Two phone screens of the owner's Telegram chat: a booking that needs a check, with the AI's notes, a draft reply and Approve and Hold buttons, and the same message after tapping Approve.",
+        caption: "A tricky note waits for Approve or Hold, and the message updates after the tap.",
+      },
+      {
+        src: "/work/booking-assistant-emails",
+        alt: "Two confirmation emails: one written in French for a customer who wrote in French, and one that answers a customer's question about a colour treatment.",
+        caption: "The reply is written in the customer's own language and answers their note.",
+      },
+      {
+        src: "/work/booking-assistant-sheet",
+        alt: "The run log in Google Sheets: one row per booking with a colored status such as Confirmed automatically, Confirmed after owner check, Held by owner and Needs attention.",
+        caption: "Every booking is logged with its status and the reason.",
+      },
+      {
+        src: "/work/booking-assistant-totals",
+        alt: "The summary sheet with five bookings handled, 40 percent handled without a person and the AI cost, next to a calendar week showing two booked appointments.",
+        caption: "Totals update by themselves, and appointments land on the calendar.",
+      },
+    ],
+  },
   "workflow-runner": {
     title: "A closer look",
     shots: [

@@ -1,0 +1,61 @@
+---
+title: "Booking assistant: confirmations, calendar and owner alerts on autopilot"
+summary: >-
+  When a customer books online, an assistant reads their note, writes the
+  confirmation in their language, adds the appointment to the calendar and
+  logs it. Anything tricky, like an allergy or an upset customer, waits for the
+  owner to tap Approve or Hold on their phone.
+categories:
+  - ai
+  - booking
+stack:
+  - n8n
+  - JavaScript
+  - Claude API
+  - Telegram
+  - Google Calendar
+  - Google Sheets
+featured: true
+order: 15
+---
+## Problem
+
+When a customer books online, someone has to read the note, write back, add the appointment to the calendar and tell the team. It takes about five minutes each time, and the notes that matter most, an allergy, an access need, a complaint, are the ones that get missed.
+
+## What it does
+
+1. **Reads the booking.** A booking form or booking system sends the details. The assistant cleans them up and checks for missing or unreadable parts.
+2. **Writes the reply.** The AI writes a short, friendly confirmation in the customer's own language, so a note written in French gets a reply in French.
+3. **Books it.** The confirmation email goes out and the appointment lands on the calendar.
+4. **Tells the owner.** A message arrives on the owner's phone with the details and a link to the exact row in the log.
+5. **Logs everything.** Every booking is written to a simple sheet, with totals that update by themselves.
+
+## When it isn't sure, it asks
+
+Some notes shouldn't be answered by a robot. When the assistant finds an allergy, an upset tone or a special request, or isn't confident, it stops and asks the owner first. The message shows what it understood and a draft reply, with two buttons:
+
+- **Approve:** the email goes out and the calendar is updated right away, and the message shows it was approved.
+- **Hold:** nothing is sent and the owner follows up personally.
+
+A form with missing details is flagged to the owner instead of guessed at.
+
+## Built so nothing goes wrong quietly
+
+- **No duplicates:** the same booking sent twice is handled once.
+- **Retries, then an alert:** if an outside service fails, it tries again, and if it still fails the owner is told by email and phone.
+- **A person in the loop:** nothing unsure is ever sent to a customer automatically.
+- **A full log:** every booking, its status, the reason and the AI cost, in one sheet.
+
+## Plugs into what you already use
+
+Nothing has to be rebuilt. The assistant connects to the booking system, website form, email or spreadsheets a business already has, and the pieces can be swapped: Telegram can be email, and the sheet can be another system.
+
+## Stack
+
+An n8n workflow, the kind of automation tool that connects apps without a custom backend. A small amount of JavaScript cleans up the booking and reads the AI's answer. Claude writes the replies in a fixed format, so the workflow never has to guess at free text. Google Calendar and Google Sheets hold the appointments and the log, and Telegram carries the owner's alerts and buttons.
+
+## Outcome
+
+A working demo for a fictional hair salon, tested with twelve messy bookings: a clean booking, an empty note, notes in French and Spanish, an allergy, an upset customer, a date in the past, a phone-only booking, the same booking twice and an incomplete form. Each one ended where it should, and the French and Spanish notes were answered in their own language.
+
+The AI cost about US$0.0002 per booking in testing. The time saved is an estimate: at about five minutes per booking, that is roughly 12 hours a month for 150 bookings, or about 30 hours at 12 bookings a day.
