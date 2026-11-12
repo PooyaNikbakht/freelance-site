@@ -16,6 +16,7 @@ export const introVideo = video("intro", "2:17", "Video: a two-minute introducti
 const workVideos: Record<string, Video> = {
   "brightside-cleaning-quotes": video("cleaning-quote-calculator", "2:33", "Video: a walkthrough of a cleaning company's instant quote calculator"),
   "booking-assistant": video("booking-assistant", "2:11", "Video: a walkthrough of the booking assistant"),
+  "customer-assistant": video("customer-assistant", "2:58", "Video: a walkthrough of the customer assistant"),
   "docs-chat": video("website-support-bot", "2:43", "Video: a walkthrough of the website support bot"),
   "freelance-site": video("this-website", "2:21", "Video: a walkthrough of this website"),
   "harbourview-bakery-website": video("bakery-website", "2:10", "Video: a walkthrough of the bakery website"),

@@ -44,6 +44,10 @@ const shots: Record<string, { src: string; alt: string }> = {
     src: "/work/paperwork-ai",
     alt: "Paperwork AI review screen: a scanned invoice with the misread line highlighted, next to two failed checks and the editable fields.",
   },
+  "customer-assistant": {
+    src: "/work/customer-assistant",
+    alt: "Two phone screens: the customer's chat with a booking confirmed, next to the owner's private admin chat showing the same booking approved and added to Google Calendar.",
+  },
   "booking-assistant": {
     src: "/work/booking-assistant",
     alt: "A phone showing the assistant's Telegram messages, next to the n8n workflow and a confirmation email written in French.",
