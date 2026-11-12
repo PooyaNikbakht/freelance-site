@@ -67,6 +67,16 @@ export function WorkIndex({
           </ul>
         </nav>
 
+        <p className="mt-6 text-[0.9375rem]">
+          <a
+            href="/pooya-selected-work.pdf"
+            download
+            className="inline-flex min-h-11 items-center gap-2 font-medium text-accent underline-offset-4 hover:underline"
+          >
+            Download my selected work (PDF, 8 pages, 1 MB)
+          </a>
+        </p>
+
         <h2 className="sr-only">{active ? `${activeLabel} work` : "All work"}</h2>
         <p className="mt-6 text-sm text-muted" aria-live="polite">
           {active
