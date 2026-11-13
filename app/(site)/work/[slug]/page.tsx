@@ -65,6 +65,7 @@ export default async function WorkItemPage({ params }: PageProps<"/work/[slug]">
         eyebrow="Project"
         title={work.title}
         intro={work.summary}
+        asideAfterTitleOnMobile
         aside={
           <WorkMedia
             slug={slug}
