@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
-import { navLinks } from "./nav-links";
+import { isActivePath, navLinks } from "./nav-links";
 
 // Client component: the small-screen menu toggle.
 export function MobileNav() {
@@ -52,8 +52,8 @@ export function MobileNav() {
             <li key={l.href} className="border-b border-border last:border-0">
               <Link
                 href={l.href}
-                aria-current={pathname === l.href || pathname.startsWith(`${l.href}/`) ? "page" : undefined}
-                className="flex min-h-12 items-center text-base aria-[current=page]:text-accent"
+                aria-current={isActivePath(pathname, l.href) ? "page" : undefined}
+                className="flex min-h-12 items-center text-base aria-[current=page]:font-semibold aria-[current=page]:text-ink"
               >
                 {l.label}
               </Link>
