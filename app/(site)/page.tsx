@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import { ServiceGrid, WorkCard } from "@/components/cards";
 import { ContactCta } from "@/components/contact-cta";
 import { JsonLd } from "@/components/json-ld";
+import { ScrollLink } from "@/components/scroll-link";
 import { HeroCollage } from "@/components/hero-collage";
 import { VideoPlayer } from "@/components/video-player";
 import { ButtonLink, Container, DotGrid, Eyebrow, Portrait, SectionHeading } from "@/components/ui";
@@ -37,18 +39,53 @@ const credentials = [
   { big: "AWS certified", caption: "Solutions Architect" },
 ] as const;
 
-// The phrase in the headline that gets the amber underline, if the CMS headline contains it.
-const highlightPhrase = "end to end";
+const heroWords = ["AI", "Website", "App"] as const;
 
-function Headline({ text }: { text: string }) {
+// The phrase in the headline (plus any punctuation right after it) shown in gold, if the CMS headline contains it.
+const highlightPhrase = "fair price";
+
+function Highlighted({ text }: { text: string }) {
   const i = text.indexOf(highlightPhrase);
   if (i === -1) return <>{text}</>;
+  const end = i + highlightPhrase.length;
+  const punct = /^[.!?]*/.exec(text.slice(end))?.[0] ?? "";
   return (
     <>
       {text.slice(0, i)}
-      <span className="marker">{highlightPhrase}</span>
-      {text.slice(i + highlightPhrase.length)}
+      {/* Non-breaking space keeps the phrase on one line. */}
+      <span>{highlightPhrase.replace(/ /g, "\u00a0") + punct}</span>
+      {text.slice(end + punct.length)}
     </>
+  );
+}
+
+/**
+ * Two-line hero heading. The line below the h1 sets the size, and the h1 is 1.891em of it, measured from
+ * Inter's shaped widths for "Custom-built for you at a fair price." so both lines render the same width at
+ * every viewport (re-measure if the headline copy changes). Dots and margins are in em, so they scale with
+ * it. Below 820px the size is fluid: the lines fill 75% of the container (0.75 / 15.79em per line), never
+ * below 1.2rem and never above 28px (about 442px wide). From 820px the hero is two columns, so the size steps down until lg.
+ */
+function HeroHeading({ headline }: { headline: string }) {
+  return (
+    <div className="max-sm:text-[clamp(1.2rem,calc((100vw_-_32px)*0.0475),28px)] sm:max-[820px]:text-[clamp(1.2rem,calc((100vw_-_48px)*0.0475),28px)] min-[820px]:max-lg:text-[1.4rem] lg:text-[1.9rem]">
+      <h1 id="hero-heading" className="whitespace-nowrap text-[1.891em] font-bold leading-[1.05] tracking-[-0.03em]">
+        <span className="sr-only">{heroWords.join(", ")}</span>
+        <span aria-hidden="true">
+          {heroWords.map((w, i) => (
+            <Fragment key={w}>
+              {i > 0 ? (
+                <span className="mx-[0.32em] inline-block h-[0.2em] w-[0.2em] rounded-full bg-accent-2/80 align-middle" />
+              ) : null}
+              {w}
+            </Fragment>
+          ))}
+        </span>
+      </h1>
+      <div className="mt-3.5 whitespace-nowrap font-medium leading-snug tracking-tight text-ink/90">
+        <Highlighted text={headline} />
+      </div>
+    </div>
   );
 }
 
@@ -61,27 +98,28 @@ export default async function HomePage() {
 
       <section aria-labelledby="hero-heading" className="band-dark relative overflow-hidden">
         <DotGrid className="opacity-[0.035]" />
-        <Container className="relative grid items-center gap-12 pb-16 pt-12 sm:pb-20 sm:pt-16 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-10 lg:pb-24 lg:pt-20">
+        <Container className="relative grid items-center gap-8 pb-12 pt-6 sm:pb-14 sm:pt-8 min-[820px]:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] min-[820px]:gap-10 lg:pb-14 lg:pt-10">
           <div className="min-w-0">
-            <Eyebrow>Senior full-stack & AI engineer, freelance</Eyebrow>
-            <h1
-              id="hero-heading"
-              className="mt-5 text-[2.5rem] font-bold leading-[1.08] tracking-tight sm:text-[3.5rem] lg:text-[4rem]"
-            >
-              <Headline text={settings.headline} />
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">{settings.subline}</p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <ButtonLink href="/contact">Start a project</ButtonLink>
+            <HeroHeading headline={settings.headline} />
+            <p className="mt-[18px] max-w-xl text-lg leading-relaxed text-muted sm:text-xl">{settings.subline}</p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <ButtonLink href="/contact">Let&apos;s chat, it&apos;s free</ButtonLink>
               <ButtonLink href="/work" variant="secondary">
-                See my work
+                See my projects
               </ButtonLink>
             </div>
-            <p className="mt-6 text-[0.9375rem] text-muted">
-              Hiring for a startup or a product team?{" "}
-              <Link href="/for-teams" className="font-semibold text-ink underline underline-offset-4 hover:text-accent">
-                See how I work with teams
-              </Link>
+            <p className="mt-6 text-[0.875rem] text-muted sm:text-[0.9375rem]">
+              Prefer to watch? See who I am and what I&apos;ve built in{" "}
+              <span className="whitespace-nowrap">
+                <ScrollLink
+                  targetId="intro"
+                  headingId="intro-heading"
+                  className="font-semibold text-ink underline underline-offset-4 hover:text-accent"
+                >
+                  a short video
+                </ScrollLink>
+                .
+              </span>
             </p>
           </div>
           <HeroCollage />
@@ -106,7 +144,7 @@ export default async function HomePage() {
       </section>
 
       <Container>
-        <section aria-labelledby="intro-heading" className="pt-20 sm:pt-24">
+        <section id="intro" aria-labelledby="intro-heading" className="scroll-mt-4 pt-20 sm:pt-24">
           <div className="grid items-center lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] lg:gap-14 lg:[&>*:first-child]:mb-0">
             <SectionHeading id="intro-heading" eyebrow="Intro" title="Meet me in two minutes">
               <p>
@@ -126,8 +164,8 @@ export default async function HomePage() {
           <div className="flex flex-wrap items-end justify-between gap-x-8">
             <SectionHeading id="services-heading" eyebrow="Services" title="What I do">
               <p>
-                Websites, web apps, AI features and fixes for sites you already have, for local businesses, startups
-                and product teams. These are the most common starting points, each backed by a project you can try.
+                Websites, web apps, AI assistants and automations, and fixes for sites you already have. These are the
+                most common starting points, each backed by a project you can try.
               </p>
             </SectionHeading>
             <Link

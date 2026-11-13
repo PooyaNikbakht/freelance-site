@@ -5,5 +5,5 @@ export const size = ogSize;
 export const contentType = ogContentType;
 
 export default function Image() {
-  return renderOg({ eyebrow: "Freelance", title: "Websites, web apps and AI, built end to end." });
+  return renderOg({ eyebrow: "AI · Website · App", title: "Custom-built for you at a fair price." });
 }

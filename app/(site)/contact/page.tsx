@@ -15,7 +15,7 @@ export const metadata = pageMetadata({
 
 const nextSteps = [
   "I reply within 1 to 2 business days with a few questions",
-  "A short call to understand your business and goals",
+  "A short call or chat (whatever works better for you) to understand your business and goals",
   "A written plan with scope, milestones, and a fixed price, before any work starts",
 ];
 
@@ -28,8 +28,8 @@ export default async function ContactPage() {
       <JsonLd data={breadcrumbLd([{ name: "Contact", path: "/contact" }])} />
       <PageHeader
         eyebrow="Contact"
-        title="Start a project"
-        intro="Send a short note on what you're building. I'll reply with questions and a rough plan."
+        title="Let&apos;s chat"
+        intro="Send a short note on what you're building or the idea you have. I'll reply with questions and a rough plan. It's free, and I'd love to connect and help."
       />
       <Container className="pb-24">
         <div className="grid gap-12 pt-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:gap-16">

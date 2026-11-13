@@ -241,6 +241,15 @@ export default async function AboutPage() {
                 </Link>
               </p>
             </section>
+            <p className="mt-12 text-[0.9375rem] text-muted">
+              Hiring for a startup or a product team?{" "}
+              <Link
+                href="/for-teams"
+                className="whitespace-nowrap font-semibold text-ink underline underline-offset-4 hover:text-accent"
+              >
+                See how I work with teams
+              </Link>
+            </p>
           </div>
 
           <div className="space-y-5">

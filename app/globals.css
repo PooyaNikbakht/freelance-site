@@ -90,14 +90,6 @@
 }
 
 /* Thick flat amber underline under the key phrase in the hero. */
-.marker {
-  text-decoration-line: underline;
-  text-decoration-color: var(--accent-2);
-  text-decoration-thickness: 0.12em;
-  text-underline-offset: 0.16em;
-  text-decoration-skip-ink: none;
-}
-
 /* Tiny entrance for the hero collage. Transform only, so nothing waits on it. */
 @media (prefers-reduced-motion: no-preference) {
   .collage-card {
@@ -111,6 +103,28 @@
   }
   to {
     translate: 0 0;
+  }
+}
+
+/* Slow pulse ring around the video play button. */
+@media (prefers-reduced-motion: no-preference) {
+  .video-play-pulse::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    border: 1.5px solid var(--accent-2);
+    animation: video-pulse 2.8s ease-out infinite;
+  }
+}
+@keyframes video-pulse {
+  from {
+    opacity: 0.45;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    scale: 1.25;
   }
 }
 
