@@ -87,7 +87,7 @@ export function PageHeader({
   const head = (
     <>
       {eyebrow ? typeof eyebrow === "string" ? <Eyebrow>{eyebrow}</Eyebrow> : eyebrow : null}
-      <h1 className="mt-4 max-w-3xl text-[2.125rem] font-bold leading-[1.1] tracking-tight sm:text-5xl">{title}</h1>
+      <h1 className={`mt-4 max-w-3xl text-[2.125rem] font-bold leading-[1.1] tracking-tight sm:text-5xl`}>{title}</h1>
     </>
   );
   const split = Boolean(aside) && asideAfterTitleOnMobile;
@@ -96,16 +96,16 @@ export function PageHeader({
       <Container className="relative pb-12 pt-8 sm:pb-16 sm:pt-10">
         {breadcrumbs ? <Breadcrumbs items={breadcrumbs} /> : null}
         {split ? (
-          // Below lg the column is capped at the body text width (45rem) so title, image and intro share one edge. Three grid children in reading order (head, aside, rest). At lg the aside spans both rows of
+          // Below md the column is capped at the body text width (45rem) so title, image and intro share one edge. Three grid children in reading order (head, aside, rest). At md the title has its own full-width row above the summary and image; from lg the aside spans both rows of
           // column 2; the spanning image grows both rows equally, so head (self-end) and rest (self-start)
           // stay flush and centred against it, matching the single-column layout below.
           <div
-            className={`${breadcrumbs ? "mt-8" : "mt-4 sm:mt-8"} grid max-w-[45rem] lg:max-w-none lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:content-center lg:gap-x-10 lg:gap-y-0`}
+            className={`${breadcrumbs ? "mt-8" : "mt-4 sm:mt-8"} grid max-w-[45rem] md:max-w-none md:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] md:content-center md:gap-x-10 md:gap-y-0 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]`}
           >
-            <div className="min-w-0 lg:col-start-1 lg:row-start-1 lg:self-end">{head}</div>
-            <div className="mt-8 min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:self-center">{aside}</div>
-            <div className="min-w-0 lg:col-start-1 lg:row-start-2 lg:self-start">
-              {intro ? <div className="mt-8 text-lg leading-relaxed text-muted lg:mt-5 lg:max-w-2xl">{intro}</div> : null}
+            <div className="min-w-0 md:col-span-2 md:col-start-1 md:row-start-1 md:self-end lg:col-span-1">{head}</div>
+            <div className="mt-8 min-w-0 md:col-start-2 md:row-start-2 md:mt-5 md:self-start lg:row-span-2 lg:row-start-1 lg:mt-0 lg:self-center">{aside}</div>
+            <div className="min-w-0 md:col-start-1 md:row-start-2 md:self-start">
+              {intro ? <div className="mt-8 text-lg leading-relaxed text-muted md:mt-5 md:max-w-2xl">{intro}</div> : null}
               {children}
             </div>
           </div>

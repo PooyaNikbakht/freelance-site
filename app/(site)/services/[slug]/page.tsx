@@ -1,10 +1,11 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { WorkCard } from "@/components/cards";
 import { ContactCta } from "@/components/contact-cta";
 import { JsonLd } from "@/components/json-ld";
 import { MarkdocBody } from "@/components/markdoc-body";
 import { ServiceIcon } from "@/components/service-icon";
-import { Container, PageHeader } from "@/components/ui";
+import { ButtonLink, Container, PageHeader } from "@/components/ui";
 import { getService, getServices, getWork } from "@/lib/content";
 import { breadcrumbLd, formatPrice, pageMetadata, serviceLd } from "@/lib/seo";
 
@@ -62,8 +63,46 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
         </div>
       </PageHeader>
       <Container>
-        <div className="pt-12">
-          <MarkdocBody node={service.body} />
+        <div className="pt-12 lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12">
+          <div className="min-w-0">
+            <MarkdocBody node={service.body} />
+          </div>
+          <aside aria-label="Service summary" className="hidden lg:block">
+            <div className="sticky top-6 self-start rounded-[12px] border border-border bg-surface p-5">
+              <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-accent">At a glance</p>
+              <dl className="mt-4 space-y-4">
+                <div>
+                  <dt className="text-xs font-medium uppercase tracking-[0.12em] text-muted">Starting at (USD)</dt>
+                  <dd className="mt-1 text-2xl font-bold leading-none text-accent">
+                    {formatPrice(service.startingPrice)}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-xs font-medium uppercase tracking-[0.12em] text-muted">Typical timeline</dt>
+                  <dd className="mt-1 text-lg font-semibold">{service.timeline}</dd>
+                </div>
+              </dl>
+              <ButtonLink href="/contact" className="mt-6 w-full">
+                Let&apos;s chat, it&apos;s free
+              </ButtonLink>
+              {related.length > 0 ? (
+                <>
+                  <p className="mt-6 font-mono text-xs font-medium uppercase tracking-[0.14em] text-accent">
+                    See it in action
+                  </p>
+                  <ul className="mt-3 space-y-2 text-sm">
+                    {related.slice(0, 3).map((w) => (
+                      <li key={w.slug}>
+                        <Link href={`/work/${w.slug}`} className="underline underline-offset-4 hover:text-accent">
+                          {w.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : null}
+            </div>
+          </aside>
         </div>
         {related.length > 0 ? (
           <section aria-labelledby="related-heading" className="mt-20">

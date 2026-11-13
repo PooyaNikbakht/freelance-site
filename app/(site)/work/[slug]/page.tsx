@@ -9,6 +9,7 @@ import { WorkMedia } from "@/components/work-media";
 import Link from "next/link";
 import { adminHref, DemoAdmin } from "@/components/demo-admin";
 import { OwnerDashboards } from "@/components/owner-dashboards";
+import { ProjectStickyBar } from "@/components/project-sticky-bar";
 import { VideoPlayer } from "@/components/video-player";
 import { WorkParts } from "@/components/work-parts";
 import { workCategoryLabel } from "@/lib/categories";
@@ -69,7 +70,7 @@ export default async function WorkItemPage({ params }: PageProps<"/work/[slug]">
         aside={
           <WorkMedia
             slug={slug}
-            sizes="(min-width: 1024px) 416px, 100vw"
+            sizes="(min-width: 1024px) 416px, (min-width: 768px) 352px, 100vw"
             priority
             className="rounded-[12px] border border-border"
           />
@@ -93,7 +94,7 @@ export default async function WorkItemPage({ params }: PageProps<"/work/[slug]">
           <TagList items={work.stack} label="Stack" />
         </div>
         {hasLinks ? (
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div id="project-actions" className="mt-8 flex flex-wrap gap-3">
             {work.liveUrl ? <ButtonLink href={work.liveUrl}>Visit the live site</ButtonLink> : null}
             {adminUrl ? (
               <ButtonLink href={adminUrl} variant="secondary">
@@ -128,7 +129,51 @@ export default async function WorkItemPage({ params }: PageProps<"/work/[slug]">
               />
             </section>
           ) : null}
-          <MarkdocBody node={work.body} />
+          <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12">
+            <div className="min-w-0">
+              <MarkdocBody node={work.body} />
+            </div>
+            {hasLinks || work.stack.length ? (
+              <aside aria-label="Project links" className="hidden lg:block">
+                <div className="sticky top-6 self-start rounded-[12px] border border-border bg-surface p-5">
+                  {hasLinks ? (
+                    <>
+                      <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-accent">Try it</p>
+                      <div className="mt-4 flex flex-col gap-3">
+                        {work.liveUrl ? (
+                          <ButtonLink href={work.liveUrl} className="w-full">
+                            Visit the live site
+                          </ButtonLink>
+                        ) : null}
+                        {adminUrl ? (
+                          <ButtonLink href={adminUrl} variant="secondary" className="w-full">
+                            Try the owner admin
+                          </ButtonLink>
+                        ) : null}
+                        {work.repoUrl ? (
+                          <ButtonLink href={work.repoUrl} variant="secondary" className="w-full">
+                            View source
+                          </ButtonLink>
+                        ) : null}
+                      </div>
+                    </>
+                  ) : null}
+                  {work.stack.length ? (
+                    <>
+                      <p
+                        className={`${hasLinks ? "mt-6" : ""} font-mono text-xs font-medium uppercase tracking-[0.14em] text-accent`}
+                      >
+                        Built with
+                      </p>
+                      <div className="mt-3">
+                        <TagList items={work.stack} label="Stack" />
+                      </div>
+                    </>
+                  ) : null}
+                </div>
+              </aside>
+            ) : null}
+          </div>
           {work.findable ? <FindableCard findable={work.findable} /> : null}
           {slug === "owner-dashboards" ? <OwnerDashboards /> : null}
           {getSplitGallery(slug) ? (
@@ -147,6 +192,9 @@ export default async function WorkItemPage({ params }: PageProps<"/work/[slug]">
         </div>
       </Container>
       <ContactCta title="Want something like this?" />
+      {hasLinks ? (
+        <ProjectStickyBar title={work.title} liveUrl={work.liveUrl} adminUrl={adminUrl} repoUrl={work.repoUrl} />
+      ) : null}
     </>
   );
 }
