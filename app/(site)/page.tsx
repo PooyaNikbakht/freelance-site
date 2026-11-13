@@ -75,7 +75,7 @@ function HeroHeading({ headline }: { headline: string }) {
           {heroWords.map((w, i) => (
             <Fragment key={w}>
               {i > 0 ? (
-                <span className="mx-[0.32em] inline-block h-[0.2em] w-[0.2em] rounded-full bg-accent-2/80 align-middle" />
+                <span className="mx-[0.32em] inline-block h-[0.2em] w-[0.2em] rounded-full bg-[#2dd4bf] align-middle" />
               ) : null}
               {w}
             </Fragment>
