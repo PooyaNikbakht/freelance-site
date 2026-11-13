@@ -17,12 +17,13 @@ export async function SiteHeader() {
       </a>
       <div className="mx-auto flex min-h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 py-2 sm:px-6">
         <Link href="/" className="flex min-w-0 items-center gap-3">
+          {/* A 96px copy (2x of 44px): the 640px file would compete with the hero image on mobile. */}
           <Image
-            src="/people/pooya"
+            src="/people/pooya-96.webp"
             alt=""
             width={44}
             height={44}
-            sizes="44px"
+            unoptimized
             priority
             className="h-11 w-11 shrink-0 rounded-full border border-border object-cover"
           />

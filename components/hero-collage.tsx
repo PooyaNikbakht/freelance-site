@@ -14,7 +14,17 @@ function BrowserFrame({ src, alt }: { src: string; alt: string }) {
         <span className="h-2 w-2 rounded-full bg-[#3a4656]" />
       </div>
       <div className="relative aspect-[16/10]">
-        <Image src={src} alt={alt} fill priority sizes="(min-width: 820px) 520px, 90vw" className="object-cover object-top" />
+        {/* LCP image: high fetch priority, and sizes matching the frame (88% of the container) so phones
+            get the 640px file and it lands before the JS chunks. */}
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          priority
+          fetchPriority="high"
+          sizes="(min-width: 820px) 520px, calc(88vw - 28px)"
+          className="object-cover object-top"
+        />
       </div>
     </div>
   );
