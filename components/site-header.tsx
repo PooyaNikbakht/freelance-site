@@ -6,7 +6,7 @@ import { MobileNav } from "./mobile-nav";
 import { navLinks } from "./nav-links";
 
 export async function SiteHeader() {
-  const { tagline, taglineShort, taglineMobile } = await getSettings();
+  const { tagline } = await getSettings();
   return (
     <header className="band-dark relative z-20 border-b border-border">
       <a
@@ -28,9 +28,7 @@ export async function SiteHeader() {
           />
           <span className="min-w-0 leading-tight">
             <span className="block font-semibold tracking-tight">{siteConfig.name}</span>
-            <span className="block text-xs text-muted sm:hidden">{taglineMobile}</span>
-            <span className="hidden text-xs text-muted lg:block">{tagline}</span>
-            <span className="hidden text-xs text-muted sm:block">{taglineShort}</span>
+            <span className="block truncate text-[11px] text-muted sm:text-xs">{tagline}</span>
           </span>
         </Link>
         <nav aria-label="Main" className="hidden md:block">

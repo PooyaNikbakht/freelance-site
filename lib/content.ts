@@ -3,6 +3,7 @@ import { createReader } from "@keystatic/core/reader";
 import type { Node } from "@markdoc/markdoc";
 import keystaticConfig from "@/keystatic.config";
 import type { WorkCategory } from "@/lib/categories";
+import { sortByWorkOrder } from "@/lib/work-order";
 import { siteConfig } from "@/site.config";
 
 const reader = createReader(process.cwd(), keystaticConfig);
@@ -119,12 +120,12 @@ export type Post = {
 };
 
 const fallbackSettings: Settings = {
-  headline: "Websites, web apps and AI, built end to end.",
-  subline: "Booking and online ordering, fast websites, and AI assistants that answer your customers, built for small businesses and startups.",
-  availability: "Available evenings and weekends, Eastern Time.",
-  tagline: "Senior full-stack & AI engineer · AWS Certified Solutions Architect",
+  headline: "Custom-built for you at a fair price.",
+  subline: "I take your project from idea to launch, and can help you bring AI into your business to make things easier and take it to the next level.",
+  availability: "I take on freelance projects, working with clients in Eastern Time.",
+  tagline: "Senior full-stack & AI engineer",
   taglineShort: "Websites, web apps and AI tools",
-  taglineMobile: "Full-stack & AI engineer",
+  taglineMobile: "Senior full-stack & AI engineer",
 };
 
 export async function getSettings(): Promise<Settings> {
@@ -255,9 +256,11 @@ export async function getService(slug: string): Promise<Service | undefined> {
 }
 
 export async function getWork(): Promise<Work[]> {
-  const entries = await reader.collections.work.all({ resolveLinkedFiles: true });
-  return entries
-    .map(({ slug, entry }) => {
+  const [entries, workOrder] = await Promise.all([
+    reader.collections.work.all({ resolveLinkedFiles: true }),
+    reader.singletons.workOrder.read().catch(() => null),
+  ]);
+  const items = entries.map(({ slug, entry }) => {
       // Demo links live in site.config.ts so deploy URLs are set in one place.
       const override = siteConfig.projects[slug];
       return {
@@ -273,8 +276,9 @@ export async function getWork(): Promise<Work[]> {
         findable: findable(entry.findable),
         body: entry.body.node,
       };
-    })
-    .sort(byOrder);
+    });
+  // The order comes from the drag-to-reorder "Project order" list in Keystatic.
+  return sortByWorkOrder(items, workOrder?.projects ?? []);
 }
 
 function findable(f: {

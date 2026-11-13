@@ -5,5 +5,5 @@ export const size = ogSize;
 export const contentType = ogContentType;
 
 export default function Image() {
-  return renderOg({ eyebrow: "Contact", title: "Start a project" });
+  return renderOg({ eyebrow: "Contact", title: "Let's chat" });
 }

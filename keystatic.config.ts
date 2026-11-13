@@ -33,13 +33,26 @@ export default config({
     brand: { name: "Pooya Nikbakht" },
   },
   singletons: {
+    workOrder: singleton({
+      label: "Project order",
+      path: "content/work-order",
+      format: "yaml",
+      schema: {
+        projects: fields.array(fields.relationship({ label: "Project", collection: "work", validation: { isRequired: true } }), {
+          label: "Order of projects (drag to reorder, top = first)",
+          description:
+            "Drag the handles to change the order on the Projects page and everywhere projects are listed. A project not in this list appears last, so add new projects here.",
+          itemLabel: (props) => props.value ?? "Select a project",
+        }),
+      },
+    }),
     settings: singleton({
       label: "Site settings",
       path: "content/settings",
       schema: {
         headline: fields.text({
           label: "Headline",
-          description: "The one-line offer at the top of the home page.",
+          description: "The line under \"AI, Website, App\" at the top of the home page. \"fair price\" is shown in gold. Keep it short: it stays on one line.",
           validation: { length: { min: 1 } },
         }),
         subline: fields.text({
@@ -52,17 +65,17 @@ export default config({
           description: "Shown in the hero, on About, and on Contact.",
         }),
         tagline: fields.text({
-          label: "Header tagline (desktop)",
-          description: "Under your name on wide screens, above the tablet tagline.",
+          label: "Header tagline",
+          description: "One line under your name in the header, on every screen size.",
           validation: { length: { min: 1 } },
         }),
         taglineShort: fields.text({
-          label: "Header tagline (tablet)",
-          description: "Under your name on tablets. On wide screens it's the third line.",
+          label: "Header tagline (tablet, unused)",
+          description: "No longer shown. The header uses the main tagline.",
           validation: { length: { min: 1 } },
         }),
         taglineMobile: fields.text({
-          label: "Header tagline (phone)",
+          label: "Header tagline (phone, unused)",
           validation: { length: { min: 1 } },
         }),
       },
@@ -199,7 +212,7 @@ export default config({
       path: "content/work/*",
       format: { contentField: "body" },
       entryLayout: "content",
-      columns: ["title", "featured", "order"],
+      columns: ["title", "featured"],
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
         summary: fields.text({ label: "Summary", multiline: true }),
@@ -222,7 +235,12 @@ export default config({
           description: "Optional. site.config.ts overrides this for the demo projects.",
         }),
         featured: fields.checkbox({ label: "Featured on home page", defaultValue: false }),
-        order: fields.integer({ label: "Order", defaultValue: 0 }),
+        order: fields.integer({
+          label: "Order (deprecated)",
+          description:
+            "No longer used for ordering. Drag projects in Project order instead. Only used to place a project that is missing from that list.",
+          defaultValue: 0,
+        }),
         findable: fields.object(
           {
             measured: fields.text({

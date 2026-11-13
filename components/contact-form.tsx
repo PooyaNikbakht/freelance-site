@@ -239,7 +239,7 @@ export function ContactForm({ email }: { email: string }) {
           id="message"
           label="Message"
           error={errors.message}
-          hint="What you're building and who it's for, what you need from me, and links to your site, app or repo. If there's an existing site, say what it's built with."
+          hint="I'd love to hear about your idea or project: what you're building, who it's for, and what you'd like help with. If you already have a site or app, a link is a bonus. And a rough idea is totally fine, so write whatever you have."
         >
           <textarea
             id="message"
