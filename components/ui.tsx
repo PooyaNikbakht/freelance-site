@@ -72,6 +72,7 @@ export function PageHeader({
   intro,
   breadcrumbs,
   aside,
+  asideAfterTitleOnMobile = false,
   children,
 }: {
   eyebrow?: ReactNode;
@@ -79,23 +80,47 @@ export function PageHeader({
   intro?: ReactNode;
   breadcrumbs?: { name: string; href?: string }[];
   aside?: ReactNode;
+  /** Below lg, place the aside between the title and the intro (desktop layout is unchanged). */
+  asideAfterTitleOnMobile?: boolean;
   children?: ReactNode;
 }) {
+  const head = (
+    <>
+      {eyebrow ? typeof eyebrow === "string" ? <Eyebrow>{eyebrow}</Eyebrow> : eyebrow : null}
+      <h1 className="mt-4 max-w-3xl text-[2.125rem] font-bold leading-[1.1] tracking-tight sm:text-5xl">{title}</h1>
+    </>
+  );
+  const split = Boolean(aside) && asideAfterTitleOnMobile;
   return (
     <header className="band-dark relative overflow-hidden border-b border-border">
       <Container className="relative pb-12 pt-8 sm:pb-16 sm:pt-10">
         {breadcrumbs ? <Breadcrumbs items={breadcrumbs} /> : null}
-        <div
-          className={`${breadcrumbs ? "mt-8" : "mt-4 sm:mt-8"} grid items-center gap-10 ${aside ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]" : ""}`}
-        >
-          <div className="min-w-0">
-            {eyebrow ? typeof eyebrow === "string" ? <Eyebrow>{eyebrow}</Eyebrow> : eyebrow : null}
-            <h1 className="mt-4 max-w-3xl text-[2.125rem] font-bold leading-[1.1] tracking-tight sm:text-5xl">{title}</h1>
-            {intro ? <div className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{intro}</div> : null}
-            {children}
+        {split ? (
+          // Below lg the column is capped at the body text width (45rem) so title, image and intro share one edge. Three grid children in reading order (head, aside, rest). At lg the aside spans both rows of
+          // column 2; the spanning image grows both rows equally, so head (self-end) and rest (self-start)
+          // stay flush and centred against it, matching the single-column layout below.
+          <div
+            className={`${breadcrumbs ? "mt-8" : "mt-4 sm:mt-8"} grid max-w-[45rem] lg:max-w-none lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:content-center lg:gap-x-10 lg:gap-y-0`}
+          >
+            <div className="min-w-0 lg:col-start-1 lg:row-start-1 lg:self-end">{head}</div>
+            <div className="mt-8 min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:self-center">{aside}</div>
+            <div className="min-w-0 lg:col-start-1 lg:row-start-2 lg:self-start">
+              {intro ? <div className="mt-8 text-lg leading-relaxed text-muted lg:mt-5 lg:max-w-2xl">{intro}</div> : null}
+              {children}
+            </div>
           </div>
-          {aside ? <div className="min-w-0">{aside}</div> : null}
-        </div>
+        ) : (
+          <div
+            className={`${breadcrumbs ? "mt-8" : "mt-4 sm:mt-8"} grid items-center gap-10 ${aside ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]" : ""}`}
+          >
+            <div className="min-w-0">
+              {head}
+              {intro ? <div className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{intro}</div> : null}
+              {children}
+            </div>
+            {aside ? <div className="min-w-0">{aside}</div> : null}
+          </div>
+        )}
       </Container>
     </header>
   );
@@ -148,9 +173,9 @@ export function TagList({ items, label }: { items: string[]; label: string }) {
 export function Breadcrumbs({ items }: { items: { name: string; href?: string }[] }) {
   return (
     <nav aria-label="Breadcrumb" className="text-sm text-muted">
-      <ol className="flex flex-wrap items-center gap-1.5">
+      <ol className="flex flex-nowrap items-center gap-1.5">
         {items.map((item, i) => (
-          <li key={item.name} className="flex min-w-0 items-center gap-1.5">
+          <li key={item.name} className={`flex items-center gap-1.5 ${item.href ? "shrink-0" : "min-w-0"}`}>
             {i > 0 ? <span aria-hidden="true">/</span> : null}
             {item.href ? (
               <Link href={item.href} className="hover:text-accent">

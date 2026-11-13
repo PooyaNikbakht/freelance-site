@@ -96,6 +96,7 @@ export function WorkMedia({
           fill
           sizes={sizes}
           priority={priority}
+          fetchPriority={priority ? "high" : undefined}
           className="object-cover object-top"
         />
       ) : (
