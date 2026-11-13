@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getSettings } from "@/lib/content";
 import { siteConfig } from "@/site.config";
 import { MobileNav } from "./mobile-nav";
-import { navLinks } from "./nav-links";
+import { NavLinkList } from "./nav-link-list";
 
 export async function SiteHeader() {
   const { tagline } = await getSettings();
@@ -32,22 +32,7 @@ export async function SiteHeader() {
           </span>
         </Link>
         <nav aria-label="Main" className="hidden md:block">
-          <ul className="flex items-center gap-1">
-            {navLinks.map((l) => (
-              <li key={l.href}>
-                <Link
-                  href={l.href}
-                  className={
-                    l.href === "/contact"
-                      ? "ml-2 inline-flex min-h-11 items-center rounded-[8px] bg-accent px-4 text-[0.9375rem] font-semibold text-accent-ink hover:opacity-90"
-                      : "inline-flex min-h-11 items-center rounded-[8px] px-3 text-[0.9375rem] font-medium text-muted hover:text-ink"
-                  }
-                >
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <NavLinkList />
         </nav>
         <MobileNav />
       </div>
