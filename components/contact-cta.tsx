@@ -4,7 +4,7 @@ import { ButtonLink, Container } from "./ui";
 /** Full-bleed solid teal call to action. Render it outside any Container. */
 export function ContactCta({
   title = "Have a project in mind?",
-  text = "Send a short note on what you're building. I'll reply with questions and a rough plan.",
+  text = "Send a short note on what you're building or the idea you have. I'll reply with questions and a rough plan. It's free, and I'd love to connect and help.",
 }: {
   title?: string;
   text?: string;
@@ -18,7 +18,7 @@ export function ContactCta({
           </h2>
           <p className="mt-4 text-pretty text-lg leading-relaxed text-muted">{text}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink href="/contact">Start a project</ButtonLink>
+            <ButtonLink href="/contact">Let&apos;s chat, it&apos;s free</ButtonLink>
             {siteConfig.bookingUrl ? (
               <ButtonLink href={siteConfig.bookingUrl} variant="secondary">
                 Book a short call
