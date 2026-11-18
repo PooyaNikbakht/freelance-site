@@ -6,8 +6,9 @@ const mediaUrl = "https://media.pooya.website/videos";
 
 export type Video = { src: string; poster: string; duration: string; label: string };
 
-function video(name: string, duration: string, label: string): Video {
-  return { src: `${mediaUrl}/${name}.mp4`, poster: `/video/${name}`, duration, label };
+// The files are cached for a year, so a replaced video gets a version: its URL then changes.
+function video(name: string, duration: string, label: string, version?: string): Video {
+  return { src: `${mediaUrl}/${name}.mp4${version ? `?v=${version}` : ""}`, poster: `/video/${name}`, duration, label };
 }
 
 export const introVideo = video("intro", "2:17", "Video: a two-minute introduction to me and my work");
@@ -23,7 +24,7 @@ const workVideos: Record<string, Video> = {
   "harbourview-physio": video("physio-clinic-booking", "2:23", "Video: a walkthrough of a physio clinic's website and booking"),
   "kingsway-cuts": video("barbershop-booking", "2:57", "Video: a walkthrough of a barbershop's website and booking"),
   "maple-paws-vet": video("vet-clinic-website", "1:55", "Video: a walkthrough of a vet clinic's website"),
-  "motion-content-studio": video("motion-content-studio", "2:15", "Video: a walkthrough of Motion Content Studio"),
+  "motion-content-studio": video("motion-content-studio", "2:15", "Video: a walkthrough of Motion Content Studio", "2"),
   "northwind-coffee-ordering": video("coffee-shop-ordering", "2:22", "Video: a walkthrough of a coffee shop's online ordering"),
   "northwind-coffee-website": video("coffee-shop-website", "2:04", "Video: a walkthrough of a coffee shop's website"),
   "paperwork-ai": video("paperwork-ai", "3:04", "Video: a walkthrough of Paperwork AI"),
