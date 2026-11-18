@@ -411,6 +411,16 @@ const galleries: Record<string, { title: string; shots: Shot[] }> = {
         caption: "Narration audio with a credit and cost estimate before anything is spent.",
       },
       {
+        src: "/work/motion-content-studio-setup-gemini",
+        alt: "The Setup page, Gemini section: an API key field, a fallback model, and Model routing with a Recommended Smart Hybrid preset and a model picker for each of the 6 stages.",
+        caption: "Setup routes each stage to its own Gemini model, so cheap models do the bulk work.",
+      },
+      {
+        src: "/work/motion-content-studio-setup-eleven",
+        alt: "The Setup page, ElevenLabs section: an API key and voice field, a default model, a stability slider, and editable credits per character and dollars per 1,000 characters for each model.",
+        caption: "ElevenLabs keys, model, stability and the credit rates behind every estimate.",
+      },
+      {
         src: "/work/motion-content-studio-board",
         alt: "The Visual Board: scene cards with an image prompt, a video prompt on the animated scenes, upload slots for the finished files and filters for what is left to do.",
         caption: "Each scene card has its prompts and an upload slot for the finished file.",
