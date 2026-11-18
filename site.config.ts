@@ -101,6 +101,10 @@ export const siteConfig = {
       liveUrl: "https://paperwork.pooya.website",
       repoUrl: "https://github.com/PooyaNikbakht/paperwork-ai",
     },
+    "motion-content-studio": {
+      liveUrl: "https://motioncontent.pooya.website/demo",
+      repoUrl: "https://github.com/PooyaNikbakht/motion-content-studio",
+    },
     "harbourview-bakery-website": {
       liveUrl: "https://bakery.pooya.website",
       repoUrl: "https://github.com/PooyaNikbakht/site-rescue",

@@ -397,6 +397,36 @@ const galleries: Record<string, { title: string; shots: Shot[] }> = {
       },
     ],
   },
+  "motion-content-studio": {
+    title: "A closer look",
+    shots: [
+      {
+        src: "/work/motion-content-studio-director",
+        alt: "The AI Director: all 6 stages marked complete, a simulated cost estimate for the full run and the cost so far, a model choice for the next stage, and the live reply below.",
+        caption: "The director runs 6 stages, and the cost is shown as it goes.",
+      },
+      {
+        src: "/work/motion-content-studio-audio",
+        alt: "The Audio tab for a sample project: the ElevenLabs voice settings, buttons to generate all audio files, save to a folder or download a ZIP, and a credit and dollar estimate.",
+        caption: "Narration audio with a credit and cost estimate before anything is spent.",
+      },
+      {
+        src: "/work/motion-content-studio-board",
+        alt: "The Visual Board: scene cards with an image prompt, a video prompt on the animated scenes, upload slots for the finished files and filters for what is left to do.",
+        caption: "Each scene card has its prompts and an upload slot for the finished file.",
+      },
+      {
+        src: "/work/motion-content-studio-cover",
+        alt: "The Cover and SEO tab: a bulk upload zone that matches file names to cards, a Download CSV button and the YouTube cover card.",
+        caption: "The YouTube cover and SEO text, with bulk upload by file name.",
+      },
+      {
+        src: "/work/motion-content-studio-reels",
+        alt: "The Reels tab: Reel 01, 02 and 03 each with progress, and the 9:16 audio, visual board and cover and captions tabs for the selected reel.",
+        caption: "A 9:16 reels kit, with its own audio, board and cover for each reel.",
+      },
+    ],
+  },
   "booking-assistant": {
     title: "A closer look",
     shots: [
