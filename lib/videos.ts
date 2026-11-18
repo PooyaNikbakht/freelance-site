@@ -23,6 +23,7 @@ const workVideos: Record<string, Video> = {
   "harbourview-physio": video("physio-clinic-booking", "2:23", "Video: a walkthrough of a physio clinic's website and booking"),
   "kingsway-cuts": video("barbershop-booking", "2:57", "Video: a walkthrough of a barbershop's website and booking"),
   "maple-paws-vet": video("vet-clinic-website", "1:55", "Video: a walkthrough of a vet clinic's website"),
+  "motion-content-studio": video("motion-content-studio", "2:13", "Video: a walkthrough of Motion Content Studio"),
   "northwind-coffee-ordering": video("coffee-shop-ordering", "2:22", "Video: a walkthrough of a coffee shop's online ordering"),
   "northwind-coffee-website": video("coffee-shop-website", "2:04", "Video: a walkthrough of a coffee shop's website"),
   "paperwork-ai": video("paperwork-ai", "3:04", "Video: a walkthrough of Paperwork AI"),
