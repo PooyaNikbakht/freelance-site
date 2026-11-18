@@ -44,6 +44,10 @@ const shots: Record<string, { src: string; alt: string }> = {
     src: "/work/paperwork-ai",
     alt: "Paperwork AI review screen: a scanned invoice with the misread line highlighted, next to two failed checks and the editable fields.",
   },
+  "motion-content-studio": {
+    src: "/work/motion-content-studio",
+    alt: "Motion Content Studio AI Director: all 6 stages marked complete, a simulated cost estimate for the full run and the cost so far, and the live reply streaming in.",
+  },
   "customer-assistant": {
     src: "/work/customer-assistant",
     alt: "Two phone screens: the customer's chat with a booking confirmed, next to the owner's private admin chat showing the same booking approved and added to Google Calendar.",

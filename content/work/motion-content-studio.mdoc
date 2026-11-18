@@ -1,0 +1,55 @@
+---
+title: "Motion Content Studio: an internal tool that turns one AI conversation into a full video kit"
+summary: >-
+  A workspace for a book-summary documentary channel. An AI director writes the
+  package, and the app turns it into narration audio with cost estimates, a
+  visual board of prompts with uploads, a YouTube cover and SEO text, and a
+  vertical reels kit, all ready to download in one click.
+categories:
+  - ai
+  - dashboards
+  - mvp
+stack:
+  - Cloudflare Workers
+  - Cloudflare D1
+  - Cloudflare R2
+  - JavaScript
+  - Gemini API
+  - ElevenLabs API
+  - Playwright
+featured: false
+order: 17
+---
+## Problem
+
+Making one book-summary video means juggling a lot of pieces: a script split into narration chunks, dozens of scene prompts, a cover, a title and caption, and a set of vertical reels. They used to live in a long AI chat, a pile of folders and a spreadsheet. Nothing showed what was done, what was left, or what the audio would cost before the credits were spent.
+
+## What I built
+
+A creator's workspace where the whole production kit for a video lives in one project. The real app sits behind a login, and a public demo with fully simulated AI and audio lets anyone click through it.
+
+1. **Get the package.** Run the AI Director inside the app, or paste a conversation from Gemini. Either way it is split into audio chunks, scenes, reels, covers and publishing text.
+2. **Generate the narration.** One audio file per chunk through ElevenLabs, with a credit and cost estimate before anything is spent. Save to a folder or download a ZIP.
+3. **Work the visual board.** Every scene has its image prompt, and a video prompt where it needs one, with copy buttons. A finished image or video is uploaded to the slot on its card. Filters show what is left to do.
+4. **Finish the cover and SEO.** The YouTube cover prompt, headline, title and caption sit in one place.
+5. **Build the reels.** A 9:16 kit with its own audio, board, cover and captions for each reel.
+6. **Download everything.** One click collects the assets.
+
+## The AI Director
+
+The director runs the work in 6 stages: architecture, script chapters, 16:9 scenes, animations and audio chunks, thumbnail and caption, and reels and covers. Each stage can use a different Gemini model, so the heavy steps and the light ones are not priced the same. The cost of every turn is shown, with an estimate for the full run up front, and the run can pause after each stage so a person can check it.
+
+## Built for a team's daily use
+
+- **Safe sign-in.** The first run sets a password and gives a recovery key.
+- **A Save bar with conflict detection.** If the same project was changed somewhere else, the app says so instead of overwriting it.
+- **Per-card uploads** are stored on Cloudflare R2, and bulk upload matches files to cards by name, like `scene_04.mp4` or `R01-cover.png`.
+- **Progress everywhere.** Each tab shows how much is done, and a Next bar points to the next step.
+
+## Stack
+
+Cloudflare Workers with D1 for project data and R2 for uploaded files, and a vanilla JavaScript front end with no framework. Gemini runs the director, and ElevenLabs makes the audio. A demo mode replaces both with simulated runs and placeholder tones, so it needs no keys and your files stay in your browser.
+
+## Outcome
+
+A working tool covering the whole path from AI conversation to a finished upload kit, with 335 automated tests and a Playwright browser suite behind it. The demo uses a fictional sample book, and its audio and director run are simulated, so it shows the workflow rather than real AI output or real costs.
