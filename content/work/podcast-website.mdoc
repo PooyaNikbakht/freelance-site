@@ -1,0 +1,56 @@
+---
+title: "Podcast website: a custom WordPress site with a player that remembers where you stopped"
+summary: >-
+  A custom WordPress site for a podcast, built around a sample show called Slow
+  Orbit. A sticky audio player remembers where listeners stopped, episode pages
+  have clickable timestamps, and visitors can search by word or episode number.
+  The host adds a new episode in minutes, without code.
+categories:
+  - websites
+stack:
+  - WordPress
+  - PHP
+  - JavaScript
+  - Docker
+featured: false
+order: 5
+findable:
+  measured: >-
+    Lighthouse, mobile with simulated slow 4G. Performance scored 98 to 99
+    across the pages I tested, and the other three scored 100.
+  performance: 98
+  accessibility: 100
+  bestPractices: 100
+  seo: 100
+---
+Slow Orbit is a fictional podcast of unhurried conversations with people who make things. The episodes use sample audio from openly licensed podcasts, credited on the site's Credits page.
+
+## Problem
+
+A podcast website has to do one thing well: make it easy to press play and keep listening. Most are slow, hide the episode list behind another app, and are painful for the host to update. Listeners also lose their place the moment they leave a page.
+
+## What it does
+
+- **A sticky audio player.** It stays at the bottom of every page, so listening carries on while people browse. It remembers where each listener stopped and picks up from there, with 15 second skips and playback speed.
+- **Episode pages with clickable timestamps.** Show notes list the chapters, and each timestamp jumps the player to that moment.
+- **Search by word or episode number.** Visitors find an episode by a title, a guest, an idea or its number, or filter the archive by topic.
+- **Guests and hosts.** A page for each guest with their episodes, and a page for the hosts.
+- **Subscribe and contact pages.** Apple Podcasts, Spotify and RSS links in one place, and a contact form with a clear confirmation.
+- **Light and dark mode,** following the visitor's device setting.
+
+## How it helps your show
+
+- **Listeners keep their place,** so they come back and finish episodes.
+- **The host publishes in minutes.** A new episode is one entry with the audio, show notes and timestamps. No code, no developer.
+- **Easy to find.** Every episode is a real page with its own title and description, so it can show up in search.
+
+## How it's built
+
+- **Custom WordPress,** with its own theme and a small plugin for episodes, guests and the player, instead of a stack of third-party plugins.
+- **Fast.** On mobile, Performance scored 98 to 99 and Accessibility, Best Practices and SEO scored 100 in Lighthouse.
+- **Accessible.** Labelled controls, visible keyboard focus, a player that works from the keyboard, and text colours that pass WCAG AA contrast.
+- **Rebuilt from scripts.** The whole site can be recreated from scratch in Docker.
+
+## Outcome
+
+A calm, quick podcast site: press play on the latest episode, browse the archive while it keeps playing, jump to a timestamp in the show notes, and leave and come back to the same spot. There is no live demo, but the walkthrough video shows it working.
