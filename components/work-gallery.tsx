@@ -317,6 +317,26 @@ const galleries: Record<string, { title: string; shots: Shot[] }> = {
       },
     ],
   },
+  "podcast-website": {
+    title: "A closer look",
+    shots: [
+      {
+        src: "/work/podcast-website-episode",
+        alt: "An episode page: the title Saying no to growth, a play button, a Show notes section with a guest card, and the sticky player at the bottom with a progress bar marked at each chapter.",
+        caption: "An episode page, with the player kept at the bottom.",
+      },
+      {
+        src: "/work/podcast-website-archive",
+        alt: "The Episodes archive: a search box that reads A title, a guest, a word, topic filters for Business, Community, Craft, Process and Rest, and the first episode cards.",
+        caption: "Search and topic filters over the whole archive.",
+      },
+      {
+        src: "/work/podcast-website-mobile",
+        alt: "Three phone screens: the home page with the latest episode, an episode page with the player open, and the episodes archive with search and topic filters.",
+        caption: "The same site on a phone.",
+      },
+    ],
+  },
   "docs-chat": {
     title: "A closer look",
     shots: [

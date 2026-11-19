@@ -32,6 +32,10 @@ const shots: Record<string, { src: string; alt: string }> = {
     src: "/work/harbourview-bakery-website",
     alt: "Harbourview Bakery home page: a holiday pre-order banner, the bakery's name and menu links above a full-width photo of fresh sourdough loaves.",
   },
+  "podcast-website": {
+    src: "/work/podcast-website",
+    alt: "Slow Orbit home page: the headline Saying no to growth for the latest episode, a play button and a Read show notes link beside a red cover with the number 08.",
+  },
   "brightside-cleaning-quotes": {
     src: "/work/brightside-cleaning-quotes",
     alt: "Brightside Cleaning quote calculator: choices for the place on the left and a live price of $281.20 plus HST, itemised line by line, on the right.",
