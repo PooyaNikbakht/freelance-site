@@ -11,13 +11,15 @@ stack:
   - WordPress
   - PHP
   - JavaScript
+  - Contact Form 7
   - Docker
 featured: false
 order: 5
 findable:
   measured: >-
-    Lighthouse, mobile with simulated slow 4G. Performance scored 98 to 99
-    across the pages I tested, and the other three scored 100.
+    Lighthouse 12, mobile preset (simulated slow 4G), local run, one run each
+    on the home page, the episodes page and an episode page. Performance
+    scored 98 to 99, and the other three scores were 100.
   performance: 98
   accessibility: 100
   bestPractices: 100
@@ -46,10 +48,10 @@ A podcast website has to do one thing well: make it easy to press play and keep 
 
 ## How it's built
 
-- **Custom WordPress,** with its own theme and a small plugin for episodes, guests and the player, instead of a stack of third-party plugins.
+- **Custom WordPress.** A custom block theme with its own design, player and page templates. The free Seriously Simple Podcasting plugin handles episodes and the podcast feed, a small custom plugin handles guests, and Contact Form 7 runs the contact form with a honeypot against spam.
 - **Fast.** On mobile, Performance scored 98 to 99 and Accessibility, Best Practices and SEO scored 100 in Lighthouse.
 - **Accessible.** Labelled controls, visible keyboard focus, a player that works from the keyboard, and text colours that pass WCAG AA contrast.
-- **Rebuilt from scripts.** The whole site can be recreated from scratch in Docker.
+- **Rebuilt from scripts.** One command recreates and seeds the whole site in Docker.
 
 ## Outcome
 
