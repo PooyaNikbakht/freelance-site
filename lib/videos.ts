@@ -28,8 +28,7 @@ const workVideos: Record<string, Video> = {
   "northwind-coffee-ordering": video("coffee-shop-ordering", "2:22", "Video: a walkthrough of a coffee shop's online ordering"),
   "northwind-coffee-website": video("coffee-shop-website", "2:04", "Video: a walkthrough of a coffee shop's website"),
   "paperwork-ai": video("paperwork-ai", "3:04", "Video: a walkthrough of Paperwork AI"),
-  // TODO(video): uncomment once the video is uploaded and the poster exists; replace the duration with the line printed by publish-videos.sh.
-  // "podcast-website": video("podcast-website", "0:00", "Video: a walkthrough of a podcast website"),
+  "podcast-website": video("podcast-website", "2:04", "Video: a walkthrough of a podcast website"),
   "shop-search": video("smart-product-search", "1:50", "Video: a walkthrough of the smart product search"),
   "site-rescue": video("website-speed-rescue", "2:45", "Video: a walkthrough of the website speed rescue"),
   "workflow-runner": video("ai-workflow-runner", "2:37", "Video: a walkthrough of the AI workflow runner"),
