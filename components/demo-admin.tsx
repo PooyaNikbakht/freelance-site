@@ -26,8 +26,12 @@ export function DemoAdmin({
         Try the owner admin
       </Heading>
       <p className="mt-3 max-w-2xl leading-relaxed text-muted">
-        See the other side as the business owner. On the login page, click &ldquo;Try the demo as the owner&rdquo; to
-        sign in with one click. The sample data resets every hour, so change anything you like.
+        {admin.note ?? (
+          <>
+            See the other side as the business owner. On the login page, click &ldquo;Try the demo as the owner&rdquo; to
+            sign in with one click. The sample data resets every hour, so change anything you like.
+          </>
+        )}
       </p>
       {href ? (
         <div className="mt-6">
