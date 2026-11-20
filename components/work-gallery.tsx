@@ -531,6 +531,11 @@ const galleries: Record<string, { title: string; shots: Shot[] }> = {
     title: "A closer look",
     shots: [
       {
+        src: "/work/ai-operations-agent-approval",
+        alt: "The approval card for a request to move job J-104 to Wednesday at 10am: the agent's step-by-step trace on the left, and on the right a Slot taken, moved note, the proposed change shown as a struck-through Tue 24 Nov, 9:00 to 13:00 replaced by Thu 26 Nov, 8:00 to 12:00 (the next free slot), and a drafted reply waiting for approval.",
+        caption: "The requested slot was taken, so the agent proposes the next free one as a before and after diff. Nothing changes until the owner approves.",
+      },
+      {
         src: "/work/ai-operations-agent-audit",
         alt: "The audit log: runs, tokens and cost today, the cost per request, and a list of events showing the agent proposing a job move and an email, and the owner approving both.",
         caption: "Every step the agent and the owner took is logged, with the cost of each request (a demo for a fictional moving company).",
