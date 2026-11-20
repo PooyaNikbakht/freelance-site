@@ -110,7 +110,7 @@ export const siteConfig = {
       repoUrl: null,
       admin: {
         url: "https://podcast.pooya.website/wp-admin",
-        note: "Sign in with username demo and password orbit-demo. It is view-only: you can look around the episode list and the Add New Episode screen, and changes are turned off. The site owner has a full account that can add and edit episodes.",
+        note: "On the login page, click \u201cTry the demo (view-only)\u201d to go straight in, with nothing to type. You can look around the episode list and the Add New Episode screen, but changes are turned off. The site owner has a full account that can add and edit episodes.",
       },
     },
     "harbourview-bakery-website": {
