@@ -131,6 +131,10 @@ export const siteConfig = {
       liveUrl: "https://coffee.pooya.website/try",
       repoUrl: "https://github.com/PooyaNikbakht/docs-chat",
     },
+    "ai-operations-agent": {
+      liveUrl: "https://moving.pooya.website",
+      repoUrl: null,
+    },
     "freelance-site": {
       // Empty on purpose: this site is the live demo.
       liveUrl: "",
