@@ -16,6 +16,8 @@ export const introVideo = video("intro", "2:17", "Video: a two-minute introducti
 /** Demo walkthroughs, keyed by work entry slug. Lines come from demo-videos/tools/publish-videos.sh. */
 const workVideos: Record<string, Video> = {
   "brightside-cleaning-quotes": video("cleaning-quote-calculator", "2:33", "Video: a walkthrough of a cleaning company's instant quote calculator"),
+  // TODO(video): uncomment once the video is uploaded and the poster exists; replace the duration with the line printed by publish-videos.sh.
+  // "ai-operations-agent": video("ai-operations-agent", "0:00", "Video: a walkthrough of the AI operations agent"),
   "booking-assistant": video("booking-assistant", "2:11", "Video: a walkthrough of the booking assistant"),
   "customer-assistant": video("customer-assistant", "2:58", "Video: a walkthrough of the customer assistant"),
   "docs-chat": video("website-support-bot", "2:43", "Video: a walkthrough of the website support bot"),
@@ -23,6 +25,8 @@ const workVideos: Record<string, Video> = {
   "harbourview-bakery-website": video("bakery-website", "2:10", "Video: a walkthrough of the bakery website"),
   "harbourview-physio": video("physio-clinic-booking", "2:23", "Video: a walkthrough of a physio clinic's website and booking"),
   "kingsway-cuts": video("barbershop-booking", "2:57", "Video: a walkthrough of a barbershop's website and booking"),
+  // TODO(video): uncomment once the video is uploaded and the poster exists; replace the duration with the line printed by publish-videos.sh.
+  // "lead-to-crm": video("lead-to-crm", "0:00", "Video: a walkthrough of the lead to CRM pipeline"),
   "maple-paws-vet": video("vet-clinic-website", "1:55", "Video: a walkthrough of a vet clinic's website"),
   "motion-content-studio": video("motion-content-studio", "2:15", "Video: a walkthrough of Motion Content Studio", "2"),
   "northwind-coffee-ordering": video("coffee-shop-ordering", "2:22", "Video: a walkthrough of a coffee shop's online ordering"),

@@ -487,6 +487,16 @@ const galleries: Record<string, { title: string; shots: Shot[] }> = {
       },
     ],
   },
+  "lead-to-crm": {
+    title: "A closer look",
+    shots: [
+      {
+        src: "/work/lead-to-crm-diagram",
+        alt: "The lead to CRM pipeline in boxes: capture, clean and check, AI scores it, HubSpot, then follow-up for hot, warm and cold leads, with a Telegram card when the AI is not sure, a run log, a daily digest and a failure alert.",
+        caption: "What happens when a lead arrives (a demo for a fictional renovation company).",
+      },
+    ],
+  },
   "customer-assistant": {
     title: "A closer look",
     shots: [
@@ -514,6 +524,16 @@ const galleries: Record<string, { title: string; shots: Shot[] }> = {
         src: "/work/customer-assistant-calendar",
         alt: "A Google Calendar week showing a gel manicure booked for Friday 6 to 7 pm, next to the admin chat message saying the booking was added to Google Calendar.",
         caption: "Approved bookings land in the owner's own Google Calendar.",
+      },
+    ],
+  },
+  "ai-operations-agent": {
+    title: "A closer look",
+    shots: [
+      {
+        src: "/work/ai-operations-agent-audit",
+        alt: "The audit log: runs, tokens and cost today, the cost per request, and a list of events showing the agent proposing a job move and an email, and the owner approving both.",
+        caption: "Every step the agent and the owner took is logged, with the cost of each request (a demo for a fictional moving company).",
       },
     ],
   },
