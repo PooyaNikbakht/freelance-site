@@ -10,13 +10,15 @@ stack:
   - TypeScript
   - Tailwind CSS
   - Cloudflare Workers
+tryIt: "Check when Willow Row opens on Sunday, then ask the chat whether they ship to the US."
+service: nextjs-websites
 featured: false
 order: 2
 findable:
   measured: >-
     Lighthouse 13.6.0, mobile with simulated slow 4G, home page, production
     build, median of three runs. SEO checks pass except indexing, which is
-    switched off on purpose because this is a demo.
+    switched off on purpose.
   performance: 93
   accessibility: 100
   bestPractices: 100
@@ -32,11 +34,18 @@ findable:
     Dartmouth, fresh beans, subscriptions and brew guides.
   resultDetails: 112 Harbour Street, Halifax · Open today 7 AM to 6 PM
 ---
-Northwind Coffee Co. is a fictional coffee roaster in Halifax, founded in 2014, with three cafés, six coffees and real coffee photography.
+Northwind Coffee Co. is a coffee roaster in Halifax, founded in 2014, with three cafés, six coffees and real coffee photography.
 
 ## Problem
 
 A small roaster sells on taste and atmosphere. Both are hard to show on a slow, generic template. Customers want to know what a coffee tastes like and how fresh it is. They want to know where the cafés are and when they're open, and they usually check on a phone. If the photos load slowly or the hours are hard to find, they move on.
+
+## How it helps your business
+
+- **It sells the coffee before the first sip.** Big, warm photos and tasting notes do the work a barista does at the counter.
+- **Fast on a phone.** Visitors on café Wi-Fi or on a bus see photos right away instead of waiting.
+- **Fewer repeat questions.** Hours, shipping and subscription rules are easy to find, and the chat handles the rest at any hour.
+- **Low running costs.** No monthly website-builder fee and no database. The pages are built ahead of time, so hosting costs very little.
 
 ## What it does
 
@@ -49,12 +58,9 @@ A small roaster sells on taste and atmosphere. Both are hard to show on a slow, 
 - **A contact page.** Customer support and wholesale details, with a contact form.
 - **A support chat.** A chat button in the corner answers questions about shipping, subscriptions and returns from the roaster's help center. It shows where each answer came from. It's the [website support bot](/work/docs-chat), added with one line of code.
 
-## How it helps your business
+## Outcome
 
-- **It sells the coffee before the first sip.** Big, warm photos and tasting notes do the work a barista does at the counter.
-- **Fast on a phone.** Visitors on café Wi-Fi or on a bus see photos right away instead of waiting.
-- **Fewer repeat questions.** Hours, shipping and subscription rules are easy to find, and the chat handles the rest at any hour.
-- **Low running costs.** No monthly website-builder fee and no database. The pages are built ahead of time, so hosting costs very little.
+A complete café and roaster website you can click through: browse the six coffees, read the pour-over guide, check when Willow Row opens on Sunday, then ask the chat whether they ship to the US. The same café chain also has [online ordering with pickup times](/work/northwind-coffee-ordering). The shop shows prices but has no checkout yet; a cart or the ordering system plugs into the same pages.
 
 ## How it's built
 
@@ -67,7 +73,3 @@ A small roaster sells on taste and atmosphere. Both are hard to show on a slow, 
 ## Stack
 
 Next.js (App Router), TypeScript and Tailwind CSS, with Fraunces and Inter fonts hosted with the site, deployed to Cloudflare Workers. The support chat is a separate script from the [website support bot](/work/docs-chat) project.
-
-## Outcome
-
-A complete café and roaster website you can click through: browse the six coffees, read the pour-over guide, check when Willow Row opens on Sunday, then ask the chat whether they ship to the US. The same café chain also has [online ordering with pickup times](/work/northwind-coffee-ordering). The shop shows prices but has no checkout yet; a cart or the ordering system plugs into the same pages.

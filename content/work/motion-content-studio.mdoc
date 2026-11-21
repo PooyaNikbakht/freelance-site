@@ -15,6 +15,7 @@ stack:
   - Gemini API
   - ElevenLabs API
   - Playwright
+service: ai-features
 featured: false
 order: 17
 ---
@@ -24,7 +25,7 @@ Making one book-summary video takes a lot of pieces: a script split into narrati
 
 ## What it does
 
-A workspace where the whole production kit for a video lives in one project. The real app sits behind a login. A public demo, with simulated AI and audio, lets anyone click through it.
+A workspace where the whole production kit for a video lives in one project. The full app sits behind a login, and a public version with simulated AI and audio lets anyone click through it.
 
 1. **Get the package.** Run the AI Director inside the app, or paste in a conversation from Gemini. Either way, it is split into audio chunks, scenes, reels, covers and publishing text.
 2. **Generate the narration.** One audio file per chunk through ElevenLabs. You see a credit and cost estimate before anything is spent. Save to a folder or download a ZIP.
@@ -48,10 +49,10 @@ Setup is the one place for the ElevenLabs and Gemini keys, which stay in the bro
 - **Uploads on every card.** Files are stored on Cloudflare R2. Bulk upload matches files to cards by name, like `scene_04.mp4` or `R01-cover.png`.
 - **Progress everywhere.** Each tab shows how much is done, and a Next bar points to the next step.
 
-## Stack
-
-Cloudflare Workers with D1 for project data and R2 for uploaded files, and a vanilla JavaScript front end with no framework. Gemini runs the director, and ElevenLabs makes the audio. A demo mode replaces both with simulated runs and placeholder tones, so it needs no keys and your files stay in your browser.
-
 ## Outcome
 
-A working tool covering the whole path from AI conversation to a finished upload kit, with 335 automated tests and a Playwright browser suite behind it. The demo uses a fictional sample book, and its audio and director run are simulated, so it shows the workflow rather than real AI output or real costs.
+A working tool covering the whole path from AI conversation to a finished upload kit, with 335 automated tests and a Playwright browser suite behind it. The public version uses a test book with simulated audio and director runs, so it shows the workflow rather than AI output or costs.
+
+## Stack
+
+Cloudflare Workers with D1 for project data and R2 for uploaded files, and a vanilla JavaScript front end with no framework. Gemini runs the director, and ElevenLabs makes the audio. An offline mode replaces both with simulated runs and placeholder tones, so it needs no keys and your files stay in your browser.

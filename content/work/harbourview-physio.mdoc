@@ -15,14 +15,23 @@ stack:
   - Cloudflare D1
   - Zod
   - Stripe
+tryIt: "Book an initial assessment, fill in the health form, then log in as the clinic owner and find the answers on the booking."
+service: booking-ordering-and-quotes
 featured: false
 order: 7
 ---
-Harbourview Physio is a fictional physiotherapy and massage clinic on the Toronto waterfront, with four practitioners and sample data. The forms ask for made-up answers only.
+Harbourview Physio is a physiotherapy and massage clinic on the Toronto waterfront, with four practitioners.
 
 ## Problem
 
 Clinics lose the first ten minutes of every new-patient visit to a clipboard. The front desk retypes the answers, handwriting is hard to read, and the practitioner sees the history for the first time with the patient already on the table. Booking by phone adds more back and forth on top.
+
+## How it helps your business
+
+- **Visits start on time,** because the paperwork is done before the patient walks in.
+- **No retyping.** Answers arrive typed, complete and attached to the right appointment.
+- **Patients book online at any hour,** with the right appointment type and practitioner.
+- **The form changes as your clinic does,** without paying a developer for each new question.
 
 ## What it does
 
@@ -34,23 +43,12 @@ Clinics lose the first ten minutes of every new-patient visit to a clipboard. Th
 - **Edit the questions yourself.** The clinic owner adds, removes and reorders questions in the admin. Old answers always show against the questions the patient actually saw.
 - **A list of who still owes a form,** so the front desk can follow up before the day starts.
 
-## How it helps your business
-
-- **Visits start on time,** because the paperwork is done before the patient walks in.
-- **No retyping.** Answers arrive typed, complete and attached to the right appointment.
-- **Patients book online at any hour,** with the right appointment type and practitioner.
-- **The form changes as your clinic does,** without paying a developer for each new question.
-
 ## How it's built
 
 - **The form rules live in one place,** shared by the patient's form, the owner's editor and the tests, so they can't drift apart.
 - **The form must be in before the visit is marked done,** online or recorded as a paper form at the desk.
-- **Privacy first.** Each form link is a long random token, and the demo stores invented answers only. A real clinic would add encryption at rest and an access log for health data.
+- **Privacy first.** Each form link is a long random token. For live patient data I add encryption at rest and an access log.
 
 ## Stack
 
 Next.js (App Router), TypeScript, Tailwind CSS, Cloudflare Workers, Cloudflare D1 with Drizzle ORM, Stripe Checkout, Zod and Vitest.
-
-## Outcome
-
-A working clinic site: book an initial assessment with a new email and pay the deposit with Stripe's test card (4242 4242 4242 4242), fill in the health form from the confirmation page, then log in as the clinic owner and find the answers on the booking and the skipped reminder in the message log.

@@ -13,6 +13,8 @@ stack:
   - D1
   - Workers AI
   - Claude API
+tryIt: "Pick an email or write your own, and watch the agent prepare its proposals for your approval."
+service: ai-features
 featured: true
 order: 19
 ---
@@ -20,9 +22,16 @@ order: 19
 
 A small business gets requests all day by email and web form, and they are rarely tidy: "need a quote for a 2 bedroom, maybe next month", "can we move Thursday to the afternoon?", an angry complaint, a question about insurance. Someone has to read each one, check the price list and the calendar, update the job and write back. Most AI helpers either only write drafts or act on their own. A business owner can't trust either with real customers.
 
+## How it helps your business
+
+- **Requests come to you ready to send.** The agent reads each request, checks prices and times, and prepares the reply and the changes.
+- **You stay in charge.** Nothing reaches a customer and nothing changes until you approve it.
+- **No wrong prices or double bookings.** Quotes stay within your price list, and a taken time is never booked twice.
+- **You know what it costs.** Every request shows its estimated cost.
+
 ## What it does
 
-The demo is the back office of a fictional moving company, Lakeside Movers.
+It runs the back office of Lakeside Movers, a moving company.
 
 1. **Reads the request.** It works out what the customer wants (a quote, a booking change, a complaint or a question) and how sure it is.
 2. **Uses the business's tools.** It looks up the price list, checks free times in the calendar, finds the customer in the CRM (the customer list) and opens the job sheet.
@@ -45,21 +54,10 @@ The important rules are written in code, not in the AI's instructions, so the AI
 
 Every step the agent and the owner took is saved in a log. Each request shows how much AI it used and an estimated cost, so the owner knows what the agent costs to run.
 
-## How it helps your business
+## Outcome
 
-- **Requests come to you ready to send.** The agent reads each request, checks prices and times, and prepares the reply and the changes.
-- **You stay in charge.** Nothing reaches a customer and nothing changes until you approve it.
-- **No wrong prices or double bookings.** Quotes stay within your price list, and a taken time is never booked twice.
-- **You know what it costs.** Every request shows its estimated cost.
-
-## Try it
-
-The demo is live with fictional data. It resets every hour and is hidden from search engines. Pick a made-up email, or write your own, and watch the agent prepare its proposals. Nothing is sent to a real person.
+A working pattern for the AI features small businesses ask for: an assistant that does real work with real tools, keeps the owner in charge, and has the safety checks written as tested code.
 
 ## Stack
 
 A Next.js app on Cloudflare Workers with D1 for the data. The AI provider is switchable: Workers AI on the public demo and Claude when run locally. Tests cover the guardrails and the tools.
-
-## Outcome
-
-A working pattern for the AI features small businesses ask for: an assistant that does real work with real tools, keeps the owner in charge, and has the safety checks written as tested code.

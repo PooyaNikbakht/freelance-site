@@ -13,6 +13,7 @@ stack:
   - Telegram
   - Google Calendar
   - Google Sheets
+service: ai-features
 featured: true
 order: 2
 findable:
@@ -21,6 +22,12 @@ findable:
 ## Problem
 
 When a customer books online, someone has to read the note, write back, add the appointment to the calendar and tell the team. That takes about five minutes each time. And the notes that matter most are the ones that get missed: an allergy, an access need, a complaint.
+
+## How it helps your business
+
+- **Time back on every booking.** For routine bookings, reading, replying, the calendar and the log are done for you. That saves about five minutes each time.
+- **Important notes get seen.** Allergies, upset customers and special requests reach the owner before any reply goes out.
+- **Replies in the customer's language.** Notes in French or Spanish get answers in French or Spanish.
 
 ## What it does
 
@@ -50,18 +57,12 @@ If a form is missing details, the owner is told. The assistant never guesses.
 
 Nothing has to be rebuilt. The assistant connects to the booking system, website form, email or spreadsheets you already have. The parts can be swapped: owner alerts can come by email instead of Telegram, and the sheet can be another system.
 
-## How it helps your business
+## Outcome
 
-- **Time back on every booking.** For routine bookings, reading, replying, the calendar and the log are done for you. That saves about five minutes each time.
-- **Important notes get seen.** Allergies, upset customers and special requests reach the owner before any reply goes out.
-- **Replies in the customer's language.** Notes in French or Spanish get answers in French or Spanish.
+Tested for a hair salon with twelve messy bookings: a clean booking, an empty note, notes in French and Spanish, an allergy, an upset customer, a date in the past, a phone-only booking, the same booking twice and an incomplete form. Each one ended where it should, and the French and Spanish notes were answered in their own language.
+
+The AI cost about US$0.0002 per booking in testing. The time saved is an estimate: at about five minutes per booking, that is roughly 12 hours a month for 150 bookings, or about 30 hours at 12 bookings a day.
 
 ## Stack
 
 An n8n workflow, the kind of automation tool that connects apps without a custom backend. A small amount of JavaScript cleans up the booking and reads the AI's answer. Claude writes the replies in a fixed format, so the workflow never has to guess at free text. Google Calendar and Google Sheets hold the appointments and the log, and Telegram carries the owner's alerts and buttons.
-
-## Outcome
-
-A working demo for a fictional hair salon, tested with twelve messy bookings: a clean booking, an empty note, notes in French and Spanish, an allergy, an upset customer, a date in the past, a phone-only booking, the same booking twice and an incomplete form. Each one ended where it should, and the French and Spanish notes were answered in their own language.
-
-The AI cost about US$0.0002 per booking in testing. The time saved is an estimate: at about five minutes per booking, that is roughly 12 hours a month for 150 bookings, or about 30 hours at 12 bookings a day.

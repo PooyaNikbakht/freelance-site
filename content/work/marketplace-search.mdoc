@@ -13,6 +13,7 @@ stack:
   - OpenSearch
   - LLM function calling
   - AWS
+service: mvp-and-feature-builds
 featured: false
 order: 13
 ---
@@ -30,6 +31,16 @@ On a marketplace, search is how most people find what they want. With 150k+ list
 - **Side-by-side compare.** People can put options next to each other before they decide.
 - **Search in plain English.** People type what they want, and AI turns it into filters. Every AI answer is checked and tested before it reaches search.
 
+## Outcome
+
+The rewrite shipped in production with search across 150k+ listings, 50+ filters, saved searches, and compare. The natural-language filters shipped with validation and an evaluation suite.
+
+I can't share internal code or screenshots, so I built [shop-search](/work/shop-search) to show the natural-language filter pattern in public code, with its own eval suite.
+
+## What carries over to your project
+
+If you have a catalog, a directory, or any list people need to filter, the same ideas apply at a smaller scale: a clear filter schema, URLs you can share, a thin API layer shaped for the UI, and AI search that is validated and tested before it ships.
+
 ## How I built it
 
 - **Frontend rewrite.** I rebuilt the search experience in React and TypeScript: the filters, the result cards, saved searches, and side-by-side comparison.
@@ -40,13 +51,3 @@ On a marketplace, search is how most people find what they want. With 150k+ list
 ## Stack
 
 React, TypeScript, NestJS, OpenSearch, LLM function calling, and AWS.
-
-## Outcome
-
-The rewrite shipped in production with search across 150k+ listings, 50+ filters, saved searches, and compare. The natural-language filters shipped with validation and an evaluation suite.
-
-I can't share internal code or screenshots, so I built [shop-search](/work/shop-search) to show the natural-language filter pattern in public code, with its own eval suite.
-
-## What carries over to your project
-
-If you have a catalog, a directory, or any list people need to filter, the same ideas apply at a smaller scale: a clear filter schema, URLs you can share, a thin API layer shaped for the UI, and AI search that is validated and tested before it ships.

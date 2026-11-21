@@ -487,7 +487,7 @@ const galleries: Record<string, { title: string; shots: Shot[] }> = {
       },
       {
         src: "/work/motion-content-studio-audio",
-        alt: "The Audio tab for a sample project: the ElevenLabs voice settings, buttons to generate all audio files, save to a folder or download a ZIP, and a credit and dollar estimate.",
+        alt: "The Audio tab for a project: the ElevenLabs voice settings, buttons to generate all audio files, save to a folder or download a ZIP, and a credit and dollar estimate.",
         caption: "Narration audio with a credit and cost estimate before anything is spent.",
       },
       {
@@ -553,7 +553,7 @@ const galleries: Record<string, { title: string; shots: Shot[] }> = {
       {
         src: "/work/lead-to-crm-diagram",
         alt: "The lead to CRM pipeline in boxes: capture, clean and check, AI scores it, HubSpot, then follow-up for hot, warm and cold leads, with a Telegram card when the AI is not sure, a run log, a daily digest and a failure alert.",
-        caption: "What happens when a lead arrives (a demo for a fictional renovation company).",
+        caption: "What happens when a lead arrives.",
       },
     ],
   },
@@ -598,7 +598,7 @@ const galleries: Record<string, { title: string; shots: Shot[] }> = {
       {
         src: "/work/ai-operations-agent-audit",
         alt: "The audit log: runs, tokens and cost today, the cost per request, and a list of events showing the agent proposing a job move and an email, and the owner approving both.",
-        caption: "Every step the agent and the owner took is logged, with the cost of each request (a demo for a fictional moving company).",
+        caption: "Every step the agent and the owner took is logged, with the cost of each request.",
       },
     ],
   },
@@ -612,7 +612,7 @@ const galleries: Record<string, { title: string; shots: Shot[] }> = {
       },
       {
         src: "/work/workflow-runner-review",
-        alt: "The review drawer: the AI's draft email to a fictional freight company with editable subject and message, a note field, and Reject or Save edits and send buttons, while the run waits at Human review.",
+        alt: "The review drawer: the AI's draft email to a freight company with editable subject and message, a note field, and Reject or Save edits and send buttons, while the run waits at Human review.",
         caption: "The run pauses for a person to approve, edit or reject the draft.",
       },
       {

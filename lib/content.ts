@@ -73,6 +73,8 @@ export type Work = {
   stack: string[];
   liveUrl: string | null;
   repoUrl: string | null;
+  tryIt: string;
+  service: string | null;
   featured: boolean;
   order: number;
   findable: WorkFindable | null;
@@ -271,6 +273,8 @@ export async function getWork(): Promise<Work[]> {
         stack: [...entry.stack],
         liveUrl: (override ? override.liveUrl : entry.liveUrl) || null,
         repoUrl: (override ? override.repoUrl : entry.repoUrl) || null,
+        tryIt: entry.tryIt,
+        service: entry.service,
         featured: entry.featured,
         order: entry.order ?? 0,
         findable: findable(entry.findable),

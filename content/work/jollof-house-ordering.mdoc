@@ -15,14 +15,23 @@ stack:
   - Cloudflare Workers
   - Cloudflare D1
   - Zod
+tryIt: "Order a jollof and a kelewele on your phone, then sign in as the cashier, confirm the payment and watch it reach the kitchen screen."
+service: booking-ordering-and-quotes
 featured: false
 order: 4
 ---
-Jollof House is a fictional Ghanaian restaurant in Osu, Accra. It has a 16-dish menu with photos and sample orders. I built it as an answer to a restaurant-ordering brief. Prices are in Ghana cedis (GHC).
+Jollof House is a Ghanaian restaurant in Osu, Accra, with a 16-dish menu with photos. I built it as an answer to a restaurant-ordering brief. Prices are in Ghana cedis (GHC).
 
 ## Problem
 
 A busy restaurant takes orders in four places at once: at the till, on a kiosk, on the phone and for delivery. Many customers pay with Mobile Money (MoMo), so the cashier has to check the merchant phone before the food is cooked. Orders get lost, the kitchen cooks food nobody has paid for, and loyalty points are tracked on paper.
+
+## How it helps your business
+
+- **No unpaid orders in the kitchen.** Cooks only see food that has been paid for.
+- **A faster till.** The cashier scans or types a code instead of looking through a list.
+- **Fewer mistakes with MoMo.** Parked orders keep a clear timer, and the cashier is reminded to check the merchant phone for the exact amount.
+- **Regulars come back.** Customers can see their points, how much they are worth and when each batch expires.
 
 ## What it does
 
@@ -35,12 +44,9 @@ A busy restaurant takes orders in four places at once: at the till, on a kiosk, 
 - **Delivery.** Customers give a street address and a landmark. Delivery is paid by MoMo only, with a delivery fee on top of the food.
 - **Wait times and the WiFi code.** The wait time depends on how much was paid for food: 15, 30, 60 or 120 minutes. The WiFi code is printed on the receipt for pickup orders only.
 
-## How it helps your business
+## Outcome
 
-- **No unpaid orders in the kitchen.** Cooks only see food that has been paid for.
-- **A faster till.** The cashier scans or types a code instead of looking through a list.
-- **Fewer mistakes with MoMo.** Parked orders keep a clear timer, and the cashier is reminded to check the merchant phone for the exact amount.
-- **Regulars come back.** Customers can see their points, how much they are worth and when each batch expires.
+A working ordering system for a single restaurant.
 
 ## How it's built
 
@@ -52,7 +58,3 @@ A busy restaurant takes orders in four places at once: at the till, on a kiosk, 
 ## Stack
 
 Next.js (App Router), TypeScript, Tailwind CSS, Cloudflare Workers, Cloudflare D1, Zod and Vitest.
-
-## Outcome
-
-A working ordering system for a single restaurant. Order a jollof and a kelewele on your phone, then sign in as the cashier in another window, confirm the payment and watch the order appear on the kitchen screen. The guide at /guide lists the sample PINs and seven things to try.

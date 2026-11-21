@@ -35,7 +35,7 @@ export function WorkIndex({
       <PageHeader
         eyebrow="Projects"
         title={active ? activeLabel : "What I've built"}
-        intro="A sample of what I build: websites, booking and ordering systems, AI tools, and fixes for existing sites. It's only a small part of my work. In my full-time roles I've built much more at scale, including a search engine, high-performance APIs, fast and complex frontend pages, databases and microservices. Pick a category to narrow it down."
+        intro="A selection of what I build: websites, booking and ordering systems, AI tools, and fixes for existing sites. It's only a small part of my work. In my full-time roles I've built much more at scale, including a search engine, high-performance APIs, fast and complex frontend pages, databases and microservices. Pick a category to narrow it down."
       />
       <Container>
         <nav aria-label="Filter work by category" className="mt-10">

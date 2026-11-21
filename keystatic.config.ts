@@ -234,6 +234,15 @@ export default config({
           label: "Repository URL",
           description: "Optional. site.config.ts overrides this for the demo projects.",
         }),
+        tryIt: fields.text({
+          label: "What to try",
+          description: "One plain line, e.g. Book a skin fade, then log in as the owner and see it on the calendar.",
+        }),
+        service: fields.relationship({
+          label: "Related service",
+          description: "Shown in the call to action at the end of the page.",
+          collection: "services",
+        }),
         featured: fields.checkbox({ label: "Featured on home page", defaultValue: false }),
         order: fields.integer({
           label: "Order (deprecated)",
