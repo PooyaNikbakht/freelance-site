@@ -52,6 +52,10 @@ const shots: Record<string, { src: string; alt: string }> = {
     src: "/work/upvote-hub",
     alt: "Upvote Hub home page: the headline Know what your customers want next, a Try the demo button and a preview of a voting board with Planned and In progress ideas.",
   },
+  "seo-optimizer": {
+    src: "/work/seo-optimizer",
+    alt: "SEO Optimizer demo home page: the headline Fix weak product pages in your Shopify store, a Try it on a sample store button and four cards for what it checks: SEO title, meta description, product description and image alt text.",
+  },
   "paperwork-ai": {
     src: "/work/paperwork-ai",
     alt: "Paperwork AI review screen: a scanned invoice with the misread line highlighted, next to two failed checks and the editable fields.",

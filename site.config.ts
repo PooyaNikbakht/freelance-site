@@ -113,6 +113,10 @@ export const siteConfig = {
       liveUrl: "https://feedback.pooya.website",
       repoUrl: null,
     },
+    "seo-optimizer": {
+      liveUrl: "https://seo-optimizer.pooya.website/demo",
+      repoUrl: null,
+    },
     "paperwork-ai": {
       liveUrl: "https://paperwork.pooya.website",
       repoUrl: "https://github.com/PooyaNikbakht/paperwork-ai",
