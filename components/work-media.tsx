@@ -24,6 +24,10 @@ const shots: Record<string, { src: string; alt: string }> = {
     src: "/work/northwind-coffee-ordering-phone",
     alt: "Three phone screens: choosing size, milk and extras for a mocha, picking a pickup time, and the order page showing Ready for pickup.",
   },
+  "jollof-house-ordering": {
+    src: "/work/jollof-house-ordering-phone",
+    alt: "Three phone screens: the Jollof House home page with a photo of jollof rice, the cart with points and payment choices, and an order marked Ready.",
+  },
   "owner-dashboards": {
     src: "/work/owner-dashboards",
     alt: "A café kitchen screen on a tablet: New, Preparing and Ready columns of pickup orders, with large Start and Picked up buttons.",

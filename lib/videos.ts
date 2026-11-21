@@ -24,6 +24,7 @@ const workVideos: Record<string, Video> = {
   "freelance-site": video("this-website", "2:21", "Video: a walkthrough of this website"),
   "harbourview-bakery-website": video("bakery-website", "2:10", "Video: a walkthrough of the bakery website"),
   "harbourview-physio": video("physio-clinic-booking", "2:23", "Video: a walkthrough of a physio clinic's website and booking"),
+  "jollof-house-ordering": video("jollof-house-ordering-first-person", "2:11", "Video: a walkthrough of a restaurant's kiosk, POS, kitchen and phone ordering"),
   "kingsway-cuts": video("barbershop-booking", "2:57", "Video: a walkthrough of a barbershop's website and booking"),
   // TODO(video): uncomment once the video is uploaded and the poster exists; replace the duration with the line printed by publish-videos.sh.
   // "lead-to-crm": video("lead-to-crm", "0:00", "Video: a walkthrough of the lead to CRM pipeline"),

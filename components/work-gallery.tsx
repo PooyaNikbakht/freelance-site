@@ -267,6 +267,36 @@ export function getSplitGallery(slug: string) {
 }
 
 const galleries: Record<string, { title: string; shots: Shot[] }> = {
+  "jollof-house-ordering": {
+    title: "A closer look",
+    shots: [
+      {
+        src: "/work/jollof-house-ordering-phone",
+        alt: "Three phone screens: the Jollof House home page with a photo of jollof rice, the cart with points and payment choices, and an order marked Ready.",
+        caption: "On a phone, from the menu to Ready.",
+      },
+      {
+        src: "/work/jollof-house-ordering-kiosk",
+        alt: "The kiosk: photo cards for dishes such as Jollof & chicken at GHC 55.00, and an order panel with Cash and MoMo buttons, a points field and a Place order button.",
+        caption: "The kiosk: tap dishes, choose cash or MoMo.",
+      },
+      {
+        src: "/work/jollof-house-ordering-pos",
+        alt: "The cashier screen: order OTM-102 opened in 0.22 seconds, with the delivery address, items, delivery fee, points and money due, and Confirm Payment Received, Park and Cancel buttons.",
+        caption: "The cashier opens an order by code and confirms payment.",
+      },
+      {
+        src: "/work/jollof-house-ordering-kitchen",
+        alt: "The kitchen screen: four paid orders, each with its code, pickup or delivery tag, dishes and a large Food Ready button, with no prices.",
+        caption: "The kitchen sees paid orders and food only.",
+      },
+      {
+        src: "/work/jollof-house-ordering-points",
+        alt: "My points: 420 points worth GHC 42.00 in three batches with their expiry dates, beside the cart using 350 points on a GHC 70.00 order.",
+        caption: "Points with expiry dates, used at checkout up to half the food.",
+      },
+    ],
+  },
   "northwind-coffee-website": {
     title: "A closer look",
     shots: [
