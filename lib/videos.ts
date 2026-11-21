@@ -25,8 +25,7 @@ const workVideos: Record<string, Video> = {
   "harbourview-physio": video("physio-clinic-booking", "2:23", "Video: a walkthrough of a physio clinic's website and booking"),
   "jollof-house-ordering": video("jollof-house-ordering-first-person", "2:11", "Video: a walkthrough of a restaurant's kiosk, POS, kitchen and phone ordering"),
   "kingsway-cuts": video("barbershop-booking", "2:57", "Video: a walkthrough of a barbershop's website and booking"),
-  // TODO(video): uncomment once the video is uploaded and the poster exists; replace the duration with the line printed by publish-videos.sh.
-  // "lead-to-crm": video("lead-to-crm", "0:00", "Video: a walkthrough of the lead to CRM pipeline"),
+  "lead-to-crm": video("lead-to-crm", "1:58", "Video: a walkthrough of the lead to CRM pipeline"),
   "maple-paws-vet": video("vet-clinic-website", "1:55", "Video: a walkthrough of a vet clinic's website"),
   "motion-content-studio": video("motion-content-studio", "2:15", "Video: a walkthrough of Motion Content Studio", "2"),
   "northwind-coffee-ordering": video("coffee-shop-ordering", "2:22", "Video: a walkthrough of a coffee shop's online ordering"),
