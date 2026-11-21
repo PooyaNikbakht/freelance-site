@@ -2,440 +2,616 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Pooya N. - Selected work</title>
+<title>Pooya Nikbakht - Selected work</title>
 <style>
-  @page { size: 1280px 720px; margin: 0; }
-  :root { --bg:#0A0D14; --panel:#121826; --line:#243044; --text:#F4F6FA; --mute:#A3AEC2; --accent:#2DD4BF; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { background: var(--bg); }
-  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: var(--text); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  a { color: inherit; text-decoration: none; }
-  .page { width: 1280px; height: 720px; padding: 52px 72px 0; position: relative; overflow: hidden; page-break-after: always; display: flex; flex-direction: column; }
-  .page:last-child { page-break-after: auto; }
-  .eyebrow { font-size: 15px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
-  h1 { font-size: 52px; line-height: 1.08; font-weight: 800; letter-spacing: -.01em; }
-  h2 { font-size: 36px; line-height: 1.12; font-weight: 800; letter-spacing: -.01em; margin-top: 8px; }
-  p.lead { font-size: 21px; line-height: 1.5; color: var(--mute); }
-  .footer { position: absolute; left: 72px; right: 72px; bottom: 24px; display: flex; justify-content: space-between; font-size: 13px; color: var(--mute); letter-spacing: .04em; }
-  .footer a { color: var(--accent); }
-  .head { margin-bottom: 20px; }
+@font-face { font-family: Inter; src: url(fonts/inter-latin.woff2) format('woff2'); font-weight: 100 900; }
+@page { size: 1280px 720px; margin: 0; }
+:root { --ink:#14231a; --mute:#3f4e46; --line:#14231a; --red:#c8372d; --yel:#f2b705; --white:#fff; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #fff; }
+body { font-family: Inter, sans-serif; color: var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+a { color: inherit; text-decoration: none; }
+.web { --bg:#fff3de; --a:#1f5a37; --tint:#f2d9a6; --soft:#fbe7c2; }
+.ai  { --bg:#e8f3ec; --a:#0b6b5d; --tint:#c4e0d0; --soft:#d6ebdf; }
+.page { width:1280px; height:720px; position:relative; overflow:hidden; background:var(--bg); page-break-after:always; }
+.page:last-child { page-break-after:auto; }
+.stripe { position:absolute; left:0; top:0; right:0; height:10px; display:flex; z-index:5; }
+.stripe i { flex:1; } .stripe i:nth-child(1){background:var(--red)} .stripe i:nth-child(2){background:var(--yel)} .stripe i:nth-child(3){background:var(--a)}
+.kick { display:inline-block; background:var(--ink); color:var(--bg); font-size:14px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; padding:7px 14px; border-radius:7px; }
+h1, h2 { font-weight:900; letter-spacing:-.035em; line-height:1.02; }
+h1 em, h2 em, h3 em { font-style:normal; color:var(--a); }
+h2 { font-size:50px; margin-top:18px; }
+.foot { position:absolute; left:64px; bottom:24px; font-size:14px; font-weight:600; color:var(--mute); letter-spacing:.02em; }
+.pn { position:absolute; right:40px; bottom:22px; font-size:15px; font-weight:800; color:var(--ink); background:#fff; border:3px solid var(--ink); border-radius:20px; padding:3px 12px; z-index:6; }
 
-  /* cover */
-  .cover { flex-direction: row; gap: 56px; align-items: center; padding-top: 0; }
-  .cover .id { width: 300px; flex: none; text-align: center; }
-  .cover img.photo { width: 230px; height: 230px; border-radius: 50%; border: 5px solid var(--accent); object-fit: cover; }
-  .cover .name { font-size: 28px; font-weight: 800; margin-top: 22px; }
-  .cover .role { font-size: 17px; color: var(--mute); margin-top: 6px; line-height: 1.4; }
-  .cover .main { flex: 1; }
-  .cover h1 { margin: 14px 0 22px; }
-  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 30px; }
-  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 20px; }
-  .stat b { display: block; font-size: 24px; color: var(--accent); margin-bottom: 4px; }
-  .stat span { font-size: 15px; color: var(--mute); line-height: 1.35; display: block; }
-  .links { margin-top: 24px; font-size: 17px; color: var(--mute); }
-  .links b { color: var(--accent); font-weight: 700; }
+/* checks */
+ul.b { list-style:none; margin-top:26px; }
+ul.b li { position:relative; padding-left:38px; font-size:20px; line-height:1.38; font-weight:500; margin-bottom:14px; }
+ul.b li::before { content:""; position:absolute; left:0; top:3px; width:24px; height:24px; border-radius:50%; background:var(--a) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4L18 8'/%3E%3C/svg%3E") center/16px no-repeat; }
+ul.b li b { font-weight:800; }
 
-  /* generic body */
-  .body { display: flex; gap: 40px; align-items: center; flex: 1; min-height: 0; padding-bottom: 44px; }
-  .body.top { align-items: flex-start; }
-  .shot { flex: none; width: 600px; }
-  .shot img, figure img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--line); }
-  .shot small, figure small { display: block; margin-top: 8px; font-size: 13px; color: var(--mute); line-height: 1.35; }
-  ul.points { list-style: none; flex: 1; }
-  ul.points li { padding: 13px 0 13px 32px; border-bottom: 1px solid var(--line); font-size: 19px; line-height: 1.35; position: relative; }
-  ul.points li:last-child { border-bottom: 0; }
-  ul.points li::before { content: ""; position: absolute; left: 0; top: 21px; width: 13px; height: 13px; border-radius: 50%; background: var(--accent); }
-  ul.points li em { font-style: normal; color: var(--mute); display: block; font-size: 15px; margin-top: 3px; line-height: 1.35; }
+/* feature layout */
+.L { position:absolute; left:64px; top:52px; width:540px; bottom:60px; display:flex; flex-direction:column; }
+.R { position:absolute; left:648px; top:10px; right:0; bottom:0; background:var(--tint); display:flex; align-items:center; justify-content:center; }
+.proof { margin-top:auto; background:#fff; border:3px solid var(--ink); border-radius:18px; padding:16px 22px; display:flex; align-items:center; gap:20px; }
+.proof .n { font-size:60px; font-weight:900; letter-spacing:-.04em; line-height:1; color:var(--a); white-space:nowrap; }
+.proof .t { font-size:17px; line-height:1.35; font-weight:600; }
+.proof .t small { display:block; font-size:13.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--mute); margin-bottom:3px; }
+.meta { margin-top:16px; font-size:15px; line-height:1.45; color:var(--mute); }
+.meta a { color:var(--a); font-weight:800; font-size:17px; }
+.note { font-size:14px; line-height:1.4; color:var(--mute); margin-top:10px; }
 
-  .stack { column-gap: 0; }
-  .tags { display: flex; gap: 10px; flex-wrap: wrap; }
-  .tags span { background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 14px; color: var(--text); }
+/* screenshot frame (cropped by script from data-crop="x,y,w,h" in 1200x750 source px) */
+.shot { position:relative; overflow:hidden; background:#fff; border:4px solid var(--ink); border-radius:22px; }
+.shot img { position:absolute; display:block; max-width:none; }
+.cap { position:absolute; background:#fff; color:var(--ink); border:3px solid var(--ink); border-radius:30px; padding:8px 18px 8px 12px; font-size:19px; font-weight:800; display:flex; align-items:center; gap:10px; white-space:nowrap; z-index:3; }
+.cap i { width:26px; height:26px; border-radius:50%; background:var(--a) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4L18 8'/%3E%3C/svg%3E") center/17px no-repeat; flex:none; }
+.cap.plain { padding-left:18px; }
 
-  .kpis { display: grid; gap: 14px; }
-  .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; }
-  .kpi b { display: block; font-size: 25px; color: var(--accent); margin-bottom: 3px; line-height: 1.15; }
-  .kpi span { font-size: 14.5px; color: var(--mute); line-height: 1.35; display: block; }
+/* designed graphics */
+.g { width:520px; display:flex; flex-direction:column; gap:14px; }
+.bx { background:#fff; border:4px solid var(--ink); border-radius:22px; padding:18px 22px; }
+.sm { font-size:16px; font-weight:800; color:var(--mute); text-transform:uppercase; letter-spacing:.07em; }
+.md { font-size:28px; font-weight:700; line-height:1.22; }
+.row { display:flex; align-items:center; gap:12px; }
+.btn { flex:1; border:4px solid var(--ink); border-radius:16px; padding:14px 0; text-align:center; font-size:30px; font-weight:900; }
+.btn.g1 { background:var(--a); color:#fff; } .btn.o { background:#fff; }
+.node { display:flex; align-items:center; gap:16px; background:#fff; border:4px solid var(--ink); border-radius:20px; padding:16px 20px; font-size:28px; font-weight:800; }
+.node.hl { background:var(--a); color:#fff; }
+.num { width:46px; height:46px; border-radius:50%; background:var(--ink); color:#fff; display:flex; align-items:center; justify-content:center; font-size:24px; font-weight:800; flex:none; }
+.node.hl .num { background:#fff; color:var(--a); }
+.ok { width:40px; height:40px; border-radius:50%; flex:none; background:var(--a) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4L18 8'/%3E%3C/svg%3E") center/24px no-repeat; }
+.node.hl .ok { background-color:#fff; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b6b5d' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4L18 8'/%3E%3C/svg%3E"); }
+.warn { width:40px; height:40px; border-radius:50%; background:var(--yel); display:flex; align-items:center; justify-content:center; font-weight:900; font-size:24px; flex:none; }
+.arr { align-self:center; width:5px; height:18px; background:var(--ink); position:relative; margin:-4px 0; }
+.arr:after { content:''; position:absolute; left:-8px; bottom:-8px; border:10.5px solid transparent; border-top:12px solid var(--ink); border-bottom:0; }
+.bub { border:4px solid var(--ink); border-radius:24px; padding:16px 22px; font-size:26px; font-weight:700; line-height:1.25; background:#fff; max-width:90%; }
+.bub.me { align-self:flex-end; background:var(--ink); color:#fff; border-bottom-right-radius:6px; }
+.bub.ai { border-bottom-left-radius:6px; }
+.pill { display:inline-block; background:var(--a); color:#fff; border-radius:20px; padding:5px 14px; font-size:17px; font-weight:800; }
+.pill.red { background:#b3261e; }
+.big { font-size:84px; font-weight:900; letter-spacing:-.04em; line-height:1; }
+.big s { color:#8a2c22; text-decoration-thickness:6px; } .big b { color:var(--a); }
 
-  .cards { display: grid; gap: 14px; }
-  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 15px 18px; }
-  .card b { display: block; color: var(--accent); font-size: 13.5px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
-  .card span { font-size: 16px; line-height: 1.4; display: block; }
-  .card span + span { margin-top: 6px; color: var(--mute); font-size: 14.5px; }
+/* columns pages */
+.top { position:absolute; left:64px; top:46px; right:64px; }
+.top h2 { font-size:44px; margin-top:14px; }
+.cols { position:absolute; left:64px; right:64px; top:200px; bottom:54px; display:grid; gap:28px; }
+.c2 { grid-template-columns:1fr 1fr; gap:40px; }
+.c3 { grid-template-columns:1fr 1fr 1fr; }
+.col { display:flex; flex-direction:column; min-width:0; }
+.vis { background:var(--tint); border-radius:22px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; flex:none; }
+.col h3 { font-size:24px; font-weight:900; letter-spacing:-.02em; line-height:1.15; margin-top:14px; }
+.col p.o { font-size:17px; line-height:1.4; font-weight:600; margin-top:4px; }
+.col ul.b { margin-top:10px; }
+.col ul.b li { font-size:16.5px; line-height:1.36; padding-left:30px; margin-bottom:6px; }
+.col ul.b li::before { width:20px; height:20px; top:1px; background-size:13px; }
+.col .lk { margin-top:auto; font-size:15px; font-weight:800; color:var(--a); padding-top:6px; }
+.stat { display:flex; align-items:baseline; gap:12px; margin-top:6px; }
+.stat b { font-size:34px; font-weight:900; letter-spacing:-.03em; color:var(--a); white-space:nowrap; }
+.stat span { font-size:15px; line-height:1.3; font-weight:600; color:var(--mute); }
 
-  .imgs { display: flex; gap: 22px; align-items: flex-start; }
-  .imgs figure { flex: 1; min-width: 0; }
-  .note { font-size: 13.5px; color: var(--mute); line-height: 1.4; margin-top: 12px; }
+/* cover */
+.cover h1 { font-size:76px; }
+.chips { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:34px; }
+.chip { background:#fff; border:3px solid var(--ink); border-radius:16px; padding:12px 16px; }
+.chip b { display:block; font-size:19px; font-weight:900; color:var(--a); letter-spacing:-.01em; }
+.chip span { display:block; font-size:15px; font-weight:600; color:var(--mute); margin-top:2px; line-height:1.3; }
+.photo { border-radius:50%; object-fit:cover; object-position:50% 25%; border:12px solid var(--a); background:#fff; display:block; }
 
-  /* multi-column project pages */
-  .cols { display: grid; gap: 22px; flex: 1; min-height: 0; padding-bottom: 46px; }
-  .col { display: flex; flex-direction: column; min-width: 0; }
-  .col h3 { font-size: 22px; line-height: 1.2; font-weight: 800; margin: 12px 0 2px; }
-  .col .url { font-size: 13px; color: var(--accent); letter-spacing: .03em; margin-bottom: 4px; }
-  .col ul { list-style: none; margin-top: 4px; }
-  .col li { padding: 7px 0 7px 22px; font-size: 15.5px; line-height: 1.35; border-bottom: 1px solid var(--line); position: relative; }
-  .col li:last-child { border-bottom: 0; }
-  .col li::before { content: ""; position: absolute; left: 0; top: 14px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
-  .col .two { display: flex; gap: 12px; }
-  .col .two figure { flex: 1; }
-  .col figure img { height: 190px; object-fit: cover; object-position: top; }
-  .col .two figure img { height: auto; }
-  .col .res { margin-top: auto; font-size: 13px; color: var(--mute); line-height: 1.4; padding-top: 8px; }
-
-  /* mvp rows */
-  .rows { display: flex; flex-direction: column; gap: 12px; }
-  .row { display: flex; gap: 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 12px; align-items: center; }
-  .row img { width: 168px; height: auto; border-radius: 8px; border: 1px solid var(--line); flex: none; display: block; }
-  .row b { display: block; font-size: 17px; margin-bottom: 2px; }
-  .row .url { display: block; font-size: 12.5px; color: var(--accent); margin-bottom: 3px; }
-  .row span.t { font-size: 14.5px; line-height: 1.38; color: var(--mute); display: block; }
-  .cta { display: flex; justify-content: space-between; align-items: center; background: var(--accent); color: #05231F; border-radius: 14px; padding: 14px 24px; margin-bottom: 46px; }
-  .cta b { font-size: 24px; }
-  .cta span { font-size: 17px; font-weight: 700; }
+/* more-work pointer */
+.more { position:absolute; left:64px; right:64px; top:610px; height:50px; background:#fff; border:3px solid var(--ink); border-radius:16px; display:flex; align-items:center; gap:14px; padding:0 8px; }
+.more .lbl { background:var(--a); color:#fff; font-size:17px; font-weight:800; border-radius:10px; padding:7px 14px; white-space:nowrap; }
+.more .lst { font-size:15.5px; font-weight:700; color:var(--ink); white-space:nowrap; }
+.more .lst span { color:var(--mute); font-weight:600; padding:0 4px; }
+/* overview */
+.ix { position:absolute; left:64px; right:64px; top:266px; bottom:122px; display:grid; grid-template-columns:1.15fr 1fr 1fr; gap:22px; }
+.grp { border:3px solid var(--ink); border-radius:20px; padding:14px 20px; background:#fff; display:flex; flex-direction:column; }
+.grp h4 { margin-bottom:4px; font-size:14px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; padding:5px 12px; border-radius:7px; align-self:flex-start; color:#fff; }
+.grp a { display:flex; align-items:baseline; gap:12px; padding:4px 0; border-bottom:2px solid #e3e6e0; }
+.grp a:last-child { border-bottom:0; }
+.grp a b { font-size:18px; font-weight:800; line-height:1.25; flex:1; }
+.grp a b span { display:block; font-size:14.5px; font-weight:500; color:var(--mute); margin-top:2px; }
+.grp a i { font-style:normal; font-size:18px; font-weight:900; color:var(--ink); background:var(--hl); border-radius:10px; padding:2px 9px; }
+.proofs { position:absolute; left:64px; right:64px; top:146px; display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.pf { background:var(--ink); color:#fff; border-radius:20px; padding:12px 22px 13px; }
+.pf b { display:block; font-size:34px; font-weight:900; letter-spacing:-.03em; color:#9fe0b8; line-height:1.05; white-space:nowrap; }
+.pf span { display:block; font-size:15px; font-weight:600; line-height:1.35; margin-top:4px; color:#e5ece7; }
 </style>
 </head>
 <body>
 
-<!-- 1 Cover -->
-<section class="page cover">
-  <div class="id">
-    <img class="photo" src="../../public/people/pooya-640.webp" alt="Pooya N.">
-    <div class="name">Pooya N.</div>
-    <div class="role">Senior Full-Stack and AI Engineer<br>Toronto, Canada</div>
-  </div>
-  <div class="main">
-    <div class="eyebrow">Selected work</div>
-    <h1>AI automation and booking websites that give small businesses their time back.</h1>
-    <p class="lead">I build AI workflows that read, decide and reply, with you approving anything unsure. I also build fast websites with online booking, ordering and quotes, and fix slow or broken sites without a rebuild.</p>
-    <div class="stats">
-      <div class="stat"><b>10+ years</b><span>building web products, from startup founder to senior engineer</span></div>
-      <div class="stat"><b>MSc, Computer Science</b><span>with 4 peer-reviewed papers on optimization algorithms</span></div>
-      <div class="stat"><b>AWS Certified</b><span>Solutions Architect</span></div>
-      <div class="stat"><b>Plan, test, ship</b><span>written plan, small steps you can test, fixed price</span></div>
+<!-- 1 COVER -->
+<section class="page web cover">
+  <div class="stripe"><i></i><i></i><i></i></div>
+  <div style="position:absolute;left:64px;top:60px;width:700px">
+    <span class="kick">Selected work</span>
+    <h1 style="margin-top:22px">Websites, web apps and <em>AI&nbsp;tools</em></h1>
+    <p style="font-size:26px;font-weight:600;line-height:1.3;margin-top:16px;color:var(--mute)">for small businesses and startups</p>
+    <div class="chips">
+      <div class="chip"><b>10+ years</b><span>building web products, from startup founder to senior engineer</span></div>
+      <div class="chip"><b>MSc, Computer Science</b><span>4 peer-reviewed papers on optimization algorithms</span></div>
+      <div class="chip"><b>AWS Certified</b><span>Solutions Architect</span></div>
+      <div class="chip"><b>Plan, test, ship</b><span>written plan, small steps you can test, fixed price</span></div>
     </div>
-    <p class="links">All case studies and demos: <b>pooya.website/work</b> &nbsp;|&nbsp; Contact: <b>pooya.website/contact</b></p>
   </div>
-  <div class="footer"><span>Selected work</span><span>1 / 14</span></div>
+  <div style="position:absolute;right:64px;top:62px;width:400px;text-align:center">
+    <img class="photo" src="img/pooya.jpg" style="width:400px;height:400px" alt="Pooya Nikbakht">
+    <div style="font-size:34px;font-weight:900;letter-spacing:-.02em;margin-top:22px">Pooya Nikbakht</div>
+    <div style="font-size:19px;font-weight:700;color:var(--mute);margin-top:6px">Senior Full-Stack &amp; AI Engineer<br>Toronto, Canada</div>
+  </div>
+  <div style="position:absolute;left:64px;bottom:44px;display:flex;gap:14px;font-size:18px;font-weight:700">
+    <a href="https://pooya.website/work" style="background:var(--a);color:#fff;border:3px solid var(--ink);border-radius:30px;padding:10px 22px">All projects and videos: pooya.website/work</a>
+    <a href="https://pooya.website/contact" style="background:#fff;border:3px solid var(--ink);border-radius:30px;padding:10px 22px">Contact: pooya.website/contact</a>
+  </div>
 </section>
 
-<!-- 2 Lead-to-CRM 1 -->
-<section class="page">
-  <div class="head">
-    <div class="eyebrow">AI automation: lead-to-CRM pipeline</div>
-    <h2>Every new lead scored, saved to your CRM and answered.</h2>
+<!-- 2 OVERVIEW -->
+<section class="page web">
+  <div class="stripe"><i></i><i></i><i></i></div>
+  <div class="top">
+    <span class="kick">In this document</span>
+    <h2>Jump to <em>what you need</em></h2>
   </div>
-  <div class="body">
-    <div class="shot"><img src="../../public/work/lead-to-crm-diagram-1200.webp" alt="Lead-to-CRM workflow diagram"><small>The workflow: capture, clean, score, save, follow up. Sample build, tested for a home renovation company.</small></div>
-    <ul class="points">
-      <li>Leads captured from your form or email<em>Names and phone numbers tidied. A repeat within 24 hours is skipped.</em></li>
-      <li>AI marks each lead hot, warm, cold or spam<em>It notes the service, budget, timeline and language. Spam is only logged.</em></li>
-      <li>Saved to your CRM for you<em>Contact, deal in the right stage, and a note on what the AI saw.</em></li>
-      <li>Follow-ups by score<em>Hot: instant reply and a Call now alert. Warm: email now, then day 2 and day 5, stopping when they reply.</em></li>
+  <div class="proofs">
+    <div class="pf"><b>12 of 12</b><span>messy test leads passed in the AI lead-to-CRM pipeline, measured in testing (p. 3)</span></div>
+    <div class="pf"><b>47.0 MB &rarr; 567 KB</b><span>home page weight of a slow WordPress site, measured (p. 11)</span></div>
+    <div class="pf"><b>62 &rarr; 96</b><span>mobile performance score, same site, no rebuild, measured (p. 11)</span></div>
+  </div>
+  <div class="ix">
+    <div class="grp ai" style="--hl:var(--tint)">
+      <h4 style="background:var(--a)">AI automation and tools</h4>
+      <a href="#p3"><b>Lead-to-CRM pipeline<span>Leads scored, saved to your CRM, answered</span></b><i>3</i></a>
+      <a href="#p4"><b>AI operations agent<span>Prepares replies and changes, you approve</span></b><i>4</i></a>
+      <a href="#p5"><b>Booking and customer assistants<span>Answer on chat and email, ask you first</span></b><i>5</i></a>
+      <a href="#p6"><b>Website support bot<span>Answers from your documents, books visits</span></b><i>6</i></a>
+      <a href="#p7"><b>Paperwork, search, workflows<span>Invoices, product search, multi-step jobs</span></b><i>7</i></a>
+    </div>
+    <div class="grp web" style="--hl:var(--tint)">
+      <h4 style="background:var(--a)">Booking and ordering sites</h4>
+      <a href="#p8"><b>Barbershop, physio, vet<span>Online booking, deposits, reminders</span></b><i>8</i></a>
+      <a href="#p9"><b>Restaurant ordering<span>Phone, kiosk, cashier and kitchen screens</span></b><i>9</i></a>
+      <a href="#p10"><b>Caf&eacute; ordering, cleaning quotes<span>Pickup orders and instant itemised quotes</span></b><i>10</i></a>
+    </div>
+    <div class="grp web" style="--hl:var(--tint)">
+      <h4 style="background:var(--ink)">Web apps and fixes</h4>
+      <a href="#p11"><b>Slow site fixed, no rebuild<span>WordPress speed rescue</span></b><i>11</i></a>
+      <a href="#p12"><b>SaaS MVP and Shopify app<span>Upvote Hub, SEO Optimizer</span></b><i>12</i></a>
+      <a href="#p13"><b>Podcast website<span>Player that remembers your spot</span></b><i>13</i></a>
+      <a href="#p14"><b>Work with me<span>pooya.website/contact</span></b><i>14</i></a>
+    </div>
+  </div>
+  <a class="more" href="https://pooya.website/work"><span class="lbl">More projects at pooya.website/work &rarr;</span><span class="lst">Bakery website<span>&middot;</span>Coffee roaster website<span>&middot;</span>Owner dashboards<span>&middot;</span>AI video workspace<span>&middot;</span>My own site</span></a>
+  <div class="foot">Pooya Nikbakht &middot; Selected work</div><div class="pn">2</div>
+</section>
+
+<!-- 3 LEAD TO CRM -->
+<section class="page ai" id="p3">
+  <div class="stripe"><i></i><i></i><i></i></div>
+  <div class="L">
+    <div><span class="kick">AI automation</span></div>
+    <h2>New leads <em>scored, saved and answered</em></h2>
+    <ul class="b">
+      <li>Leads from your form or email are tidied, and a repeat within 24 hours is skipped.</li>
+      <li>AI marks each lead hot, warm, cold or spam, and saves it to your CRM with a deal.</li>
+      <li>Hot leads get an instant reply and a Call now alert. Unsure? You decide in one tap.</li>
     </ul>
+    <div class="proof"><div class="n">12 of 12</div><div class="t"><small>Measured in testing</small>messy test leads passed: 20 of 20 checks, 0 failed n8n runs</div></div>
+    <div class="meta"><a href="https://pooya.website/work/lead-to-crm">pooya.website/work/lead-to-crm</a><br>n8n &middot; Claude API &middot; HubSpot &middot; Telegram &middot; Google Sheets</div>
   </div>
-  <div class="footer"><a href="https://pooya.website/work/lead-to-crm">pooya.website/work/lead-to-crm</a><span>2 / 14</span></div>
-</section>
-
-<!-- 3 Lead-to-CRM 2 -->
-<section class="page">
-  <div class="head">
-    <div class="eyebrow">Lead-to-CRM pipeline: how it stays safe, and the results</div>
-    <h2>When it is unsure, it asks you. When a step fails, you hear about it.</h2>
-  </div>
-  <div class="kpis" style="grid-template-columns:repeat(4,1fr)">
-    <div class="kpi"><b>12 of 12</b><span>messy test leads passed (20 of 20 checks, 0 failed n8n runs)</span></div>
-    <div class="kpi"><b>11 of 11</b><span>leads scored as expected, and 47 of 47 unit tests pass</span></div>
-    <div class="kpi"><b>about US$0.00035</b><span>AI cost per lead, measured in testing</span></div>
-    <div class="kpi"><b>about 13 hours</b><span>saved a month for 100 leads at 8 minutes each (my estimate)</span></div>
-  </div>
-  <div class="cards" style="grid-template-columns:repeat(3,1fr);margin-top:16px">
-    <div class="card"><b>You stay in charge</b><span>If the AI is less sure than the level you set, nothing is sent. You get its guess, its reason and four buttons: Hot, Warm, Cold, Spam.</span><span>No answer in 24 hours: the lead is saved as Needs review and nothing goes out.</span></div>
-    <div class="card"><b>Nothing fails quietly</b><span>Steps retry three times, then you are alerted by email and phone and a Failed row is logged. Repeat leads never double up in the CRM.</span><span>Every lead, score, decision and AI cost is in one sheet, plus a daily 08:00 summary.</span></div>
-    <div class="card"><b>What the test covered</b><span>Typos, no phone number, French, spam, a duplicate, a vague lead and an email lead. The French lead was answered in French and spam never reached the CRM.</span></div>
-  </div>
-  <p class="note">Run locally with test mail. The owner review step ran through the review link, not real Telegram taps, so live Telegram taps and Gmail intake are not claimed. Running costs are estimates: n8n self-hosted from about US$5 a month, with the free HubSpot CRM.</p>
-  <div class="tags" style="margin-top:12px"><span>n8n</span><span>JavaScript</span><span>Claude API</span><span>HubSpot</span><span>Telegram</span><span>Google Sheets</span></div>
-  <div class="footer"><a href="https://pooya.website/work/lead-to-crm">pooya.website/work/lead-to-crm</a><span>3 / 14</span></div>
-</section>
-
-<!-- 4 AI ops agent 1 -->
-<section class="page">
-  <div class="head">
-    <div class="eyebrow">AI operations agent</div>
-    <h2>An AI agent that prepares the work. You approve it.</h2>
-  </div>
-  <div class="body">
-    <div class="shot"><img src="../../public/work/ai-operations-agent-1200.webp" alt="AI operations agent home screen"><small>Demo: the back office of Lakeside Movers, a moving company. Pick an email or write your own.</small></div>
-    <ul class="points">
-      <li>Reads each request<em>A quote, a booking change, a complaint or a question, and how sure it is.</em></li>
-      <li>Uses the business's own tools<em>Price list, calendar, the CRM (customer list) and the job sheet.</em></li>
-      <li>Proposes, never acts alone<em>A drafted reply and each change as a before and after, such as moving a job from Thu 8:00 to Thu 14:00.</em></li>
-      <li>You decide in one tap<em>Approve, edit the reply, or reject. Only then is anything sent or changed.</em></li>
-    </ul>
-  </div>
-  <div class="footer"><a href="https://pooya.website/work/ai-operations-agent">pooya.website/work/ai-operations-agent</a><span>4 / 14</span></div>
-</section>
-
-<!-- 5 AI ops agent 2 -->
-<section class="page">
-  <div class="head">
-    <div class="eyebrow">AI operations agent: what the owner sees, and the safety rules</div>
-    <h2>Every step shown, every request costed, safety rules in code.</h2>
-  </div>
-  <div class="imgs" style="width:760px">
-    <figure><img src="../../public/work/ai-operations-agent-approval-1200.webp" alt="Agent steps and proposals waiting for approval"><small>The agent's steps and its proposals, waiting for the owner.</small></figure>
-    <figure><img src="../../public/work/ai-operations-agent-audit-1200.webp" alt="Audit log with cost per request"><small>The audit log, with estimated AI cost for every request.</small></figure>
-  </div>
-  <div class="cards" style="grid-template-columns:repeat(5,1fr);margin-top:14px">
-    <div class="card"><b>Price limits</b><span>Quotes stay within the price list.</span></div>
-    <div class="card"><b>No double booking</b><span>A taken slot is never booked twice.</span></div>
-    <div class="card"><b>Unsure goes to you</b><span>The agent hands it over.</span></div>
-    <div class="card"><b>Big refunds</b><span>Above a set amount the owner must approve.</span></div>
-    <div class="card"><b>Trick emails</b><span>Emails giving it new instructions are flagged.</span></div>
-  </div>
-  <p class="note">The rules are written in code, not in the AI's instructions, and tests cover the guardrails and the tools. The AI provider is switchable: Workers AI on the public demo and Claude when run locally.</p>
-  <div class="tags" style="margin-top:10px"><span>Next.js</span><span>TypeScript</span><span>Cloudflare Workers</span><span>D1</span><span>Workers AI</span><span>Claude API</span></div>
-  <div class="footer"><a href="https://pooya.website/work/ai-operations-agent">pooya.website/work/ai-operations-agent</a><span>5 / 14</span></div>
-</section>
-
-<!-- 6 Booking assistant 1 -->
-<section class="page">
-  <div class="head">
-    <div class="eyebrow">AI automation: booking assistant (n8n sample)</div>
-    <h2>Every booking read, answered, calendared and logged for you.</h2>
-  </div>
-  <div class="body">
-    <div class="shot"><img src="../../public/work/booking-assistant-1200.webp" alt="Booking assistant workflow and owner approval in Telegram"><small>The n8n workflow and the owner's Telegram message. Tested for a hair salon.</small></div>
-    <ul class="points">
-      <li>Reads the booking and tidies it up<em>Missing or unreadable parts are flagged. It never guesses.</em></li>
-      <li>Writes a friendly reply in the customer's language<em>A note in French gets a reply in French.</em></li>
-      <li>Emails the confirmation and adds it to the calendar<em>Then the owner gets a phone message with a link to the log row.</em></li>
-      <li>Allergy, upset tone or special request? It asks you first<em>Approve sends the email and updates the calendar. Hold sends nothing.</em></li>
-    </ul>
-  </div>
-  <div class="footer"><a href="https://pooya.website/work/booking-assistant">pooya.website/work/booking-assistant</a><span>6 / 14</span></div>
-</section>
-
-<!-- 7 Booking assistant 2 -->
-<section class="page">
-  <div class="head">
-    <div class="eyebrow">Booking assistant: the log, the safety, the results</div>
-    <h2>Tested on twelve messy bookings. Each one ended where it should.</h2>
-  </div>
-  <div class="imgs" style="width:880px">
-    <figure><img src="../../public/work/booking-assistant-sheet-1200.webp" alt="Booking log in a spreadsheet"><small>Every booking, its status, the reason and the AI cost, in one sheet.</small></figure>
-    <figure><img src="../../public/work/booking-assistant-emails-1200.webp" alt="Confirmation emails"><small>Confirmation emails the assistant sent.</small></figure>
-  </div>
-  <div class="kpis" style="grid-template-columns:repeat(3,1fr);margin-top:14px">
-    <div class="kpi"><b>about 5 minutes</b><span>saved per booking (estimate)</span></div>
-    <div class="kpi"><b>12 to 30 hours</b><span>a month: 150 bookings, or about 30 hours at 12 a day (estimates)</span></div>
-    <div class="kpi"><b>about US$0.0002</b><span>AI cost per booking, measured in testing</span></div>
-  </div>
-  <p class="note">The test set: a clean booking, an empty note, French and Spanish notes, an allergy, an upset customer, a past date, phone-only, the same booking twice and an incomplete form. Duplicates are handled once, failed steps retry then alert the owner, and nothing unsure is sent automatically.</p>
-  <div class="tags" style="margin-top:10px"><span>n8n</span><span>JavaScript</span><span>Claude API</span><span>Google Calendar</span><span>Google Sheets</span><span>Telegram</span></div>
-  <div class="footer"><a href="https://pooya.website/work/booking-assistant">pooya.website/work/booking-assistant</a><span>7 / 14</span></div>
-</section>
-
-<!-- 8 Customer assistant 1 -->
-<section class="page">
-  <div class="head">
-    <div class="eyebrow">AI automation: customer assistant</div>
-    <h2>Answers your customers in your voice, on the chat they already use.</h2>
-  </div>
-  <div class="body">
-    <div class="shot"><img src="../../public/work/customer-assistant-booking-1200.webp" alt="Customer chat, owner admin chat and a booking"><small>Demo: a one-person nail studio. The customer side runs on a demo Telegram bot standing in for the business account.</small></div>
-    <ul class="points">
-      <li>Replies as the owner, in the customer's language<em>Only from your sheet: hours, prices, services and a FAQ. Messy typing is fine.</em></li>
-      <li>Not sure? The owner gets a draft to send<em>The customer gets a short holding reply. Tap Send, or type a few rough words and the AI writes it properly.</em></li>
-      <li>Takes bookings from real free times<em>It checks hours, breaks, days off and every pending booking, then asks the owner to approve.</em></li>
-      <li>One tap adds it to Google Calendar<em>Approve confirms to the customer and saves it in the sheet.</em></li>
-    </ul>
-  </div>
-  <div class="footer"><a href="https://pooya.website/work/customer-assistant">pooya.website/work/customer-assistant</a><span>8 / 14</span></div>
-</section>
-
-<!-- 9 Customer assistant 2 -->
-<section class="page">
-  <div class="head">
-    <div class="eyebrow">Customer assistant: the owner's side and the results</div>
-    <h2>A private admin chat and one Google Sheet run the back office.</h2>
-  </div>
-  <div class="imgs" style="width:740px">
-    <figure><img src="../../public/work/customer-assistant-panel-1200.webp" alt="Owner admin chat with draft cards"><small>The owner's private admin chat: draft cards and buttons.</small></figure>
-    <figure><img src="../../public/work/customer-assistant-sheet-1200.webp" alt="Back office Google Sheet"><small>The back office: hours, services, FAQ, rules and bookings.</small></figure>
-  </div>
-  <div class="cards" style="grid-template-columns:repeat(4,1fr);margin-top:14px">
-    <div class="card"><b>Your control panel</b><span>Switch the AI on or off for one customer or everyone, or jump into any chat. Asked outright, it says it is an AI.</span></div>
-    <div class="card"><b>Rules in plain words</b><span>For example, never give the exact address before a booking is confirmed. Complaints, health questions and money go to you first.</span></div>
-    <div class="card"><b>Your own account</b><span>Runs on Telegram Business, a WhatsApp Business number or texts, set up with your accounts.</span></div>
-    <div class="card"><b>Tested</b><span>English and French messages, a complaint, a taken time and AI off for one customer. 22 automated tests cover the decision rules. About US$0.0006 AI cost per answer.</span></div>
-  </div>
-  <div class="tags" style="margin-top:12px"><span>n8n</span><span>JavaScript</span><span>Claude API</span><span>Telegram</span><span>Google Sheets</span><span>Google Calendar</span></div>
-  <div class="footer"><a href="https://pooya.website/work/customer-assistant">pooya.website/work/customer-assistant</a><span>9 / 14</span></div>
-</section>
-
-<!-- 10 Support bot -->
-<section class="page">
-  <div class="head">
-    <div class="eyebrow">AI support bot for your website: docs-chat</div>
-    <h2>Answers from your documents, shows its source, books visits.</h2>
-  </div>
-  <div class="imgs" style="width:740px">
-    <figure><img src="../../public/work/docs-chat-chat-1200.webp" alt="Support chat on a coffee roaster website"><small>Chat bubble on a coffee roaster's site, installed with one line of code.</small></figure>
-    <figure><img src="../../public/work/docs-chat-booking-confirmed-1200.webp" alt="Booking confirmed in the chat"><small>Barbershop front desk: open times as buttons, then a confirmed booking.</small></figure>
-  </div>
-  <div class="cards" style="grid-template-columns:repeat(4,1fr);margin-top:14px">
-    <div class="card"><b>One line to install</b><span>Works on Shopify, WordPress, Webflow, Squarespace or custom builds. About 10 KB, so pages stay fast.</span></div>
-    <div class="card"><b>Grounded answers</b><span>Answers only from your documents and names the page. One tap shows the exact passage. If unsure, it offers Talk to a human.</span></div>
-    <div class="card"><b>Books in the chat</b><span>Only real open times. Nothing is booked until the visitor presses Book it. If the booking system is down, it gives the phone number.</span></div>
-    <div class="card"><b>Claude or OpenAI</b><span>Either provider, with usage limits and a fallback mode to keep costs low.</span></div>
-  </div>
-  <div class="tags" style="margin-top:12px"><span>Python FastAPI</span><span>TypeScript widget</span><span>Next.js</span><span>Claude and OpenAI</span></div>
-  <div class="footer"><a href="https://pooya.website/work/docs-chat">pooya.website/work/docs-chat</a><span>10 / 14</span></div>
-</section>
-
-<!-- 11 AI tools -->
-<section class="page">
-  <div class="head">
-    <div class="eyebrow">More AI tools</div>
-    <h2>Paperwork, product search and multi-step AI workflows.</h2>
-  </div>
-  <div class="cols" style="grid-template-columns:repeat(3,1fr)">
-    <div class="col">
-      <figure><img src="../../public/work/paperwork-ai-review-1200.webp" alt="Paperwork AI review screen"></figure>
-      <h3>Paperwork AI</h3><span class="url">pooya.website/work/paperwork-ai</span>
-      <ul>
-        <li>Reads up to 50 invoices, receipts or scans at once, with a Source button for every value</li>
-        <li>Checks line maths, totals, GST, HST, PST and QST, dates and duplicates</li>
-                <li>Exports to Excel, CSV or JSON</li>
-      </ul>
-      <p class="res">Checked on twelve bakery documents and three job receipts: offline mode catches all four planted problems and the one misread, no false alarms.</p>
-    </div>
-    <div class="col">
-      <figure><img src="../../public/work/shop-search-results-1200.webp" alt="Smart product search results"></figure>
-      <h3>Smart product search</h3><span class="url">pooya.website/work/shop-search</span>
-      <ul>
-        <li>Shoppers search in plain English, such as waterproof hiking boots under $150, size 8</li>
-        <li>It becomes filters shown as tags they can edit, and unmatched words are shown</li>
-                <li>Claude or OpenAI, plus an offline mode, with evals</li>
-      </ul>
-      <p class="res">A public version of the natural-language filter pattern I have shipped in production.</p>
-    </div>
-    <div class="col">
-      <figure><img src="../../public/work/workflow-runner-run-1200.webp" alt="Workflow runner live steps"></figure>
-      <h3>Workflow runner</h3><span class="url">pooya.website/work/workflow-runner</span>
-      <ul>
-        <li>Multi-step AI jobs, such as lead outreach and ticket triage</li>
-        <li>Failed steps retry on their own, nothing is sent twice, and a live log shows each step</li>
-        <li>Pauses for a person to approve, edit or reject the draft</li>
-              </ul>
-      <p class="res">Python FastAPI API and worker with 66 tests, Next.js frontend and Claude.</p>
-    </div>
-  </div>
-  <div class="footer"><span>pooya.website/work</span><span>11 / 14</span></div>
-</section>
-
-<!-- 12 Booking sites -->
-<section class="page">
-  <div class="head">
-    <div class="eyebrow">Websites with online booking (example projects)</div>
-    <h2>Customers book at 11 p.m. instead of calling during your busiest hour.</h2>
-  </div>
-  <div class="cols" style="grid-template-columns:repeat(3,1fr)">
-    <div class="col">
-      <figure><img src="../../public/work/kingsway-cuts-1200.webp" alt="Barbershop website"></figure>
-      <h3>Barbershop</h3><span class="url">pooya.website/work/kingsway-cuts</span>
-      <ul>
-        <li>Pick a barber or First available, and no double bookings</li>
-        <li>$10 card deposit, refunded if cancelled 24 hours ahead</li>
-        <li>Email and text reminders 24 hours before</li>
-        <li>Walk-in wait board, and an owner calendar</li>
-      </ul>
-    </div>
-    <div class="col">
-      <figure><img src="../../public/work/harbourview-physio-1200.webp" alt="Physio clinic website"></figure>
-      <h3>Physio clinic</h3><span class="url">pooya.website/work/harbourview-physio</span>
-      <ul>
-        <li>Booking by appointment type and practitioner</li>
-        <li>$25 deposit for the first visit</li>
-        <li>Online health form before the visit, with a body-area picker and pain scale</li>
-        <li>The clinic edits the questions itself</li>
-      </ul>
-    </div>
-    <div class="col">
-      <figure><img src="../../public/work/maple-paws-vet-1200.webp" alt="Vet clinic website"></figure>
-      <h3>Vet clinic</h3><span class="url">pooya.website/work/maple-paws-vet</span>
-      <ul>
-        <li>Booking by pet, so owners only see fitting vets and visits</li>
-        <li>Pet records with vaccine history</li>
-        <li>Reminder 14 days before a vaccine is due</li>
-        <li>One-tap booking from the reminder</li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer"><span>pooya.website/work</span><span>12 / 14</span></div>
-</section>
-
-<!-- 13 Ordering and quotes -->
-<section class="page">
-  <div class="head">
-    <div class="eyebrow">Online ordering and instant quotes</div>
-    <h2>Pickup orders without the phone tag, and quotes customers work out themselves.</h2>
-  </div>
-  <div class="cols" style="grid-template-columns:repeat(2,1fr);gap:36px">
-    <div class="col">
-      <div class="two">
-        <figure><img src="../../public/work/northwind-coffee-ordering-menu-1200.webp" alt="Coffee ordering menu"><small>What customers see</small></figure>
-        <figure><img src="../../public/work/northwind-coffee-ordering-admin-kitchen-1200.webp" alt="Kitchen screen"><small>What the kitchen sees</small></figure>
+  <div class="R">
+    <div class="g" style="gap:10px">
+      <div class="bx"><div class="row" style="justify-content:space-between"><div class="md" style="font-weight:800">Maria Alvarez</div><span class="pill red" style="font-size:20px;padding:5px 18px">HOT</span></div><div style="font-size:21px;font-weight:600;line-height:1.3;margin-top:6px">Kitchen remodel, about $45,000. Can someone quote this week?</div></div>
+      <div class="arr"></div>
+      <div class="node"><span class="ok"></span><div>Deal in HubSpot<div class="sm" style="font-size:15px;margin-top:2px">Stage: Hot, call now</div></div></div>
+      <div class="arr"></div>
+      <div class="node hl"><span class="ok"></span><div>Reply sent<div class="sm" style="font-size:15px;margin-top:2px;color:#cfe6d8">Instant, personal</div></div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px">
+        <div class="bx" style="padding:12px 16px"><div style="font-size:26px;font-weight:900;color:var(--a)">US$0.00035</div><div style="font-size:15px;font-weight:600;line-height:1.3">AI cost per lead, measured in testing</div></div>
+        <div class="bx" style="padding:12px 16px"><div style="font-size:26px;font-weight:900;color:var(--a)">~13 h / month</div><div style="font-size:15px;font-weight:600;line-height:1.3">saved for 100 leads at 8 min each (estimate)</div></div>
       </div>
-      <h3>Coffee shop ordering</h3><span class="url">pooya.website/work/northwind-coffee-ordering</span>
-      <ul>
-        <li>Choose a café, size, milk and extras, with a live price</li>
-        <li>Pay by card on Stripe or at pickup, with no commission app</li>
-        <li>Pickup times that respect the kitchen</li>
-        <li>Live kitchen screen, and a Ready message to the customer</li>
+      <div class="note" style="margin-top:2px;color:var(--ink)">A lead pipeline for a home renovation business. Numbers come from local test runs; the Telegram buttons and Gmail inbox were not part of them.</div>
+    </div>
+  </div>
+  <div class="foot">Pooya Nikbakht &middot; Selected work</div><div class="pn">3</div>
+</section>
+
+<!-- 4 AI OPS AGENT -->
+<section class="page ai" id="p4">
+  <div class="stripe"><i></i><i></i><i></i></div>
+  <div class="L">
+    <div><span class="kick">AI agent</span></div>
+    <h2>Requests handled, <em>you approve</em></h2>
+    <ul class="b">
+      <li>Reads each email or web form: a quote, a booking change, a complaint or a question.</li>
+      <li>Checks your price list, calendar, CRM and job sheet, then drafts the reply and each change.</li>
+      <li>Nothing is sent or changed until you approve, edit or reject it.</li>
+    </ul>
+    <div class="proof" style="display:block;padding:14px 20px">
+      <div class="t"><small>Safety rules in code, not in the AI&rsquo;s instructions</small></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;margin-top:6px;font-size:16.5px;font-weight:700;line-height:1.3">
+        <span>Quotes stay within the price list</span><span>A taken slot is never booked twice</span>
+        <span>Refunds above a limit need you</span><span>Trick emails are flagged</span>
+      </div>
+    </div>
+    <div class="meta"><a href="https://pooya.website/work/ai-operations-agent">pooya.website/work/ai-operations-agent</a><br>Next.js &middot; TypeScript &middot; Cloudflare Workers, D1, Workers AI &middot; Claude API</div>
+  </div>
+  <div class="R">
+    <div class="shot" data-crop="712,6,376,486" style="width:424px"><img src="img/ai-operations-agent-approval-masked.jpg" alt=""></div>
+    <div class="cap" style="left:40px;bottom:20px"><i></i>Waits for the owner</div>
+  </div>
+  <div class="foot">Pooya Nikbakht &middot; Selected work</div><div class="pn">4</div>
+</section>
+
+<!-- 5 ASSISTANTS -->
+<section class="page ai" id="p5">
+  <div class="stripe"><i></i><i></i><i></i></div>
+  <div class="top">
+    <span class="kick">AI assistants</span>
+    <h2>Customers answered, <em>you stay in charge</em></h2>
+  </div>
+  <div class="cols c2" style="top:178px">
+    <div class="col">
+      <div class="vis" style="height:246px">
+        <div class="g" style="width:480px;gap:9px">
+          <div class="bx" style="padding:9px 16px;border-width:3px;border-radius:16px"><div class="sm" style="font-size:12.5px">New booking</div><div class="md" style="font-size:20px;margin-top:1px">Dana: Colour, Sat 11:00 a.m.</div></div>
+          <div class="bx" style="padding:9px 16px;border-width:3px;border-radius:16px;background:#fff7e0"><div class="sm" style="font-size:12.5px">Tricky note</div><div class="md" style="font-size:20px;margin-top:1px">Reacts badly to PPD. Asks for a PPD-free colour.</div></div>
+          <div class="row"><div class="btn g1" style="font-size:20px;padding:6px 0;border-width:3px;border-radius:12px">Approve</div><div class="btn o" style="font-size:20px;padding:6px 0;border-width:3px;border-radius:12px">Hold</div></div>
+        </div>
+      </div>
+      <h3>Booking assistant <em>(n8n)</em></h3>
+      <ul class="b">
+        <li>Reads each booking, replies in the customer's language, adds it to the calendar.</li>
+        <li>Allergy, upset tone or special request? It asks you first. Hold sends nothing.</li>
       </ul>
+      <div class="stat"><b>US$0.0002</b><span>AI cost per booking, measured in testing on 12 messy hair salon bookings</span></div>
+      <div class="lk"><a href="https://pooya.website/work/booking-assistant">pooya.website/work/booking-assistant</a> <span style="color:var(--mute);font-weight:600">&middot; n8n, Claude API, Google Calendar</span></div>
     </div>
     <div class="col">
-      <div class="two">
-        <figure><img src="../../public/work/brightside-cleaning-quotes-quote-1200.webp" alt="Cleaning quote breakdown"><small>What customers see</small></figure>
-        <figure><img src="../../public/work/brightside-cleaning-quotes-admin-leads-1200.webp" alt="Leads inbox"><small>What the owner sees</small></figure>
+      <div class="vis" style="height:246px">
+        <div class="g" style="width:480px;gap:9px">
+          <div class="bub ai" style="font-size:19px;padding:8px 14px;border-width:3px">do u do chrome nails?? how much</div>
+          <div class="bub me" style="font-size:19px;padding:8px 14px;max-width:96%;border-width:3px"><div class="sm" style="color:#cfe6d8;font-size:13px;margin-bottom:3px">Draft reply</div>Hi Dana! I'm not sure about chrome nails, so I'll check and get back to you.</div>
+          <div class="row"><div class="btn g1" style="font-size:20px;padding:6px 0;border-width:3px;border-radius:12px">Send</div><div class="btn o" style="font-size:20px;padding:6px 0;border-width:3px;border-radius:12px">Change</div></div>
+        </div>
       </div>
-      <h3>Cleaning quotes</h3><span class="url">pooya.website/work/brightside-cleaning-quotes</span>
-      <ul>
-        <li>An itemised price that updates as customers choose, taxes shown separately</li>
-        <li>Optional AI photo analysis fills the form. The price still comes from your list.</li>
-        <li>A leads inbox from New to Won, with follow-up dates</li>
-        <li>Edit your own prices in the admin</li>
+      <h3>Customer assistant <em>(chat)</em></h3>
+      <ul class="b">
+        <li>Answers in your voice, only from your sheet: hours, prices, services and FAQ.</li>
+        <li>Not sure? You get a draft to send. Bookings use real free times, one tap to approve.</li>
       </ul>
+      <div class="stat"><b>22 tests</b><span>cover the decision rules. About US$0.0006 AI cost per answer in nail studio testing</span></div>
+      <div class="lk"><a href="https://pooya.website/work/customer-assistant">pooya.website/work/customer-assistant</a> <span style="color:var(--mute);font-weight:600">&middot; n8n, Claude API, Telegram</span></div>
     </div>
   </div>
-  <div class="footer"><span>pooya.website/work</span><span>13 / 14</span></div>
+  <div class="foot">Pooya Nikbakht &middot; Selected work</div><div class="pn">5</div>
 </section>
 
-<!-- 14 Fixes and MVPs -->
-<section class="page">
-  <div class="head">
-    <div class="eyebrow">Fixes and MVPs</div>
-    <h2>Fix what you have, or ship a first version fast.</h2>
+<!-- 6 DOCS CHAT -->
+<section class="page ai" id="p6">
+  <div class="stripe"><i></i><i></i><i></i></div>
+  <div class="L">
+    <div><span class="kick">AI support bot</span></div>
+    <h2>Your documents, <em>answered by chat</em></h2>
+    <ul class="b">
+      <li>One line installs it on Shopify, WordPress, Webflow, Squarespace or a custom site.</li>
+      <li>Answers only from your documents, names the page and shows the exact passage.</li>
+      <li>Books visits at real open times. Unsure? It offers Talk to a human.</li>
+    </ul>
+    <div class="proof"><div class="n">~10 KB</div><div class="t"><small>Widget size</small>so your pages stay fast. Claude or OpenAI, with usage limits and a fallback mode.</div></div>
+    <div class="meta"><a href="https://pooya.website/work/docs-chat">pooya.website/work/docs-chat</a><br>Python FastAPI &middot; TypeScript widget &middot; Next.js &middot; Claude and OpenAI</div>
   </div>
-  <div class="body top" style="padding-bottom:16px;gap:28px">
-    <div class="shot" style="width:470px">
-      <img src="../../public/work/site-rescue-1200.webp" alt="Website speed rescue before and after">
-      <div class="kpis" style="grid-template-columns:1fr 1fr;margin-top:12px;gap:10px">
-        <div class="kpi" style="padding:10px 14px"><b style="font-size:22px">47.0 MB to 567 KB</b><span>home page weight</span></div>
-        <div class="kpi" style="padding:10px 14px"><b style="font-size:22px">62 to 96</b><span>mobile performance score</span></div>
+  <div class="R" style="justify-content:flex-end;padding-right:40px">
+    <div class="shot" data-crop="862,140,322,526" style="width:360px"><img src="img/docs-chat-source.jpg" alt=""></div>
+    <div class="cap" style="left:22px;top:440px;font-size:17px"><i></i>Shows its source</div>
+  </div>
+  <div class="foot">Pooya Nikbakht &middot; Selected work</div><div class="pn">6</div>
+</section>
+
+<!-- 7 MORE AI TOOLS -->
+<section class="page ai" id="p7">
+  <div class="stripe"><i></i><i></i><i></i></div>
+  <div class="top">
+    <span class="kick">More AI tools</span>
+    <h2>Paperwork, search and <em>multi-step jobs</em></h2>
+  </div>
+  <div class="cols c3" style="top:178px">
+    <div class="col">
+      <div class="vis" style="height:250px">
+        <div class="g" style="width:316px;gap:8px">
+          <div class="bx" style="padding:10px 16px;border-width:3px"><div class="sm" style="font-size:12.5px">Invoices &amp; receipts</div>
+            <div class="row" style="margin-top:4px;font-size:17px;font-weight:700"><span class="ok" style="width:24px;height:24px;background-size:15px"></span>Lumber and hardware</div>
+            <div class="row" style="margin-top:4px;font-size:17px;font-weight:700"><span class="ok" style="width:24px;height:24px;background-size:15px"></span>Fuel stop</div>
+            <div class="row" style="margin-top:4px;font-size:17px;font-weight:700"><span class="warn" style="width:24px;height:24px;font-size:15px">!</span>Equipment rental</div></div>
+          <div class="bx" style="padding:9px 16px;border-width:3px;background:var(--a);color:#fff;font-size:18px;font-weight:800">2 checks passed, 1 to review</div>
+        </div>
       </div>
-      <small>Speed rescue of a slow WordPress bakery site, no redesign. Lab numbers (Lighthouse, median of three runs), not real visitors. pooya.website/work/site-rescue</small>
+      <h3>Paperwork AI</h3>
+      <ul class="b">
+        <li>Reads up to 50 invoices or receipts at once, with a Source for every value.</li>
+        <li>Checks maths, taxes, dates and duplicates. Exports to Excel or CSV.</li>
+      </ul>
+      <div class="stat"><b>4 of 4</b><span>planted problems caught, no false alarms (offline test mode)</span></div>
+      <div class="lk"><a href="https://pooya.website/work/paperwork-ai">pooya.website/work/paperwork-ai</a></div>
     </div>
-    <div class="rows" style="flex:1">
-      <div class="row"><img src="../../public/work/upvote-hub-board-1200.webp" alt="Upvote Hub board"><div><b>Upvote Hub, a SaaS MVP</b><span class="url">pooya.website/work/upvote-hub</span><span class="t">Customers vote on ideas and follow a public roadmap. Workspaces, Free and Pro plans through Stripe, and emails when an idea moves.</span></div></div>
-      <div class="row"><img src="../../public/work/podcast-website-1200.webp" alt="Podcast website"><div><b>Podcast website</b><span class="url">pooya.website/work/podcast-website</span><span class="t">WordPress. The player remembers where listeners stopped, and the host adds episodes without code. Lighthouse mobile Performance 98 to 99, the rest 100.</span></div></div>
-      <div class="row"><img src="../../public/work/seo-optimizer-1200.webp" alt="SEO Optimizer for Shopify"><div><b>SEO Optimizer for Shopify</b><span class="url">pooya.website/work/seo-optimizer</span><span class="t">Scores every product, writes AI fixes in the store's voice, and applies them only after approval. In the demo, 12 products raised the score from 77 to 90.</span></div></div>
+    <div class="col">
+      <div class="vis" style="height:250px">
+        <div class="g" style="width:316px;gap:12px">
+          <div class="bx" style="padding:12px 16px;font-size:21px;font-weight:700;line-height:1.25">men's or unisex rain jacket, $100 to $250</div>
+          <div class="arr" style="margin:0"></div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="font-size:19px;font-weight:800;border:3px solid var(--ink);border-radius:24px;padding:5px 14px;background:#fff">Jackets</span>
+            <span style="font-size:19px;font-weight:800;border:3px solid var(--ink);border-radius:24px;padding:5px 14px;background:#fff">Men</span>
+            <span style="font-size:19px;font-weight:800;border:3px solid var(--ink);border-radius:24px;padding:5px 14px;background:#fff">Unisex</span>
+            <span style="font-size:19px;font-weight:800;border:3px solid var(--ink);border-radius:24px;padding:5px 14px;background:var(--a);color:#fff">$100 to $250</span>
+          </div>
+        </div>
+      </div>
+      <h3>Smart product search</h3>
+      <ul class="b">
+        <li>Shoppers type what they want in plain English. It becomes filters they can edit.</li>
+        <li>Claude or OpenAI, plus an offline mode, with evals.</li>
+      </ul>
+      <div class="lk"><a href="https://pooya.website/work/shop-search">pooya.website/work/shop-search</a></div>
+    </div>
+    <div class="col">
+      <div class="vis" style="height:250px">
+        <div class="g" style="width:300px;gap:6px">
+          <div class="node" style="font-size:17px;padding:4px 12px;border-width:3px;border-radius:12px"><span class="num" style="width:26px;height:26px;font-size:14px">1</span>Read the lead</div>
+          <div class="arr" style="height:6px;margin:-1px 0 5px"></div>
+          <div class="node" style="font-size:17px;padding:4px 12px;border-width:3px;border-radius:12px"><span class="num" style="width:26px;height:26px;font-size:14px">2</span>AI drafts the email</div>
+          <div class="arr" style="height:6px;margin:-1px 0 5px"></div>
+          <div class="node hl" style="font-size:17px;padding:4px 12px;border-width:3px;border-radius:12px"><span class="num" style="width:26px;height:26px;font-size:14px">3</span>You review it</div>
+          <div class="arr" style="height:6px;margin:-1px 0 5px"></div>
+          <div class="node" style="font-size:17px;padding:4px 12px;border-width:3px;border-radius:12px"><span class="num" style="width:26px;height:26px;font-size:14px">4</span>Sent</div>
+        </div>
+      </div>
+      <h3>Workflow runner</h3>
+      <ul class="b">
+        <li>Multi-step AI jobs, such as lead outreach and ticket triage.</li>
+        <li>Failed steps retry, nothing is sent twice, and a person approves each draft.</li>
+      </ul>
+      <div class="stat"><b>66 tests</b><span>FastAPI API and worker, Next.js frontend, Claude</span></div>
+      <div class="lk"><a href="https://pooya.website/work/workflow-runner">pooya.website/work/workflow-runner</a></div>
     </div>
   </div>
-  <div class="cta"><b>Tell me what you need.</b><span>pooya.website/contact</span></div>
-  <div class="footer"><span>pooya.website/work</span><span>14 / 14</span></div>
+  <div class="foot">Pooya Nikbakht &middot; Selected work</div><div class="pn">7</div>
 </section>
 
+<!-- 8 BOOKING SITES -->
+<section class="page web" id="p8">
+  <div class="stripe"><i></i><i></i><i></i></div>
+  <div class="top">
+    <span class="kick">Booking websites</span>
+    <h2>Customers book at 11 p.m., <em>not during your rush</em></h2>
+  </div>
+  <div class="cols c3" style="top:178px">
+    <div class="col">
+      <div class="vis" style="height:250px;border:4px solid var(--ink);background:url(img/hero-kingsway.jpg) 50% 35%/cover"><div class="cap plain" style="left:14px;bottom:14px;font-size:17px">Pick a time, $10 deposit</div></div>
+      <h3>Booking site for a barbershop</h3>
+      <ul class="b">
+        <li>Pick a barber or First available. No double bookings.</li>
+        <li>$10 card deposit, refunded if cancelled 24 hours ahead.</li>
+        <li>Email and text reminders, a walk-in wait board and an owner calendar.</li>
+      </ul>
+      <div class="lk"><a href="https://pooya.website/work/kingsway-cuts">pooya.website/work/kingsway-cuts</a></div>
+    </div>
+    <div class="col">
+      <div class="vis" style="height:250px;border:4px solid var(--ink);background:url(img/hero-harbourview.jpg) 50% 40%/cover"><div class="cap plain" style="left:14px;bottom:14px;font-size:17px">First visit, $25 deposit</div></div>
+      <h3>Booking site for a physio clinic</h3>
+      <ul class="b">
+        <li>Booking by appointment type and practitioner.</li>
+        <li>Online health form before the visit, with a body-area picker and pain scale.</li>
+        <li>The clinic edits the questions itself.</li>
+      </ul>
+      <div class="lk"><a href="https://pooya.website/work/harbourview-physio">pooya.website/work/harbourview-physio</a></div>
+    </div>
+    <div class="col">
+      <div class="vis" style="height:250px;border:4px solid var(--ink);background:url(img/hero-maplepaws.jpg) 50% 62%/cover"><div class="cap" style="left:14px;bottom:14px;font-size:17px"><i></i>You're booked</div></div>
+      <h3>Booking site for a vet clinic</h3>
+      <ul class="b">
+        <li>Booking by pet, so owners only see fitting vets and visits.</li>
+        <li>Pet records with vaccine history.</li>
+        <li>Reminder 14 days before a vaccine is due, with one-tap booking.</li>
+      </ul>
+      <div class="lk"><a href="https://pooya.website/work/maple-paws-vet">pooya.website/work/maple-paws-vet</a></div>
+    </div>
+  </div>
+  <div class="foot">Pooya Nikbakht &middot; Selected work</div><div class="pn">8</div>
+</section>
+
+<!-- 9 JOLLOF HOUSE -->
+<section class="page web" id="p9">
+  <div class="stripe"><i></i><i></i><i></i></div>
+  <div class="L">
+    <div><span class="kick">Restaurant ordering</span></div>
+    <h2>Only <em>paid orders</em> reach the kitchen</h2>
+    <ul class="b">
+      <li>Customers order on a phone or a kiosk and pay in cash or Mobile Money (MoMo).</li>
+      <li>The cashier types or scans the order code, confirms payment, and it goes to the kitchen.</li>
+      <li>Loyalty points: 5% back, held until payment, oldest used first, expire after 90 days.</li>
+    </ul>
+    <div class="proof" style="padding:14px 20px">
+      <div class="t" style="width:100%"><small>Four screens, one system</small>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px">
+          <span class="pill" style="font-size:16px">Phone</span><span class="pill" style="font-size:16px">Kiosk</span><span class="pill" style="font-size:16px">Cashier (POS)</span><span class="pill" style="font-size:16px">Kitchen</span>
+        </div></div>
+    </div>
+    <div class="meta"><a href="https://pooya.website/work/jollof-house-ordering">pooya.website/work/jollof-house-ordering</a><br>Built for restaurants in Accra &middot; Next.js &middot; TypeScript &middot; Cloudflare Workers, D1</div>
+  </div>
+  <div class="R" style="display:block">
+    <div class="shot" data-crop="344,256,540,334" style="position:absolute;left:24px;top:74px;width:584px"><img src="img/jollof-house-ordering-pos.jpg" alt=""></div>
+    <div class="shot" data-crop="380,126,440,262" style="position:absolute;left:24px;top:462px;width:360px"><img src="img/jollof-house-ordering-kitchen.jpg" alt=""></div>
+    <div class="cap plain" style="left:24px;top:22px;font-size:17px">Cashier screen: confirm, then cook</div>
+    <div class="cap plain" style="left:334px;top:552px;font-size:17px">&larr; Kitchen: paid orders only</div>
+  </div>
+  <div class="foot">Pooya Nikbakht &middot; Selected work</div><div class="pn">9</div>
+</section>
+
+<!-- 10 ORDERING AND QUOTES -->
+<section class="page web" id="p10">
+  <div class="stripe"><i></i><i></i><i></i></div>
+  <div class="top">
+    <span class="kick">Ordering and quotes</span>
+    <h2>Pickup orders and quotes, <em>no phone tag</em></h2>
+  </div>
+  <div class="cols c2" style="top:178px">
+    <div class="col">
+      <div class="vis" style="height:318px;gap:18px">
+        <div class="shot" data-crop="76,130,296,370" style="width:236px;border-width:3px;border-radius:16px"><img src="img/northwind-coffee-ordering-phone.jpg" alt=""></div>
+        <div class="shot" data-crop="826,140,300,376" style="width:236px;border-width:3px;border-radius:16px"><img src="img/northwind-coffee-ordering-phone.jpg" alt=""></div>
+      </div>
+      <h3>Ordering site for a coffee chain</h3>
+      <ul class="b">
+        <li>Choose a caf&eacute;, size, milk and extras, with a live price and real pickup times.</li>
+        <li>Pay by card on Stripe or at pickup, no commission app. A kitchen screen sends Ready.</li>
+      </ul>
+      <div class="lk"><a href="https://pooya.website/work/northwind-coffee-ordering">pooya.website/work/northwind-coffee-ordering</a></div>
+    </div>
+    <div class="col">
+      <div class="vis" style="height:318px">
+        <div class="shot" data-crop="670,84,388,300" style="width:340px;border-width:3px;border-radius:16px"><img src="img/brightside-cleaning-quotes-quote.jpg" alt=""></div>
+      </div>
+      <h3>Quote site for a cleaning business</h3>
+      <ul class="b">
+        <li>An itemised price that updates as customers choose, with taxes shown separately.</li>
+        <li>Optional AI photo analysis fills the form; the price still comes from your list.</li>
+      </ul>
+      <div class="lk"><a href="https://pooya.website/work/brightside-cleaning-quotes">pooya.website/work/brightside-cleaning-quotes</a></div>
+    </div>
+  </div>
+  <div class="foot">Pooya Nikbakht &middot; Selected work</div><div class="pn">10</div>
+</section>
+
+<!-- 11 SITE RESCUE -->
+<section class="page web" id="p11">
+  <div class="stripe"><i></i><i></i><i></i></div>
+  <div class="L">
+    <div><span class="kick">Website fix</span></div>
+    <h2>Slow website? <em>Fixed, not rebuilt</em></h2>
+    <ul class="b">
+      <li>Same theme and page builder, so editing works exactly as before.</li>
+      <li>Photos resized, 6 unused plugins removed, seven font families cut to two.</li>
+      <li>Back on Google, and the broken cake order form works again.</li>
+    </ul>
+    <div class="proof" style="display:block;padding:14px 20px">
+      <div class="t"><small>Also measured, same pages</small></div>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin-top:6px;font-size:17px;font-weight:600;line-height:1.3;align-items:baseline">
+        <b style="font-size:24px;font-weight:900;color:var(--a)">49 &rarr; 99</b><span>desktop performance score, home page</span>
+        <b style="font-size:24px;font-weight:900;color:var(--a)">100</b><span>Accessibility and Best Practices on every measured page</span>
+      </div>
+    </div>
+    <div class="meta"><a href="https://pooya.website/work/site-rescue">pooya.website/work/site-rescue</a><br>WordPress &middot; PHP &middot; Docker &middot; Lighthouse</div>
+  </div>
+  <div class="R">
+    <div class="g" style="width:540px;gap:16px">
+      <div class="bx"><div class="sm">Home page weight (measured)</div><div class="big" style="margin-top:6px"><s>47.0 MB</s></div><div class="big">&rarr; <b>567 KB</b></div></div>
+      <div class="bx"><div class="sm">Mobile performance score (measured)</div><div class="big" style="margin-top:6px"><s>62</s> &rarr; <b>96</b></div></div>
+      <div class="note" style="color:var(--ink);font-size:15px">A WordPress bakery site I sped up. Lab numbers (Lighthouse, median of three runs), not visitor data.</div>
+    </div>
+  </div>
+  <div class="foot">Pooya Nikbakht &middot; Selected work</div><div class="pn">11</div>
+</section>
+
+<!-- 12 WEB APPS -->
+<section class="page web" id="p12">
+  <div class="stripe"><i></i><i></i><i></i></div>
+  <div class="top">
+    <span class="kick">Web apps</span>
+    <h2>A first version, <em>shipped fast</em></h2>
+  </div>
+  <div class="cols c2" style="top:178px">
+    <div class="col">
+      <div class="vis" style="height:300px">
+        <div class="g" style="width:500px;gap:12px">
+          <div class="bx" style="padding:10px 18px;border-width:3px;border-radius:16px"><div class="row" style="gap:16px"><div style="border:3px solid var(--ink);border-radius:12px;width:58px;text-align:center;font-weight:900;font-size:20px;line-height:1.1;padding:4px 0">&#9650;<br>37</div><div style="font-size:21px;font-weight:800;line-height:1.2">Subtasks deeper than two levels<div style="font-size:15px;font-weight:800;letter-spacing:.06em;color:var(--mute);margin-top:3px">OPEN</div></div></div></div>
+          <div class="bx" style="padding:10px 18px;border-width:3px;border-radius:16px"><div class="row" style="gap:16px"><div style="border:3px solid var(--ink);border-radius:12px;width:58px;text-align:center;font-weight:900;font-size:20px;line-height:1.1;padding:4px 0">&#9650;<br>36</div><div style="font-size:21px;font-weight:800;line-height:1.2">Dark mode<div style="font-size:15px;font-weight:800;letter-spacing:.06em;color:var(--a);margin-top:3px">PLANNED</div></div></div></div>
+          <div class="bx" style="padding:10px 18px;border-width:3px;border-radius:16px"><div class="row" style="gap:16px"><div style="border:3px solid var(--ink);border-radius:12px;width:58px;text-align:center;font-weight:900;font-size:20px;line-height:1.1;padding:4px 0">&#9650;<br>34</div><div style="font-size:21px;font-weight:800;line-height:1.2">Slack message to task<div style="font-size:15px;font-weight:800;letter-spacing:.06em;color:var(--mute);margin-top:3px">DONE</div></div></div></div>
+        </div>
+      </div>
+      <h3>Upvote Hub, a SaaS MVP</h3>
+      <ul class="b">
+        <li>Customers vote on ideas and follow a public roadmap.</li>
+        <li>Free and Pro plans through Stripe, and emails when an idea moves.</li>
+      </ul>
+      <div class="lk"><a href="https://pooya.website/work/upvote-hub">pooya.website/work/upvote-hub</a></div>
+    </div>
+    <div class="col">
+      <div class="vis" style="height:300px">
+        <div class="g" style="width:440px;gap:14px">
+          <div class="bx" style="padding:16px 24px"><div class="sm" style="font-size:15px">Store SEO score (test store)</div><div style="font-size:92px;font-weight:900;letter-spacing:-.04em;line-height:1.02;margin-top:4px"><s style="color:#8a2c22;text-decoration-thickness:7px">77</s> &rarr; <b style="color:var(--a)">90</b></div></div>
+          <div class="bx" style="padding:12px 24px;font-size:21px;font-weight:800;line-height:1.25">after fixing 12 products, each change approved first</div>
+        </div>
+      </div>
+      <h3>SEO Optimizer for Shopify</h3>
+      <ul class="b">
+        <li>Scores every product and writes fixes in the store's voice.</li>
+        <li>Nothing changes until the merchant approves.</li>
+      </ul>
+      <div class="lk"><a href="https://pooya.website/work/seo-optimizer">pooya.website/work/seo-optimizer</a></div>
+    </div>
+  </div>
+  <div class="foot">Pooya Nikbakht &middot; Selected work</div><div class="pn">12</div>
+</section>
+
+<!-- 13 PODCAST -->
+<section class="page web" id="p13">
+  <div class="stripe"><i></i><i></i><i></i></div>
+  <div class="L">
+    <div><span class="kick">Website</span></div>
+    <h2>A podcast site that <em>keeps listeners</em></h2>
+    <ul class="b">
+      <li>The player stays on every page and remembers where each listener stopped.</li>
+      <li>Clickable timestamps jump straight to a moment.</li>
+      <li>The host adds an episode in minutes, without code.</li>
+    </ul>
+    <div class="proof"><div class="n">98&ndash;99</div><div class="t"><small>Lighthouse, mobile, lab run</small>Performance score. Accessibility, Best Practices and SEO all 100.</div></div>
+    <div class="meta"><a href="https://pooya.website/work/podcast-website">pooya.website/work/podcast-website</a><br>WordPress &middot; custom block theme &middot; PHP</div>
+  </div>
+  <div class="R">
+    <div class="shot" data-crop="60,0,1080,672" style="width:580px"><img src="img/podcast-website.jpg" alt=""></div>
+    <div class="cap" style="right:28px;top:124px"><i></i>Try it live</div>
+  </div>
+  <div class="foot">Pooya Nikbakht &middot; Selected work</div><div class="pn">13</div>
+</section>
+
+<!-- 14 CTA -->
+<section class="page web" id="p14">
+  <div class="stripe"><i></i><i></i><i></i></div>
+  <div style="position:absolute;left:64px;top:70px;width:700px">
+    <span class="kick">Work with me</span>
+    <h1 style="font-size:78px;margin-top:22px">Tell me <em>what you need.</em></h1>
+    <p style="font-size:24px;font-weight:600;line-height:1.4;margin-top:22px;color:var(--mute)">Websites, web apps and AI tools for small businesses and startups. A written plan, small steps you can test, and a fixed price.</p>
+    <a href="https://pooya.website/contact" style="display:inline-block;margin-top:38px;background:var(--a);color:#fff;border:4px solid var(--ink);border-radius:40px;padding:18px 34px;font-size:30px;font-weight:900;letter-spacing:-.01em">pooya.website/contact &rarr;</a>
+    <a href="https://pooya.website/work" style="display:block;margin-top:30px;background:#fff;border:3px solid var(--ink);border-radius:18px;padding:14px 20px">
+      <span style="display:block;font-size:20px;font-weight:800">More projects at <span style="color:var(--a)">pooya.website/work</span></span>
+      <span style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+        <span class="pill" style="font-size:15px">Bakery website</span><span class="pill" style="font-size:15px">Coffee roaster website</span><span class="pill" style="font-size:15px">Owner dashboards</span><span class="pill" style="font-size:15px">AI video workspace</span><span class="pill" style="font-size:15px">My own site</span>
+      </span>
+    </a>
+  </div>
+  <div style="position:absolute;right:64px;top:110px;width:380px;text-align:center">
+    <img class="photo" src="img/pooya.jpg" style="width:360px;height:360px;margin:0 auto" alt="">
+    <div style="font-size:32px;font-weight:900;letter-spacing:-.02em;margin-top:20px">Pooya Nikbakht</div>
+    <div style="font-size:19px;font-weight:700;color:var(--mute);margin-top:6px">Senior Full-Stack &amp; AI Engineer<br>Toronto, Canada</div>
+  </div>
+  <div class="pn">14</div>
+</section>
+
+<script>
+// Crop screenshots: data-crop = x,y,w,h in source pixels (sources are 1200x750).
+document.querySelectorAll('.shot[data-crop]').forEach(el => {
+  const [x, y, w, h] = el.dataset.crop.split(',').map(Number);
+  const bw = parseFloat(getComputedStyle(el).borderLeftWidth) * 2;
+  const W = el.getBoundingClientRect().width - bw;
+  const s = W / w;
+  el.style.height = (h * s + bw) + 'px';
+  const img = el.querySelector('img');
+  img.style.width = (1200 * s) + 'px';
+  img.style.left = (-x * s) + 'px';
+  img.style.top = (-y * s) + 'px';
+  el.dataset.scale = s.toFixed(2);
+});
+</script>
 </body>
 </html>
