@@ -267,6 +267,36 @@ export function getSplitGallery(slug: string) {
 }
 
 const galleries: Record<string, { title: string; shots: Shot[] }> = {
+  "jollof-house-ordering": {
+    title: "A closer look",
+    shots: [
+      {
+        src: "/work/jollof-house-ordering-phone",
+        alt: "Three phone screens: the Jollof House home page with a photo of jollof rice, the cart with points and payment choices, and an order marked Ready.",
+        caption: "On a phone, from the menu to Ready.",
+      },
+      {
+        src: "/work/jollof-house-ordering-kiosk",
+        alt: "The kiosk: photo cards for dishes such as Jollof & chicken at GHC 55.00, and an order panel with Cash and MoMo buttons, a points field and a Place order button.",
+        caption: "The kiosk: tap dishes, choose cash or MoMo.",
+      },
+      {
+        src: "/work/jollof-house-ordering-pos",
+        alt: "The cashier screen: order OTM-102 opened in 0.22 seconds, with the delivery address, items, delivery fee, points and money due, and Confirm Payment Received, Park and Cancel buttons.",
+        caption: "The cashier opens an order by code and confirms payment.",
+      },
+      {
+        src: "/work/jollof-house-ordering-kitchen",
+        alt: "The kitchen screen: four paid orders, each with its code, pickup or delivery tag, dishes and a large Food Ready button, with no prices.",
+        caption: "The kitchen sees paid orders and food only.",
+      },
+      {
+        src: "/work/jollof-house-ordering-points",
+        alt: "My points: 420 points worth GHC 42.00 in three batches with their expiry dates, beside the cart using 350 points on a GHC 70.00 order.",
+        caption: "Points with expiry dates, used at checkout up to half the food.",
+      },
+    ],
+  },
   "northwind-coffee-website": {
     title: "A closer look",
     shots: [
@@ -374,6 +404,36 @@ const galleries: Record<string, { title: string; shots: Shot[] }> = {
         src: "/work/docs-chat-mobile",
         alt: "Three phone screens: the coffee shop home page with the chat button in the corner, the chat answering a subscription question with the quoted passage open, and the install page with the snippet.",
         caption: "The same chat on a phone.",
+      },
+    ],
+  },
+  "upvote-hub": {
+    title: "A closer look",
+    shots: [
+      {
+        src: "/work/upvote-hub-board",
+        alt: "The Feature requests board: ideas with vote counts, status tags such as Open, Planned and Done, comment counts and who posted them.",
+        caption: "The public board: customers vote and comment on ideas.",
+      },
+      {
+        src: "/work/upvote-hub-status",
+        alt: "The status board with four columns, Open, Planned, In progress and Done, each idea showing its votes, a status menu and a Move button.",
+        caption: "The team moves ideas between statuses, and voters are emailed.",
+      },
+      {
+        src: "/work/upvote-hub-insights",
+        alt: "The insights dashboard: 236 votes, 4 new ideas, 40 active users and 3 team members in the last 30 days, and a line chart of votes per day.",
+        caption: "Insights: votes per day, active users and top requests.",
+      },
+      {
+        src: "/work/upvote-hub-billing",
+        alt: "A board that reached the Free plan limit: a message that the Free plan includes 50 posts per workspace and an Upgrade to Pro button above the idea list.",
+        caption: "Reach the Free plan limit and the board offers an upgrade to Pro.",
+      },
+      {
+        src: "/work/upvote-hub-mobile",
+        alt: "Three phone screens: the home page headline with Try the demo, a voting board with ideas and vote counts, and the status board for a workspace.",
+        caption: "The same screens on a phone.",
       },
     ],
   },

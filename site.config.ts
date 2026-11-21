@@ -82,6 +82,10 @@ export const siteConfig = {
       repoUrl: null,
       admin: { url: "https://northwind.pooya.website/admin" },
     },
+    "jollof-house-ordering": {
+      liveUrl: "https://restaurant.pooya.website",
+      repoUrl: null,
+    },
     "brightside-cleaning-quotes": {
       liveUrl: "https://brightside.pooya.website/quote",
       repoUrl: null,
@@ -96,6 +100,10 @@ export const siteConfig = {
       liveUrl: "https://runner.pooya.website",
       repoUrl: "https://github.com/PooyaNikbakht/workflow-runner",
       localUrl: "http://localhost:3050",
+    },
+    "upvote-hub": {
+      liveUrl: "https://feedback.pooya.website",
+      repoUrl: null,
     },
     "paperwork-ai": {
       liveUrl: "https://paperwork.pooya.website",

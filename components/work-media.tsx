@@ -24,6 +24,10 @@ const shots: Record<string, { src: string; alt: string }> = {
     src: "/work/northwind-coffee-ordering-phone",
     alt: "Three phone screens: choosing size, milk and extras for a mocha, picking a pickup time, and the order page showing Ready for pickup.",
   },
+  "jollof-house-ordering": {
+    src: "/work/jollof-house-ordering-phone",
+    alt: "Three phone screens: the Jollof House home page with a photo of jollof rice, the cart with points and payment choices, and an order marked Ready.",
+  },
   "owner-dashboards": {
     src: "/work/owner-dashboards",
     alt: "A café kitchen screen on a tablet: New, Preparing and Ready columns of pickup orders, with large Start and Picked up buttons.",
@@ -43,6 +47,10 @@ const shots: Record<string, { src: string; alt: string }> = {
   "site-rescue": {
     src: "/work/site-rescue",
     alt: "Lighthouse on the bakery home page, mobile, before and after: Performance 62 to 96, Largest Contentful Paint 143.3 s to 2.7 s (the median run).",
+  },
+  "upvote-hub": {
+    src: "/work/upvote-hub",
+    alt: "Upvote Hub home page: the headline Know what your customers want next, a Try the demo button and a preview of a voting board with Planned and In progress ideas.",
   },
   "paperwork-ai": {
     src: "/work/paperwork-ai",

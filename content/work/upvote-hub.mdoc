@@ -1,0 +1,56 @@
+---
+title: "Upvote Hub: a customer feedback board and public roadmap, as a paid SaaS"
+summary: >-
+  A multi-tenant SaaS where a company collects feature requests on a public
+  voting board, moves them through a status roadmap, and emails the people who
+  voted when an idea changes status. Free and Pro plans are billed through
+  Stripe, and a one-click Try the demo opens a ready-made workspace.
+categories:
+  - mvp
+  - dashboards
+stack:
+  - Next.js
+  - TypeScript
+  - Supabase
+  - Postgres
+  - Stripe
+  - Cloudflare Workers
+featured: true
+order: 20
+---
+## Problem
+
+Software teams hear feature requests in email, chat and support tickets, so the same idea is counted five times and nobody knows what customers want most. Customers ask for something and never hear back. A product like this needs more than a nice board: it needs accounts, separate workspaces for each company, paid plans and limits that are enforced.
+
+## What it does
+
+1. **A public voting board.** Customers browse a company's ideas, sort by top or new, vote and comment. Each workspace has its own public link.
+2. **A status roadmap.** The team moves each idea between Open, Planned, In progress and Done on a status board. Planned, In progress and Done appear on the public roadmap.
+3. **Voters hear back.** When an idea changes status, everyone who voted gets an email.
+4. **An insights dashboard.** Votes per day, new ideas, active users and the top requests for the last 30 days.
+5. **Workspaces and teams.** A company signs up, creates a workspace and invites its team.
+6. **Free and Pro plans.** Billing runs through Stripe. The Free plan has a limit of 50 posts per workspace. When a workspace reaches it, the board shows a clear upgrade prompt instead of failing.
+7. **One-click Try the demo.** A button on the home page opens a workspace full of sample ideas, with no sign-up.
+
+## How it helps your business
+
+- **One place for requests.** Votes show what customers want most, not who shouted loudest.
+- **A roadmap customers can see.** Fewer "are you working on this?" emails.
+- **Customers feel heard.** The people who asked are told when their idea moves.
+- **Revenue from day one.** Plans, limits and upgrades are part of the product, not an afterthought.
+
+## How it's built
+
+- **Each company's data is separate.** Workspaces are isolated in the database, so one company can never read another's ideas, votes or members.
+- **Limits are enforced on the server.** The Free plan limit is checked where the data is saved, so it can't be skipped from the browser.
+- **Billing stays in sync.** Stripe handles checkout and plan changes, and the workspace's plan follows the subscription.
+- **Fast and global.** The app runs on Cloudflare Workers, with Supabase for the database and sign-in.
+- **Works on a phone.** The board, roadmap and dashboard all fit a 360 px screen.
+
+## Stack
+
+Next.js (App Router), TypeScript, Supabase (Postgres and Auth), Stripe and Cloudflare Workers.
+
+## Outcome
+
+A working SaaS you can try in one click. Press Try the demo, vote on an idea, move one to Planned on the status board, and look at the insights dashboard. It shows what a SaaS MVP needs beyond screens: workspaces, plans, billing and notifications that work together.

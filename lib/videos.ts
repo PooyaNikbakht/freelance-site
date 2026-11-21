@@ -16,14 +16,14 @@ export const introVideo = video("intro", "2:17", "Video: a two-minute introducti
 /** Demo walkthroughs, keyed by work entry slug. Lines come from demo-videos/tools/publish-videos.sh. */
 const workVideos: Record<string, Video> = {
   "brightside-cleaning-quotes": video("cleaning-quote-calculator", "2:33", "Video: a walkthrough of a cleaning company's instant quote calculator"),
-  // TODO(video): uncomment once the video is uploaded and the poster exists; replace the duration with the line printed by publish-videos.sh.
-  // "ai-operations-agent": video("ai-operations-agent", "0:00", "Video: a walkthrough of the AI operations agent"),
+  "ai-operations-agent": video("ai-operations-agent", "1:58", "Video: a walkthrough of the AI operations agent"),
   "booking-assistant": video("booking-assistant", "2:11", "Video: a walkthrough of the booking assistant"),
   "customer-assistant": video("customer-assistant", "2:58", "Video: a walkthrough of the customer assistant"),
   "docs-chat": video("website-support-bot", "2:43", "Video: a walkthrough of the website support bot"),
   "freelance-site": video("this-website", "2:21", "Video: a walkthrough of this website"),
   "harbourview-bakery-website": video("bakery-website", "2:10", "Video: a walkthrough of the bakery website"),
   "harbourview-physio": video("physio-clinic-booking", "2:23", "Video: a walkthrough of a physio clinic's website and booking"),
+  "jollof-house-ordering": video("jollof-house-ordering-first-person", "2:11", "Video: a walkthrough of a restaurant's kiosk, POS, kitchen and phone ordering"),
   "kingsway-cuts": video("barbershop-booking", "2:57", "Video: a walkthrough of a barbershop's website and booking"),
   // TODO(video): uncomment once the video is uploaded and the poster exists; replace the duration with the line printed by publish-videos.sh.
   // "lead-to-crm": video("lead-to-crm", "0:00", "Video: a walkthrough of the lead to CRM pipeline"),
@@ -35,6 +35,8 @@ const workVideos: Record<string, Video> = {
   "podcast-website": video("podcast-website", "2:04", "Video: a walkthrough of a podcast website"),
   "shop-search": video("smart-product-search", "1:50", "Video: a walkthrough of the smart product search"),
   "site-rescue": video("website-speed-rescue", "2:45", "Video: a walkthrough of the website speed rescue"),
+  // TODO(video): uncomment after `publish-videos.sh saas-starter` uploads it (run time 1:22); then rename the printed key to "upvote-hub".
+  // "upvote-hub": video("feedback-roadmap-tool", "1:22", "Video: a walkthrough of the feedback and roadmap tool"),
   "workflow-runner": video("ai-workflow-runner", "2:37", "Video: a walkthrough of the AI workflow runner"),
 };
 
