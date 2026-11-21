@@ -150,7 +150,7 @@ export default async function WorkItemPage({ params }: PageProps<"/work/[slug]">
                 </div>
               </div>
             ) : null}
-            <div className="min-w-0 lg:col-start-1 lg:row-start-2">
+            <div className={`${intro.children.length ? "mt-12 " : ""}min-w-0 lg:col-start-1 lg:row-start-2`}>
               <MarkdocBody node={main} />
             </div>
           </div>
