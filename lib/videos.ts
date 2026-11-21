@@ -36,6 +36,8 @@ const workVideos: Record<string, Video> = {
   "podcast-website": video("podcast-website", "2:04", "Video: a walkthrough of a podcast website"),
   "shop-search": video("smart-product-search", "1:50", "Video: a walkthrough of the smart product search"),
   "site-rescue": video("website-speed-rescue", "2:45", "Video: a walkthrough of the website speed rescue"),
+  // TODO(video): uncomment after `publish-videos.sh saas-starter` uploads it (run time 1:22); then rename the printed key to "upvote-hub".
+  // "upvote-hub": video("feedback-roadmap-tool", "1:22", "Video: a walkthrough of the feedback and roadmap tool"),
   "workflow-runner": video("ai-workflow-runner", "2:37", "Video: a walkthrough of the AI workflow runner"),
 };
 

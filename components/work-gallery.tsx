@@ -407,6 +407,36 @@ const galleries: Record<string, { title: string; shots: Shot[] }> = {
       },
     ],
   },
+  "upvote-hub": {
+    title: "A closer look",
+    shots: [
+      {
+        src: "/work/upvote-hub-board",
+        alt: "The Feature requests board: ideas with vote counts, status tags such as Open, Planned and Done, comment counts and who posted them.",
+        caption: "The public board: customers vote and comment on ideas.",
+      },
+      {
+        src: "/work/upvote-hub-status",
+        alt: "The status board with four columns, Open, Planned, In progress and Done, each idea showing its votes, a status menu and a Move button.",
+        caption: "The team moves ideas between statuses, and voters are emailed.",
+      },
+      {
+        src: "/work/upvote-hub-insights",
+        alt: "The insights dashboard: 236 votes, 4 new ideas, 40 active users and 3 team members in the last 30 days, and a line chart of votes per day.",
+        caption: "Insights: votes per day, active users and top requests.",
+      },
+      {
+        src: "/work/upvote-hub-billing",
+        alt: "A board that reached the Free plan limit: a message that the Free plan includes 50 posts per workspace and an Upgrade to Pro button above the idea list.",
+        caption: "Reach the Free plan limit and the board offers an upgrade to Pro.",
+      },
+      {
+        src: "/work/upvote-hub-mobile",
+        alt: "Three phone screens: the home page headline with Try the demo, a voting board with ideas and vote counts, and the status board for a workspace.",
+        caption: "The same screens on a phone.",
+      },
+    ],
+  },
   "paperwork-ai": {
     title: "A closer look",
     shots: [

@@ -101,6 +101,10 @@ export const siteConfig = {
       repoUrl: "https://github.com/PooyaNikbakht/workflow-runner",
       localUrl: "http://localhost:3050",
     },
+    "upvote-hub": {
+      liveUrl: "https://feedback.pooya.website",
+      repoUrl: null,
+    },
     "paperwork-ai": {
       liveUrl: "https://paperwork.pooya.website",
       repoUrl: "https://github.com/PooyaNikbakht/paperwork-ai",

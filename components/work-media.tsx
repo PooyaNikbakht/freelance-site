@@ -48,6 +48,10 @@ const shots: Record<string, { src: string; alt: string }> = {
     src: "/work/site-rescue",
     alt: "Lighthouse on the bakery home page, mobile, before and after: Performance 62 to 96, Largest Contentful Paint 143.3 s to 2.7 s (the median run).",
   },
+  "upvote-hub": {
+    src: "/work/upvote-hub",
+    alt: "Upvote Hub home page: the headline Know what your customers want next, a Try the demo button and a preview of a voting board with Planned and In progress ideas.",
+  },
   "paperwork-ai": {
     src: "/work/paperwork-ai",
     alt: "Paperwork AI review screen: a scanned invoice with the misread line highlighted, next to two failed checks and the editable fields.",
