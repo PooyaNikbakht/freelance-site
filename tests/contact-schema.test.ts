@@ -7,7 +7,7 @@ const valid = {
   email: "jane@example.com",
   business: "Jane's Bakery",
   need: "A new website",
-  budget: "$1,000 to $3,000",
+  budget: "US$1,000 to US$3,000",
   timing: "In the next month",
   message: "A new site for my bakery, with online orders.",
   website: "",

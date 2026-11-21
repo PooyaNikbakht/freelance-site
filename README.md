@@ -19,6 +19,7 @@ Listed on `/work` in this order (the first four are featured on the home page):
 9. **shop-search**: natural-language product search.
 10. **Marketplace search**: a public-level case study of production work.
 11. **This site**.
+12. **AI operations agent**: reads messy business requests, uses the price list, calendar, CRM and job sheet, and proposes replies and changes as before and after diffs that the owner approves, edits or rejects. Guardrails are code, with an audit log and cost per request.
 
 Each entry has one or more categories (a multi-select in Keystatic, defined in `lib/categories.ts`): Websites, AI solutions, Booking and scheduling, Online ordering, Quotes and leads, Dashboards and admin, Fixing and improving, MVPs. `/work` has a filter with counts that links to a static page per category, `/work/category/<value>` (for example `/work/category/booking`), so it works without JavaScript. `/work?category=booking` redirects there.
 

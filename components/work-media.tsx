@@ -56,6 +56,14 @@ const shots: Record<string, { src: string; alt: string }> = {
     src: "/work/customer-assistant",
     alt: "Two phone screens: the customer's chat with a booking confirmed, next to the owner's private admin chat showing the same booking approved and added to Google Calendar.",
   },
+  "lead-to-crm": {
+    src: "/work/lead-to-crm",
+    alt: "The lead to CRM pipeline as boxes and arrows: a lead is captured, cleaned, scored hot, warm, cold or spam by AI, saved to HubSpot and followed up by score.",
+  },
+  "ai-operations-agent": {
+    src: "/work/ai-operations-agent",
+    alt: "The Lakeside Movers inbox: a headline reading An AI agent that does the work. You approve it., a truck and boxes illustration, and a form to simulate a messy incoming request.",
+  },
   "booking-assistant": {
     src: "/work/booking-assistant",
     alt: "A phone showing the assistant's Telegram messages, next to the n8n workflow and a confirmation email written in French.",
