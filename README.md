@@ -297,7 +297,7 @@ All of these are marked `TODO` in `site.config.ts`:
 - [ ] `links.upwork`, `links.contra`: empty, so they're hidden (LinkedIn and Google Scholar are set)
 - [ ] `links.github`: confirm `https://github.com/PooyaNikbakht`
 - [ ] `url` / `SITE_URL`: the `*.workers.dev` URL until DNS moves, then `https://pooya.website`
-- [ ] `projects[*].liveUrl` for shop-search (planned `shop.pooya.website`), docs-chat (planned `coffee.pooya.website`), paperwork-ai (planned `paperwork.pooya.website`) and the five small-business demos (planned `kingsway.`, `harbourview.`, `maplepaws.`, `northwind.` and `brightside.pooya.website`): set once the demos are live. site-rescue has no live demo on purpose.
+- [ ] `projects[*].liveUrl` for shop-search (planned `shop.pooya.website`), docs-chat (`chatbot.pooya.website`), paperwork-ai (planned `paperwork.pooya.website`) and the five small-business demos (planned `kingsway.`, `harbourview.`, `maplepaws.`, `cafe.` and `brightside.pooya.website`): set once the demos are live. site-rescue has no live demo on purpose.
 - [x] `projects[*].admin.url`: each business's own admin, `https://<slug>.pooya.website/admin`
 - [x] `projects[*].repoUrl`: set for the public repos; `null` hides the "View code" link
 

@@ -82,7 +82,7 @@ This is Pooya's personal brand. No third-party logos, colours, or fonts.
   | URL | Project |
   |-----|---------|
   | `shop.pooya.website` | shop-search |
-  | `coffee.pooya.website` | docs-chat (sample site + widget) |
+  | `chatbot.pooya.website` | docs-chat (sample site + widget) |
   | `api.pooya.website` | docs-chat backend |
 
 - **Rollout, phase 3:** once freelance-site is ready, point `pooya.website` and `www` at it, replacing Google Sites. The useful Google Sites content moves into `/about`.
