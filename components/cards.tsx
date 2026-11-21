@@ -7,6 +7,8 @@ import { WorkMedia } from "./work-media";
 
 const card =
   "group relative flex h-full flex-col overflow-hidden rounded-[12px] border border-border bg-background transition-colors hover:border-accent focus-within:border-accent";
+// Project cards sit on the page background, so their resting border is one step stronger than --border.
+const workCard = card.replace("border-border", "border-border-strong");
 const stretched = "after:absolute after:inset-0 after:rounded-[12px] focus-visible:outline-none";
 
 export function ServiceCard({ service, headingLevel = "h3" }: { service: Service; headingLevel?: "h2" | "h3" }) {
@@ -76,7 +78,7 @@ export function WorkCard({
 }) {
   const H = headingLevel;
   return (
-    <article className={card}>
+    <article className={workCard}>
       <WorkMedia slug={work.slug} sizes={sizes} className="border-b border-border" />
       <div className="flex flex-1 flex-col p-6">
         <H className="text-lg font-bold leading-snug tracking-tight">
