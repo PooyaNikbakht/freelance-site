@@ -1,11 +1,8 @@
 ---
-title: 'Lead to CRM: every new lead scored, saved and answered in seconds'
+title: "AI lead scoring and follow-up, saved to your CRM"
 summary: >-
-  When a lead arrives from a website form or an email, the pipeline cleans it,
-  scores it hot, warm, cold or spam with AI, saves it to a CRM with a deal in
-  the right stage and replies. Hot leads alert the owner, warm leads get a
-  follow-up sequence that stops when they reply, and anything unsure waits for
-  one tap from the owner.
+  Every new lead from your website form or email is scored hot, warm, cold or
+  spam by AI, saved to your CRM and answered. Hot leads alert you right away.
 categories:
   - ai
   - quotes
@@ -21,32 +18,39 @@ order: 18
 ---
 ## Problem
 
-New leads come in by form and by email. Someone has to read each one, look up the person, type it into the CRM, decide who to call first and write back. It takes about eight minutes per lead (my estimate), and the hot leads wait the longest.
+New leads come in by form and by email. Someone has to read each one, look up the person, type it into the CRM (your list of customers and deals), decide who to call first and write back. It takes about eight minutes per lead (my estimate), and the hot leads wait the longest.
 
 ## What it does
 
-1. **Captures the lead.** A website form posts to a protected link, or a lead email is picked up from a labelled folder.
-1. **Cleans it.** Names, phone numbers and messy typing are tidied, and the same person sent twice within 24 hours is skipped.
+1. **Captures the lead.** Leads come in from your website form, through a protected link, or from emails in a labelled folder.
+1. **Cleans it.** Names, phone numbers and messy typing are tidied. If the same person sends twice within 24 hours, the repeat is skipped.
 1. **Scores it.** The AI marks it hot, warm, cold or spam, and notes the service, budget, timeline and language. Spam is only logged.
-1. **Saves it to the CRM.** The contact is created or updated, a deal goes into the stage for its score, and a note records what the AI saw.
-1. **Follows up by score.** Hot: an instant personal reply and a Call now alert on the owner's phone. Warm: an email now and follow-ups on day 2 and day 5, which stop as soon as the lead replies. Cold: a polite reply and a nurture tag.
-1. **Logs everything.** Every run is written to one sheet, and a daily digest at 08:00 lists new leads by score and the ones nobody has answered in 48 hours.
+1. **Saves it to the CRM.** The contact is created or updated, and a deal is added in the right sales stage for its score. A note records what the AI saw.
+1. **Follows up by score.** Hot: an instant personal reply and a Call now alert on the owner's phone. Warm: an email now and follow-ups on day 2 and day 5, which stop as soon as the lead replies. Cold: a polite reply and a tag for later follow-up.
+1. **Logs everything.** Every run is written to one sheet. A daily summary at 08:00 lists new leads by score and the ones nobody has answered in 48 hours.
 
 ## When it isn't sure, it asks
 
-When the AI is below its confidence setting, nothing is sent. The owner gets a message with the AI's guess, its reason and four buttons: Hot, Warm, Cold and Spam. One tap and it carries on. If the owner picks a different score, the reply is rewritten to fit. With no answer in 24 hours, the lead is saved under a Needs review stage and nothing goes out.
+When the AI is less sure than the level you set, nothing is sent. The owner gets a message with the AI's guess, its reason and four buttons: Hot, Warm, Cold and Spam. One tap and it carries on. If the owner picks a different score, the reply is rewritten to fit. If there is no answer in 24 hours, the lead is saved under a Needs review stage and nothing goes out.
 
 ## Built so nothing goes wrong quietly
 
-- **No duplicates:** the log is the memory, so a repeat lead is skipped, and CRM contacts are matched by email so they never double up.
-- **Retries, then an alert:** every outside call retries three times, then the owner is alerted by email and phone and a Failed row is added to the log.
+- **No duplicates:** the log is the memory, so a repeat lead is skipped. CRM contacts are matched by email, so they never double up.
+- **Retries, then an alert:** every step that calls another app retries three times. Then the owner is alerted by email and phone, and a Failed row is added to the log.
 - **A person in the loop:** the AI never acts on a score it is unsure about.
-- **Safe with messy text:** the AI answers in a fixed format and treats the lead's message as data, not instructions.
+- **Safe with messy text:** the AI answers in a fixed format and treats the lead's message as information, not instructions.
 - **A full log:** every lead, its score, the decision and the AI cost, in one sheet.
 
 ## Plugs into what you already use
 
 The demo uses the free HubSpot CRM, Telegram and Google Sheets, and the same patterns work with other CRMs and tools. The workflow runs in the client's own account.
+
+## How it helps your business
+
+- **Hot leads hear back first.** They get an instant reply, and you get a Call now alert on your phone.
+- **No more typing leads into the CRM.** Contacts, deals and notes are saved for you.
+- **Follow-ups happen on their own.** Warm leads get emails on day 2 and day 5, and they stop when the lead replies.
+- **Time back.** At about eight minutes per lead (my estimate), that is roughly 13 hours a month for 100 leads.
 
 ## Stack
 

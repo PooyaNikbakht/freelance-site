@@ -1,9 +1,8 @@
 ---
-title: "AI workflow runner: multi-step jobs with a queue, retries and human review"
+title: "AI workflow automation with human review and retries"
 summary: >-
-  Start a multi-step AI workflow and watch it run live: a separate worker runs
-  each step from a job queue, retries what fails, and pauses for a person to
-  approve, edit or reject the AI's draft before anything is sent.
+  Multi-step AI workflows that run reliably in the background. Failed steps retry
+  on their own, and a person checks each AI draft before anything is sent.
 categories:
   - ai
   - mvp
@@ -20,16 +19,22 @@ order: 10
 ---
 ## Problem
 
-Real AI features are rarely one model call. They are a chain of steps: look something up, have the model analyse it, draft something, let a person check it, then send it to another system. Run all of that inside a web request and it times out, a hiccup in one step loses the whole job, and a retry can send the same email twice.
+Useful AI features are rarely one question to an AI model. They are a chain of steps: look something up, have the AI study it, write a draft, let a person check it, then send it to another system. If all of that runs while someone waits on a web page, it can time out. One failed step can lose the whole job, and trying again can send the same email twice.
 
 ## What it does
 
-Two sample workflows run on the same engine:
+Two sample workflows show how it works:
 
-- **Lead outreach.** Lead intake, company lookup, pain points extracted by the AI, a draft email, a human review, then delivery to a webhook.
-- **Support ticket triage.** Classify the ticket, suggest a reply, review it, send it.
+- **Lead outreach.** A new lead comes in and the app looks up the company. The AI picks out the company's pain points and writes a draft email. A person reviews it, then the result is sent to another system.
+- **Support ticket triage.** The AI sorts the ticket and suggests a reply. A person reviews it, then it is sent.
 
-You start a run and watch each step move from queued to running to done, with a live log. When the draft is ready the run pauses and a review drawer opens: approve it, edit it, or reject it. Approved results go to a webhook receiver that stands in for a CRM or help desk.
+You start a run and watch each step move from queued (waiting its turn) to running to done, with a live log. When the draft is ready, the run pauses and a review panel opens. You can approve the draft, edit it or reject it. Approved results go to a test receiver that stands in for your CRM or help desk.
+
+## How it helps your business
+
+- **No lost work.** A failed step tries again on its own. A step that keeps failing ends the run cleanly instead of hanging.
+- **Nothing sent twice.** A retried step never sends the same email or update a second time.
+- **A person stays in control.** The AI's draft waits for approval, and every decision is saved in the run's history.
 
 ## How it's built
 

@@ -1,10 +1,8 @@
 ---
-title: "Jollof House: kiosk, POS, kitchen screen and phone ordering for a restaurant in Accra"
+title: "Restaurant ordering system: kiosk, POS and kitchen screen"
 summary: >-
-  One ordering system for a restaurant in Accra. Customers order from a phone
-  or a self-service kiosk, the cashier confirms payment in cash or Mobile Money,
-  and only paid orders reach the kitchen screen. It also has loyalty points
-  and delivery.
+  A restaurant ordering system built for Accra. Customers order on a phone or a
+  kiosk, pay in cash or Mobile Money, and only paid orders reach the kitchen.
 categories:
   - websites
   - ordering
@@ -20,22 +18,22 @@ stack:
 featured: false
 order: 4
 ---
-Jollof House is a fictional Ghanaian restaurant in Osu, Accra, with a 16-dish menu with photos and sample orders. I built it as an answer to a restaurant-ordering brief. Prices are in Ghana cedis (GHC).
+Jollof House is a fictional Ghanaian restaurant in Osu, Accra. It has a 16-dish menu with photos and sample orders. I built it as an answer to a restaurant-ordering brief. Prices are in Ghana cedis (GHC).
 
 ## Problem
 
-A busy restaurant takes orders in four places at once: at the till, on a kiosk, on the phone and for delivery. Many customers pay with Mobile Money (MoMo), and the cashier has to check the merchant phone before the food is cooked. Orders get lost, the kitchen cooks food nobody has paid for, and loyalty points are tracked on paper.
+A busy restaurant takes orders in four places at once: at the till, on a kiosk, on the phone and for delivery. Many customers pay with Mobile Money (MoMo), so the cashier has to check the merchant phone before the food is cooked. Orders get lost, the kitchen cooks food nobody has paid for, and loyalty points are tracked on paper.
 
 ## What it does
 
-- **Order from a phone.** Customers browse the menu with photos, fill a cart drawer and choose pickup or delivery, then pay in cash at the counter or by MoMo.
-- **A self-service kiosk.** Customers tap their dishes, choose cash or MoMo and get an order code such as OTM-101 to show at the till.
-- **A cashier screen.** The cashier finds an order by typing its code or scanning its QR code or barcode, which opens it in about a quarter of a second. The order shows the food, the delivery fee, points used and the money due. One button, Confirm Payment Received, sends it to the kitchen.
-- **Parking MoMo orders.** If a customer is still waiting for a MoMo prompt, the cashier parks the order as Waiting for MoMo and serves the next person.
+- **Order from a phone.** Customers browse the menu with photos, add dishes to their cart and choose pickup or delivery. They pay in cash at the counter or by MoMo.
+- **A self-service kiosk.** Customers tap their dishes, choose cash or MoMo and get an order code, such as OTM-101, to show at the till.
+- **A cashier screen.** The cashier types an order's code or scans its QR code or barcode, and the order opens in about a quarter of a second. It shows the food, the delivery fee, points used and the money due. One button, Confirm Payment Received, sends it to the kitchen.
+- **Park MoMo orders.** If a customer is still waiting for a MoMo prompt, the cashier sets the order aside as Waiting for MoMo and serves the next person.
 - **A kitchen screen.** It shows paid orders only, with the food and nothing else: no prices, no phone numbers, no points. A cook taps Food Ready.
-- **Loyalty points.** Customers earn 5% back as points, and 1 point is worth GHC 0.10. Points can pay up to half of the food, are held when the order is placed, deducted when payment is confirmed and returned if the order is cancelled. They expire after 90 days, oldest first.
-- **Delivery.** Delivery is paid by MoMo only, with a street address and a landmark, and a delivery fee on top of the food.
-- **Wait tiers and the WiFi code.** The wait time depends on how much food money has been paid: 15, 30, 60 or 120 minutes. The WiFi code is printed on the receipt for pickup orders only.
+- **Loyalty points.** Customers earn 5% back as points, and 1 point is worth GHC 0.10. Points can pay for up to half of the food. They are held when the order is placed, deducted when payment is confirmed and returned if the order is cancelled. Points expire after 90 days, oldest first.
+- **Delivery.** Customers give a street address and a landmark. Delivery is paid by MoMo only, with a delivery fee on top of the food.
+- **Wait times and the WiFi code.** The wait time depends on how much was paid for food: 15, 30, 60 or 120 minutes. The WiFi code is printed on the receipt for pickup orders only.
 
 ## How it helps your business
 

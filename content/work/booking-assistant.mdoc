@@ -1,10 +1,8 @@
 ---
-title: 'Booking assistant: confirmations, calendar and owner alerts on autopilot'
+title: "AI booking assistant: replies, calendar and owner alerts"
 summary: >-
-  When a customer books online, an assistant reads their note, writes the
-  confirmation in their language, adds the appointment to the calendar and logs
-  it. Anything tricky, like an allergy or an upset customer, waits for the owner
-  to tap Approve or Hold on their phone.
+  An AI booking assistant that confirms bookings in the customer's language,
+  adds them to your calendar, and asks you before replying to tricky notes.
 categories:
   - ai
   - booking
@@ -22,35 +20,41 @@ findable:
 ---
 ## Problem
 
-When a customer books online, someone has to read the note, write back, add the appointment to the calendar and tell the team. It takes about five minutes each time, and the notes that matter most, an allergy, an access need, a complaint, are the ones that get missed.
+When a customer books online, someone has to read the note, write back, add the appointment to the calendar and tell the team. That takes about five minutes each time. And the notes that matter most are the ones that get missed: an allergy, an access need, a complaint.
 
 ## What it does
 
-1. **Reads the booking.** A booking form or booking system sends the details. The assistant cleans them up and checks for missing or unreadable parts.
-1. **Writes the reply.** The AI writes a short, friendly confirmation in the customer's own language, so a note written in French gets a reply in French.
-1. **Books it.** The confirmation email goes out and the appointment lands on the calendar.
+1. **Reads the booking.** Your booking form or booking system sends the details. The assistant tidies them up and checks for missing or unreadable parts.
+1. **Writes the reply.** The AI writes a short, friendly confirmation in the customer's own language. A note written in French gets a reply in French.
+1. **Books it.** The confirmation email goes out and the appointment goes on the calendar.
 1. **Tells the owner.** A message arrives on the owner's phone with the details and a link to the exact row in the log.
-1. **Logs everything.** Every booking is written to a simple sheet, with totals that update by themselves.
+1. **Logs everything.** Every booking is saved in a simple spreadsheet, with totals that update by themselves.
 
 ## When it isn't sure, it asks
 
-Some notes shouldn't be answered by a robot. When the assistant finds an allergy, an upset tone or a special request, or isn't confident, it stops and asks the owner first. The message shows what it understood and a draft reply, with two buttons:
+Some notes shouldn't be answered by a robot. When the assistant finds an allergy, an upset tone or a special request, it stops and asks the owner first. It does the same when it isn't confident. The message shows what it understood and a draft reply, with two buttons:
 
-- **Approve:** the email goes out and the calendar is updated right away, and the message shows it was approved.
-- **Hold:** nothing is sent and the owner follows up personally.
+- **Approve:** the email goes out and the calendar is updated right away. The message then shows it was approved.
+- **Hold:** nothing is sent, and the owner follows up personally.
 
-A form with missing details is flagged to the owner instead of guessed at.
+If a form is missing details, the owner is told. The assistant never guesses.
 
 ## Built so nothing goes wrong quietly
 
-- **No duplicates:** the same booking sent twice is handled once.
-- **Retries, then an alert:** if an outside service fails, it tries again, and if it still fails the owner is told by email and phone.
+- **No duplicates:** if the same booking arrives twice, it is handled once.
+- **Retries, then an alert:** if a connected service fails, it tries again. If it still fails, the owner is told by email and phone.
 - **A person in the loop:** nothing unsure is ever sent to a customer automatically.
 - **A full log:** every booking, its status, the reason and the AI cost, in one sheet.
 
 ## Plugs into what you already use
 
-Nothing has to be rebuilt. The assistant connects to the booking system, website form, email or spreadsheets a business already has, and the pieces can be swapped: Telegram can be email, and the sheet can be another system.
+Nothing has to be rebuilt. The assistant connects to the booking system, website form, email or spreadsheets you already have. The parts can be swapped: owner alerts can come by email instead of Telegram, and the sheet can be another system.
+
+## How it helps your business
+
+- **Time back on every booking.** For routine bookings, reading, replying, the calendar and the log are done for you. That saves about five minutes each time.
+- **Important notes get seen.** Allergies, upset customers and special requests reach the owner before any reply goes out.
+- **Replies in the customer's language.** Notes in French or Spanish get answers in French or Spanish.
 
 ## Stack
 

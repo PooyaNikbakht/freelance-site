@@ -1,10 +1,8 @@
 ---
-title: "AI operations agent: reads messy requests, proposes the work, you approve it"
+title: "AI agent for small business requests, with your approval"
 summary: >-
-  An AI agent for a small business that reads messy requests (quotes, booking
-  changes, complaints, questions), uses the business's own tools to prepare the
-  reply and the changes as before and after diffs, and waits. Nothing is sent
-  or changed until the owner approves, edits or rejects it in one tap.
+  An AI agent that reads customer emails and web forms, checks your prices and
+  calendar, and prepares the reply. Nothing is sent or changed until you approve it.
 categories:
   - ai
   - dashboards
@@ -20,32 +18,39 @@ order: 19
 ---
 ## Problem
 
-A small business gets requests all day by email and web form, and they are rarely tidy: "need a quote for a 2 bedroom, maybe next month", "can we move Thursday to the afternoon?", an angry complaint, a question about insurance. Someone has to read each one, check the price list and the calendar, update the job and write back. Most AI helpers either only draft text or act on their own, and a business owner can't trust either with real customers.
+A small business gets requests all day by email and web form, and they are rarely tidy: "need a quote for a 2 bedroom, maybe next month", "can we move Thursday to the afternoon?", an angry complaint, a question about insurance. Someone has to read each one, check the price list and the calendar, update the job and write back. Most AI helpers either only write drafts or act on their own. A business owner can't trust either with real customers.
 
 ## What it does
 
 The demo is the back office of a fictional moving company, Lakeside Movers.
 
-1. **Reads the request.** It works out what the customer wants, whether that is a quote, a change to a booking, a complaint or a question, and how sure it is.
-2. **Uses the business's tools.** It looks up the price list, checks calendar availability, finds the customer in the CRM and opens the job sheet.
-3. **Proposes, never does.** It drafts the reply and each change as a before and after diff, such as "Move job J-107 from Thu 8:00 to Thu 14:00", and puts them in an approval queue.
+1. **Reads the request.** It works out what the customer wants (a quote, a booking change, a complaint or a question) and how sure it is.
+2. **Uses the business's tools.** It looks up the price list, checks free times in the calendar, finds the customer in the CRM (the customer list) and opens the job sheet.
+3. **Proposes, never acts alone.** It drafts the reply and shows each change as a before and after, such as "Move job J-107 from Thu 8:00 to Thu 14:00". Everything waits in a list for the owner.
 4. **The owner decides in one tap.** Approve, edit the reply, or reject. Only then is the email sent or the job changed.
 
-The trace of each run is visible step by step, so the owner can see what the agent looked up and why it proposed what it did.
+Each run is shown step by step, so the owner can see what the agent looked up and why it proposed what it did.
 
-## Guardrails are code, not prompts
+## Safety rules the AI can't get around
 
-The rules that matter are enforced in plain code the model can't talk its way around:
+The important rules are written in code, not in the AI's instructions, so the AI can't talk its way around them:
 
 - **Price limits.** Quotes stay within the price list.
 - **No double booking.** If the slot is taken, it proposes the next free one.
-- **Low confidence goes to a person.** When the agent isn't sure, it says so and hands the request to the owner.
-- **Refunds and discounts above a threshold need approval,** with the amount shown in the diff.
-- **Prompt-injection emails are flagged.** An email that tries to give the agent new instructions is marked as suspicious, and nothing is changed.
+- **Unsure requests go to a person.** When the agent isn't sure, it says so and hands the request to the owner.
+- **Large refunds and discounts need approval.** Above a set amount, the owner must approve, and the amount is shown in the change.
+- **Trick emails are flagged.** An email that tries to give the agent new instructions is marked as suspicious, and nothing is changed.
 
-## An audit log with the cost of every request
+## A full record, with the cost of every request
 
-Every step the agent and the owner took is written to an audit log, with tokens and an estimated cost per request, so the owner knows what the agent costs to run.
+Every step the agent and the owner took is saved in a log. Each request shows how much AI it used and an estimated cost, so the owner knows what the agent costs to run.
+
+## How it helps your business
+
+- **Requests come to you ready to send.** The agent reads each request, checks prices and times, and prepares the reply and the changes.
+- **You stay in charge.** Nothing reaches a customer and nothing changes until you approve it.
+- **No wrong prices or double bookings.** Quotes stay within your price list, and a taken time is never booked twice.
+- **You know what it costs.** Every request shows its estimated cost.
 
 ## Try it
 

@@ -1,9 +1,8 @@
 ---
-title: "AI website support bot and booking receptionist"
+title: "AI website chatbot for support and appointment booking"
 summary: >-
-  A chat widget that answers website visitors from a business's own help
-  documents with the source, and books appointments from real open times in
-  the business's booking system. One script tag installs it on any site.
+  An AI chatbot for your website. It answers visitors from your own help
+  documents, shows the source, and books appointments at real open times.
 categories:
   - ai
   - booking
@@ -20,28 +19,34 @@ order: 5
 ---
 ## Problem
 
-Small businesses answer the same questions every day: shipping times, returns, subscriptions, opening hours. The answers already sit in a help page or a policy PDF, but visitors don't read them, and a generic chatbot that makes things up is worse than no chatbot at all.
+Small businesses answer the same questions every day: shipping times, returns, subscriptions, opening hours. The answers are already on a help page or in a policy PDF, but visitors don't read them. And a generic chatbot that makes things up is worse than no chatbot at all.
 
-## Approach
+## What it does
 
-- **A widget on the client's own site.** One `<script>` tag adds a chat bubble to Shopify, WordPress, Webflow, Squarespace or a custom site. It renders in a Shadow DOM, so the site's CSS can't break it and its CSS can't leak out, and it weighs about 10 KB gzipped.
-- **Answers only from the business's documents.** The backend finds the most relevant passages in the help center, and the model answers from those alone, in a few friendly sentences.
-- **Sources visitors can check.** Each answer shows the page it came from, and a tap opens the exact passage with the quoted words highlighted.
-- **Hands off instead of guessing.** When the documents don't cover a question, the bot says so and offers a "Talk to a human" link. Off-topic questions never reach the model, so they cost nothing.
-- **A believable demo.** A sample site for a fictional coffee roaster, with its own brand, loads the widget through the same snippet a client would paste. The site and the help center PDF are generated from one fact sheet, so they always agree.
-- **Try it on your own PDF.** Prospects upload a document and see a bot built on it in seconds.
-- **Two providers and a demo mode.** Claude and OpenAI sit behind one interface with native citations. Usage caps and an automatic fallback to a built-in demo mode keep the public demo free to run and never broken.
+- **Installs with one line.** One line of code adds a chat bubble to your site, on Shopify, WordPress, Webflow, Squarespace or a custom build. Your site's styles can't break the chat, and the chat can't change how your site looks. It is small, about 10 KB, so pages stay fast.
+- **Answers only from your documents.** The bot finds the most relevant parts of your help center and answers from those alone, in a few friendly sentences.
+- **Shows where each answer came from.** Each answer names the page it came from. One tap opens the exact passage, with the quoted words highlighted.
+- **Hands off instead of guessing.** When your documents don't cover a question, the bot says so and offers a "Talk to a human" link. Off-topic questions are stopped before they reach the AI, so they cost nothing.
+- **A realistic demo.** A sample site for a fictional coffee roaster, with its own brand, loads the chat with the same line of code you would paste. The site and its help center PDF come from one fact sheet, so they always agree.
+- **Try it on your own PDF.** Upload a document and see a bot built on it in seconds.
+- **Claude or OpenAI.** It works with either AI provider. Usage limits and an automatic switch to a built-in demo mode keep the public demo free to run and never broken.
 
 ## Booking receptionist
 
-Answers are useful, but a visitor who wants an appointment should be able to get one right there. For a fictional barbershop, the same chat works as a 24/7 front desk:
+Answers help, but a visitor who wants an appointment should be able to book one right there. For a fictional barbershop, the same chat works as a 24/7 front desk:
 
-- **Real open times only.** Asked "Is Saturday afternoon open for a skin fade?", it checks the business's booking system through a tool call and offers the open times as buttons. Any reply that names a time the booking system didn't return is replaced, so it can't invent availability.
-- **Confirm before booking.** The visitor picks a time and gives a name and email, which are checked, and nothing is booked until they press Book it. These rules live in code, not in the prompt.
-- **Handles the awkward cases.** A full day points to the next day with openings, a time someone else takes first gets fresh options, and if the booking system is down the bot offers the phone number.
-- **Works without an API key.** A built-in receptionist runs the same booking flow for the free demo and the tests.
+- **Real open times only.** Ask "Is Saturday afternoon open for a skin fade?" and it checks the business's booking system, then shows the open times as buttons. If a reply ever names a time the booking system didn't offer, it is replaced, so the bot can't invent openings.
+- **Confirms before booking.** The visitor picks a time and gives a name and email, which are checked. Nothing is booked until they press Book it. These rules are built into the code, not left to the AI.
+- **Handles the awkward cases.** If a day is full, it points to the next day with openings. If someone else takes a time first, it offers fresh options. If the booking system is down, it gives the phone number.
+- **Works even without the AI.** A built-in receptionist runs the same booking steps for the free demo and the tests.
 
-The booking side sits behind a small interface, so it can connect to the booking system a business already uses.
+The booking part is kept separate, so it can connect to the booking system your business already uses.
+
+## How it helps your business
+
+- **Fewer repeat questions.** Visitors get answers about shipping, returns and hours from your own documents, without waiting for you.
+- **Answers people can trust.** Every answer shows its source, and the bot says so when it doesn't know.
+- **Bookings at any hour.** Visitors can book an appointment right in the chat, even when you're closed.
 
 ## Stack
 
