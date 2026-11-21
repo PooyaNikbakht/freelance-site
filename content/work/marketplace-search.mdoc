@@ -1,10 +1,8 @@
 ---
-title: A high-traffic marketplace search and catalog app at ApplyBoard
+title: "ApplyBoard marketplace search: 150k+ listings, AI filters"
 summary: >-
-  Full-stack work on the core search of a marketplace used by hundreds of thousands of
-  students: a React and TypeScript catalog with 150k+ listings and 50+
-  filters, saved searches and compare, a NestJS API layer over OpenSearch, and
-  natural-language filters.
+  Marketplace search used by hundreds of thousands of students: 150k+ listings,
+  50+ filters, saved searches, compare, and AI search in plain English.
 categories:
   - ai
   - mvp
@@ -18,13 +16,21 @@ stack:
 featured: false
 order: 13
 ---
-This is a public-level summary of work I did at ApplyBoard as a senior full-stack engineer on a product team. It leaves out internal names, code, screenshots, and metrics that aren't public.
+This is a summary of work I did as a senior full-stack engineer on a product team at ApplyBoard, a large online marketplace. It uses public-level facts only, and leaves out internal names, code, screenshots and private numbers.
 
 ## Problem
 
-Search is how most people find what they want on a marketplace. With 150k+ listings and 50+ filters, the hard part is helping people narrow things down without getting lost in options, and keeping the code easy to change as new filters and features are added.
+On a marketplace, search is how most people find what they want. With 150k+ listings and 50+ filters, the hard part is helping people narrow their options without getting lost. The code also has to stay easy to change as new filters and features are added.
 
-## Approach
+## What it does
+
+- **Search across 150k+ listings.** Results are ranked across the whole catalog, so the best matches come first.
+- **50+ filters.** People narrow results step by step until only the right options are left.
+- **Saved searches.** People can save a search and come back to it later.
+- **Side-by-side compare.** People can put options next to each other before they decide.
+- **Search in plain English.** People type what they want, and AI turns it into filters. Every AI answer is checked and tested before it reaches search.
+
+## How I built it
 
 - **Frontend rewrite.** I rebuilt the search experience in React and TypeScript: the filters, the result cards, saved searches, and side-by-side comparison.
 - **A backend for the frontend.** A NestJS BFF sits between the UI and the search layer, so each page gets data in the shape it needs and the search internals can change behind it.

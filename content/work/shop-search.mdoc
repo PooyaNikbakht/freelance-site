@@ -1,10 +1,8 @@
 ---
-title: "AI product search: turning plain-English requests into editable filters"
+title: "AI product search that turns plain English into filters"
 summary: >-
-  Type "waterproof women's hiking boots under $150, size 8" and the AI turns it
-  into filter chips you can see, edit and remove. Every answer is checked
-  against a schema, and an eval suite measures accuracy before any prompt or
-  model change ships.
+  AI search for online stores. Shoppers type what they want in plain English
+  and get filters they can see and edit. Accuracy is tested before every change.
 categories:
   - ai
 stack:
@@ -19,14 +17,25 @@ order: 12
 ---
 ## Problem
 
-Shoppers describe what they want in sentences, for example "waterproof women's hiking boots under $150, size 8, 4 stars and up". Keyword search handles that badly, and adding AI search that guesses wrong is worse than not having it.
+Shoppers describe what they want in sentences, for example "waterproof women's hiking boots under $150, size 8, 4 stars and up". Keyword search handles that badly. And AI search that guesses wrong is worse than having no AI search at all.
 
-## Approach
+## What it does
+
+- **Search in plain English.** Shoppers type a request like the one above. The search turns it into filters, such as price, size and rating.
+- **Filters you can see and fix.** What the search understood appears as small filter tags. Shoppers can remove or edit a tag to correct it, without retyping.
+- **Honest about what it missed.** Words that couldn't be matched to a filter are shown, so shoppers can see why the results look the way they do.
+- **Everything a normal store search has.** Filter lists, sorting, pages of results and links you can share, like a real online store.
+
+## How it helps your business
+
+- **Shoppers can ask the way they talk,** instead of clicking through many filters one by one.
+- **No hidden wrong guesses.** Shoppers always see what the search understood and can fix it.
+- **Safe to improve.** Every change to the AI is tested for accuracy first, so search can't quietly get worse.
+- **Not tied to one AI company.** It works with Claude or OpenAI, and a simple offline mode keeps the demo working without an AI account.
+
+## How it's built
 
 - **One filter schema.** A single Zod schema defines every filter the store supports. The model's output has to match it, or it's rejected.
-- **Editable chips.** What the search understood is shown as chips that you can remove or edit, so you can correct it without retyping.
-- **Honest about gaps.** Words that couldn't be mapped to a filter are shown, so it's clear why the results look the way they do.
-- **Normal search still works.** Facets, sorting, pagination, and shareable URLs, like a real storefront.
 - **Two providers and an offline mode.** Claude and OpenAI sit behind one small interface, and an offline parser keeps the demo working without API keys.
 - **Evals.** An evaluation suite runs from the command line and scores the parser per provider.
 
