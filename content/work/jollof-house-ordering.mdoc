@@ -48,7 +48,7 @@ A busy restaurant takes orders in four places at once: at the till, on a kiosk, 
 
 - **Prices are checked on the server.** The cart lives in the browser, but every order is re-priced from the menu before it's saved.
 - **Points follow a ledger.** Each batch of points has its own date, so reserving, deducting, restoring and expiring always use the oldest points first and the balance can't go below zero.
-- **The kitchen is limited by role.** The kitchen, cashier and manager each sign in with their own PIN, and the kitchen's data has no prices or customer details in it.
+- **The kitchen is limited by role.** The kitchen and cashier each sign in with their own PIN, a manager PIN also unlocks both and lets staff leave the customer kiosk, and the kitchen's data has no prices or customer details in it.
 - **Quick on a weak connection.** The screens check for new orders at a steady interval, so a poor connection delays an update instead of breaking it.
 
 ## Stack
