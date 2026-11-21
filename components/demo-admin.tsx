@@ -28,8 +28,7 @@ export function DemoAdmin({
       <p className="mt-3 max-w-2xl leading-relaxed text-muted">
         {admin.note ?? (
           <>
-            See the other side as the business owner. On the login page, click &ldquo;Try the demo as the owner&rdquo; to
-            sign in with one click. The sample data resets every hour, so change anything you like.
+            See the other side as the business owner. The login page signs you in with one click.
           </>
         )}
       </p>

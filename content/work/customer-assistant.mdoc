@@ -13,12 +13,20 @@ stack:
   - Telegram
   - Google Sheets
   - Google Calendar
+service: ai-features
 featured: true
 order: 16
 ---
 ## Problem
 
 A solo business answers the same questions all day, takes bookings by chat and replies late at night. Most small businesses have no website, no booking system and no time for a new app. Their customers just message them.
+
+## How it helps your business
+
+- **Customers get answers at any hour,** including late at night, without you picking up the phone.
+- **Less time on repeat questions.** Answers about hours, prices and services go out on their own.
+- **No new app to learn.** Customers use the chat they already use, and you run everything from one Google Sheet.
+- **You stay in charge.** Complaints, money and anything unsure come to you first, and no booking is confirmed without your tap.
 
 ## What it does
 
@@ -49,19 +57,12 @@ Business details, services, opening hours and breaks, days off, the FAQ, the rul
 
 The same flow runs on the owner's own Telegram account (through Telegram Business), a WhatsApp Business number or a business phone number for texts. Only the small step that receives and sends messages differs, and it is set up with the client's own accounts. In this demo the customer side runs on a demo Telegram bot standing in for the business account.
 
-## How it helps your business
+## Outcome
 
-- **Customers get answers at any hour,** including late at night, without you picking up the phone.
-- **Less time on repeat questions.** Answers about hours, prices and services go out on their own.
-- **No new app to learn.** Customers use the chat they already use, and you run everything from one Google Sheet.
-- **You stay in charge.** Complaints, money and anything unsure come to you first, and no booking is confirmed without your tap.
+Tested for a one-person nail studio with messy messages in English and French: opening hours with a typo, a service that is not in the sheet, a complaint, a booking at a free time and at a taken time, a request for the exact address, a customer asking whether they are talking to a bot, and the AI switched off for one customer and back on. Each ended where it should, including a booking approved with one tap that appeared in the Google Calendar, and 22 automated tests cover the decision rules.
+
+The AI cost about US$0.0006 per answer in testing, a fraction of a cent, and for a busy solo business the assistant saves a lot of time every day.
 
 ## Stack
 
 An n8n workflow with the decision logic written as plain, tested JavaScript. Claude writes the replies and drafts in a fixed format, so the workflow never guesses at free text. Telegram carries the customer chat and the owner's admin chat, Google Sheets holds the back office, and Google Calendar receives the approved bookings.
-
-## Outcome
-
-A working demo for a fictional one-person nail studio, tested with messy messages in English and French: opening hours with a typo, a service that is not in the sheet, a complaint, a booking at a free time and at a taken time, a request for the exact address, a customer asking whether they are talking to a bot, and the AI switched off for one customer and back on. Each ended where it should, including a booking approved with one tap that appeared in the Google Calendar, and 22 automated tests cover the decision rules.
-
-The AI cost about US$0.0006 per answer in testing, a fraction of a cent, and for a busy solo business the assistant saves a lot of time every day.

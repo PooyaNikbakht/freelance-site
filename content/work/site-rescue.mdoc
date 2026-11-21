@@ -12,10 +12,11 @@ stack:
   - Docker
   - Lighthouse
   - Shopify Liquid
+service: fix-and-speed-up
 featured: true
 order: 6
 ---
-Harbourview Bakery is a fictional business. The site, its problems and the fixes are real: real WordPress, real free plugins and real measurements. Scripts rebuild everything, so anyone can check the work. The photos are real bakery photos from Unsplash, credited on the site and in the repo.
+The site, its problems and the fixes are real: real WordPress, real free plugins and real measurements. Scripts rebuild everything, so anyone can check the work. The photos are real bakery photos from Unsplash, credited on the site and in the repo.
 
 ## Problem
 
@@ -57,7 +58,7 @@ Measured with Lighthouse 13.6.0 on the same laptop and the same pages, before an
 | Menu | Mobile | 69 → 92 | 6.4 s → 3.2 s | 2.3 MB → 484 KB |
 | Blog post | Mobile | 85 → 96 | 3.5 s → 2.6 s | 3.6 MB → 285 KB |
 
-On every measured page, Accessibility went from 90 to 92 up to 100, Best Practices from 77 to 100, and layout shift to almost 0. Every SEO check passes except indexing, which this demo copy switches off on purpose so a fictional bakery stays out of Google (Lighthouse scores that alone as 69; with indexing on, as on a real job, these pages scored 100). The cake form now delivers every time, checked by an automated test.
+On every measured page, Accessibility went from 90 to 92 up to 100, Best Practices from 77 to 100, and layout shift to almost 0. Every SEO check passes except indexing, which is switched off on purpose (Lighthouse scores that alone as 69; with indexing on, these pages scored 100). The cake form now delivers every time, checked by an automated test.
 
 **How to read these numbers honestly:**
 
@@ -81,10 +82,10 @@ Once it was fast, the site still looked dated. The Home, Menu, Custom Cakes and 
 
 The same job for Shopify stores is prepared: a playbook, ready-to-apply theme code checked against Shopify's Dawn theme, and an app clean-up checklist. Measuring it on a real store is still pending, so there are no Shopify numbers yet.
 
-## Stack
-
-WordPress with the existing OceanWP theme and Elementor, a cleaned-up child theme, five small must-use plugins, and scripts that rebuild both sites in Docker from the same starting point. Lighthouse runs from a script, and Shopify Liquid for the store version.
-
 ## Outcome
 
 For a site like this one I'd quote about 3.5 days of work, fixed price after a short audit. A rebuild would typically cost three to five times as much, take weeks, and mean learning a new editor. The owner keeps the site they know, and it is fast, findable, and taking cake orders again.
+
+## Stack
+
+WordPress with the existing OceanWP theme and Elementor, a cleaned-up child theme, five small must-use plugins, and scripts that rebuild both sites in Docker from the same starting point. Lighthouse runs from a script, and Shopify Liquid for the store version.

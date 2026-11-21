@@ -16,14 +16,23 @@ stack:
   - Cloudflare D1
   - Zod
   - Stripe
+tryIt: "Order a large oat latte with an extra shot, then open the kitchen screen as the owner and watch it arrive and turn ready."
+service: booking-ordering-and-quotes
 featured: false
 order: 3
 ---
-Northwind Coffee Co. is a fictional café and roaster in Halifax with three locations, a full menu with photos, and sample orders.
+Northwind Coffee Co. is a café and roaster in Halifax with three locations and a full menu with photos.
 
 ## Problem
 
 At a café, the morning rush is the whole business. Customers who see a line walk on to the next place. Phone orders tie up the person on the till. And third-party ordering apps take a large cut of every order.
+
+## How it helps your business
+
+- **Shorter lines.** Regulars order on the way and walk straight to the pickup shelf.
+- **No commission.** Orders come in on your own site, not through an app that takes a cut. Card orders pay Stripe's standard card fee and nothing more.
+- **A calmer kitchen.** Pickup times are spread out and every order is on one screen.
+- **Fewer "is my order ready?" questions,** because customers can see it on their phone.
 
 ## What it does
 
@@ -36,13 +45,6 @@ At a café, the morning rush is the whole business. Customers who see a line wal
 - **The owner's view.** Today's orders by café, order value, a menu editor with options and prices, sold-out and seasonal items, and each café's own hours.
 - **A support chat.** Customers can ask questions in a chat on the site.
 
-## How it helps your business
-
-- **Shorter lines.** Regulars order on the way and walk straight to the pickup shelf.
-- **No commission.** Orders come in on your own site, not through an app that takes a cut. Card orders pay Stripe's standard card fee and nothing more.
-- **A calmer kitchen.** Pickup times are spread out and every order is on one screen.
-- **Fewer "is my order ready?" questions,** because customers can see it on their phone.
-
 ## How it's built
 
 - **Prices are checked on the server.** The basket lives in the browser, but every order is re-priced from the menu before it's saved, so nobody can change a price.
@@ -53,7 +55,3 @@ At a café, the morning rush is the whole business. Customers who see a line wal
 ## Stack
 
 Next.js (App Router), TypeScript, Tailwind CSS, Cloudflare Workers, Cloudflare D1 with Drizzle ORM, Stripe Checkout, Zod and Vitest. QR codes are drawn in the app, with no outside service.
-
-## Outcome
-
-A working order-ahead site for a small chain: order a large oat latte with an extra shot on your phone and pay with Stripe's test card (4242 4242 4242 4242, no real money moves), then log in as the café owner, open the kitchen screen in another window, and watch the order arrive and turn ready.

@@ -13,20 +13,13 @@ stack:
   - TypeScript
   - Claude API
   - OpenAI API
+service: ai-features
 featured: true
 order: 11
 ---
 ## Problem
 
 Bookkeepers and office managers spend hours a week typing supplier invoices and receipts into spreadsheets. AI can read documents, but a tool that quietly gets a number wrong is worse than typing it yourself, because nobody notices until the books don't balance.
-
-## What it does
-
-1. **Drop the pile.** Up to 50 files at once: PDFs, scans or phone photos. Pick invoices, receipts, or define your own fields for a form.
-2. **Watch it read.** Each document moves from queued to reading to "needs review" or "checks passed", live on the screen.
-3. **Review side by side.** The page is on the left, the fields, line items and taxes on the right. A **Source** button highlights the exact text each value came from.
-4. **Fix and approve.** Edit anything and the checks run again. Approve everything that passed in one click.
-5. **Export.** An Excel workbook, CSV per document or per line, a Google Sheets-ready CSV, or JSON for other software.
 
 ## How it helps your business
 
@@ -41,6 +34,14 @@ The AI does the reading, and a layer of checks does what a careful bookkeeper wo
 
 The AI is told to report what the page says and never to fix numbers, so a supplier's own arithmetic mistake surfaces instead of being quietly corrected.
 
+## What it does
+
+1. **Drop the pile.** Up to 50 files at once: PDFs, scans or phone photos. Pick invoices, receipts, or define your own fields for a form.
+2. **Watch it read.** Each document moves from queued to reading to "needs review" or "checks passed", live on the screen.
+3. **Review side by side.** The page is on the left, the fields, line items and taxes on the right. A **Source** button highlights the exact text each value came from.
+4. **Fix and approve.** Edit anything and the checks run again. Approve everything that passed in one click.
+5. **Export.** An Excel workbook, CSV per document or per line, a Google Sheets-ready CSV, or JSON for other software.
+
 ## Receipts mode for trades
 
 Contractors and trades collect crumpled receipts in the truck all week. Receipts mode is built for that, on a phone:
@@ -51,12 +52,12 @@ Contractors and trades collect crumpled receipts in the truck all week. Receipts
 - **The same math checks** as invoices, so a misprinted tax line or total is caught before anything is approved.
 - **Exports with a category column** and a per-category summary sheet in the Excel workbook.
 
-The categories come from a fixed list, and a rule-based categorizer backs up the AI and powers the demo, which uses three reproducible, fully fictional sample receipts.
-
-## Stack
-
-A Python FastAPI backend with tests and an evaluation harness, and a Next.js frontend. Claude and OpenAI sit behind one interface through their official SDKs, and a demo mode needs no API keys.
+The categories come from a fixed list, and a rule-based categorizer backs up the AI.
 
 ## Outcome
 
-A working tool with twelve sample documents for a fictional bakery and three job receipts for receipts mode. The bakery set includes a crooked scan, a phone photo of a till receipt, and invoices with planted mistakes. In demo mode the checks catch all four planted document problems and the one deliberate misread, with no false alarms on the clean documents. Demo mode replays known answers, so those numbers show the checks working, not the quality of a particular AI model; the same harness scores a real model with an API key.
+A working tool, checked against twelve bakery documents and three job receipts. The bakery set includes a crooked scan, a phone photo of a till receipt, and invoices with planted mistakes. In offline mode the checks catch all four planted document problems and the one deliberate misread, with no false alarms on the clean documents. Offline mode replays known answers, so those numbers show the checks working, not the quality of a particular AI model; the same harness scores a real model with an API key.
+
+## Stack
+
+A Python FastAPI backend with tests and an evaluation harness, and a Next.js frontend. Claude and OpenAI sit behind one interface through their official SDKs, and an offline mode runs without API keys.

@@ -2,6 +2,8 @@ export type ProjectLinks = {
   liveUrl: string | null;
   repoUrl: string | null;
   localUrl?: string;
+  /** Link to the demo site's own "How to try it" guide page. */
+  guideUrl?: string;
   admin?: { url: string | null; localUrl?: string; note?: string };
 };
 
@@ -60,16 +62,19 @@ export const siteConfig = {
     "kingsway-cuts": {
       liveUrl: "https://kingsway.pooya.website",
       repoUrl: null,
+      guideUrl: "https://kingsway.pooya.website/guide",
       admin: { url: "https://kingsway.pooya.website/admin" },
     },
     "harbourview-physio": {
       liveUrl: "https://harbourview.pooya.website",
       repoUrl: null,
+      guideUrl: "https://harbourview.pooya.website/guide",
       admin: { url: "https://harbourview.pooya.website/admin" },
     },
     "maple-paws-vet": {
       liveUrl: "https://maplepaws.pooya.website",
       repoUrl: null,
+      guideUrl: "https://maplepaws.pooya.website/guide",
       admin: { url: "https://maplepaws.pooya.website/admin" },
     },
     "northwind-coffee-website": {
@@ -80,15 +85,18 @@ export const siteConfig = {
     "northwind-coffee-ordering": {
       liveUrl: "https://cafe.pooya.website",
       repoUrl: null,
+      guideUrl: "https://cafe.pooya.website/guide",
       admin: { url: "https://cafe.pooya.website/admin" },
     },
     "jollof-house-ordering": {
       liveUrl: "https://restaurant.pooya.website",
       repoUrl: null,
+      guideUrl: "https://restaurant.pooya.website/guide",
     },
     "brightside-cleaning-quotes": {
       liveUrl: "https://brightside.pooya.website/quote",
       repoUrl: null,
+      guideUrl: "https://brightside.pooya.website/guide",
       admin: { url: "https://brightside.pooya.website/admin" },
     },
     "owner-dashboards": {
@@ -118,7 +126,7 @@ export const siteConfig = {
       repoUrl: null,
       admin: {
         url: "https://podcast.pooya.website/wp-admin",
-        note: "On the login page, click \u201cTry the demo (view-only)\u201d to go straight in, with nothing to type. You can look around the episode list and the Add New Episode screen, but changes are turned off. The site owner has a full account that can add and edit episodes.",
+        note: "The login page signs you in with one click, view-only. Look around the episode list and the Add New Episode screen. The site owner has a full account that can add and edit episodes.",
       },
     },
     "harbourview-bakery-website": {

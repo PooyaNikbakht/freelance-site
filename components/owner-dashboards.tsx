@@ -82,8 +82,7 @@ export function OwnerDashboards() {
         Five businesses, five dashboards
       </h2>
       <p className="mt-3 max-w-2xl leading-relaxed text-muted">
-        On each login page, click &ldquo;Try the demo as the owner&rdquo; to sign in with one click. The sample data
-        resets every hour, so change anything you like.
+        Each login page signs you in as the owner with one click.
       </p>
       <ul className="mt-8 grid gap-6">
         {dashboards.map((d) => {

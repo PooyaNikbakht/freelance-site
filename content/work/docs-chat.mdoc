@@ -14,6 +14,7 @@ stack:
   - FastAPI
   - Claude API
   - OpenAI API
+service: ai-features
 featured: true
 order: 5
 ---
@@ -21,19 +22,25 @@ order: 5
 
 Small businesses answer the same questions every day: shipping times, returns, subscriptions, opening hours. The answers are already on a help page or in a policy PDF, but visitors don't read them. And a generic chatbot that makes things up is worse than no chatbot at all.
 
+## How it helps your business
+
+- **Fewer repeat questions.** Visitors get answers about shipping, returns and hours from your own documents, without waiting for you.
+- **Answers people can trust.** Every answer shows its source, and the bot says so when it doesn't know.
+- **Bookings at any hour.** Visitors can book an appointment right in the chat, even when you're closed.
+
 ## What it does
 
 - **Installs with one line.** One line of code adds a chat bubble to your site, on Shopify, WordPress, Webflow, Squarespace or a custom build. Your site's styles can't break the chat, and the chat can't change how your site looks. It is small, about 10 KB, so pages stay fast.
 - **Answers only from your documents.** The bot finds the most relevant parts of your help center and answers from those alone, in a few friendly sentences.
 - **Shows where each answer came from.** Each answer names the page it came from. One tap opens the exact passage, with the quoted words highlighted.
 - **Hands off instead of guessing.** When your documents don't cover a question, the bot says so and offers a "Talk to a human" link. Off-topic questions are stopped before they reach the AI, so they cost nothing.
-- **A realistic demo.** A sample site for a fictional coffee roaster, with its own brand, loads the chat with the same line of code you would paste. The site and its help center PDF come from one fact sheet, so they always agree.
+- **Ready to install.** A coffee roaster's site, with its own brand, loads the chat with the same line of code you would paste. The site and its help center PDF come from one fact sheet, so they always agree.
 - **Try it on your own PDF.** Upload a document and see a bot built on it in seconds.
-- **Claude or OpenAI.** It works with either AI provider. Usage limits and an automatic switch to a built-in demo mode keep the public demo free to run and never broken.
+- **Claude or OpenAI.** It works with either AI provider. Usage limits and an automatic fallback mode keep running costs low and the chat always available.
 
 ## Booking receptionist
 
-Answers help, but a visitor who wants an appointment should be able to book one right there. For a fictional barbershop, the same chat works as a 24/7 front desk:
+Answers help, but a visitor who wants an appointment should be able to book one right there. For a barbershop, the same chat works as a 24/7 front desk:
 
 - **Real open times only.** Ask "Is Saturday afternoon open for a skin fade?" and it checks the business's booking system, then shows the open times as buttons. If a reply ever names a time the booking system didn't offer, it is replaced, so the bot can't invent openings.
 - **Confirms before booking.** The visitor picks a time and gives a name and email, which are checked. Nothing is booked until they press Book it. These rules are built into the code, not left to the AI.
@@ -42,16 +49,10 @@ Answers help, but a visitor who wants an appointment should be able to book one 
 
 The booking part is kept separate, so it can connect to the booking system your business already uses.
 
-## How it helps your business
-
-- **Fewer repeat questions.** Visitors get answers about shipping, returns and hours from your own documents, without waiting for you.
-- **Answers people can trust.** Every answer shows its source, and the bot says so when it doesn't know.
-- **Bookings at any hour.** Visitors can book an appointment right in the chat, even when you're closed.
-
-## Stack
-
-A Python FastAPI backend with tests, a vanilla TypeScript widget bundled with esbuild and unit tested, and a Next.js sample site. Claude and OpenAI through their official SDKs.
-
 ## Outcome
 
 A working support bot a small business could put on its site this week: grounded answers with sources, a clear handoff to a person, a one-line install, and a codebase that grows into multiple bots, more documents and helpdesk integration.
+
+## Stack
+
+A Python FastAPI backend with tests, a vanilla TypeScript widget bundled with esbuild and unit tested, and a Next.js example site. Claude and OpenAI through their official SDKs.

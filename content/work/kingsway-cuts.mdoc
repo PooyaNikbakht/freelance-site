@@ -16,14 +16,23 @@ stack:
   - Drizzle ORM
   - Stripe
   - Twilio
+tryIt: "Book a skin fade, then log in as the owner and see it on the calendar."
+service: booking-ordering-and-quotes
 featured: true
 order: 1
 ---
-Kingsway Cuts is a fictional barbershop on Bloor West in Toronto, with three barbers and sample data. You can book a cut, then see it from the owner's side.
+Kingsway Cuts is a barbershop on Bloor West in Toronto with three barbers. Book a cut, then see it from the owner's side.
 
 ## Problem
 
 A busy barbershop loses customers in two ways. Some call while every barber is busy with a cut, and nobody can answer. Others walk past because they can't tell how long the wait is. A paper appointment book and a phone that rings in the middle of a cut make both worse. And every no-show costs a full slot.
+
+## How it helps your business
+
+- **Customers book at 11 p.m.** instead of calling during your busiest hour.
+- **No double bookings.** If two people try to take the last slot at the same moment, only one gets it. The other simply sees fresh times.
+- **Fewer no-shows.** A deposit means people turn up, reminders go out on their own, and a cancelled appointment frees the chair for someone else.
+- **Walk-ins come in when it's quiet,** because they can see the wait before they leave home.
 
 ## What it does
 
@@ -36,13 +45,6 @@ A busy barbershop loses customers in two ways. Some call while every barber is b
 - **Edit it yourself.** Change prices, opening hours, barbers' hours and breaks, and the home page text in the admin area. No developer needed.
 - **A "Book a chair" button anywhere.** One line of code adds the same booking to another website, such as an existing WordPress or Squarespace site.
 
-## How it helps your business
-
-- **Customers book at 11 p.m.** instead of calling during your busiest hour.
-- **No double bookings.** If two people try to take the last slot at the same moment, only one gets it. The other simply sees fresh times.
-- **Fewer no-shows.** A deposit means people turn up, reminders go out on their own, and a cancelled appointment frees the chair for someone else.
-- **Walk-ins come in when it's quiet,** because they can see the wait before they leave home.
-
 ## How it's built
 
 - **Times are worked out on the server** from each barber's hours, breaks and the length of each service, with daylight saving time handled properly.
@@ -53,7 +55,3 @@ A busy barbershop loses customers in two ways. Some call while every barber is b
 ## Stack
 
 Next.js (App Router), TypeScript, Tailwind CSS, Cloudflare Workers, Cloudflare D1 with Drizzle ORM, Stripe Checkout, Twilio, Zod and Vitest.
-
-## Outcome
-
-A working barbershop site you can try end to end: book a skin fade with the first available barber and pay the deposit with Stripe's test card (4242 4242 4242 4242, no real money moves), move it from the confirmation link, then log in as the owner and see the booking, the customer and every message on the calendar. The sample data resets every hour.

@@ -12,12 +12,20 @@ stack:
   - Claude API
   - OpenAI API
   - Tailwind CSS
+service: ai-features
 featured: false
 order: 12
 ---
 ## Problem
 
 Shoppers describe what they want in sentences, for example "waterproof women's hiking boots under $150, size 8, 4 stars and up". Keyword search handles that badly. And AI search that guesses wrong is worse than having no AI search at all.
+
+## How it helps your business
+
+- **Shoppers can ask the way they talk,** instead of clicking through many filters one by one.
+- **No hidden wrong guesses.** Shoppers always see what the search understood and can fix it.
+- **Safe to improve.** Every change to the AI is tested for accuracy first, so search can't quietly get worse.
+- **Not tied to one AI company.** It works with Claude or OpenAI, and a simple offline mode keeps the demo working without an AI account.
 
 ## What it does
 
@@ -26,12 +34,9 @@ Shoppers describe what they want in sentences, for example "waterproof women's h
 - **Honest about what it missed.** Words that couldn't be matched to a filter are shown, so shoppers can see why the results look the way they do.
 - **Everything a normal store search has.** Filter lists, sorting, pages of results and links you can share, like a real online store.
 
-## How it helps your business
+## Outcome
 
-- **Shoppers can ask the way they talk,** instead of clicking through many filters one by one.
-- **No hidden wrong guesses.** Shoppers always see what the search understood and can fix it.
-- **Safe to improve.** Every change to the AI is tested for accuracy first, so search can't quietly get worse.
-- **Not tied to one AI company.** It works with Claude or OpenAI, and a simple offline mode keeps the demo working without an AI account.
+A public, runnable version of the natural-language filter pattern I've shipped in production, described in the [marketplace search project](/work/marketplace-search). You can try it, read the code, and run the evals yourself.
 
 ## How it's built
 
@@ -42,7 +47,3 @@ Shoppers describe what they want in sentences, for example "waterproof women's h
 ## Stack
 
 Next.js, TypeScript, Zod, the Claude and OpenAI APIs, and Tailwind CSS.
-
-## Outcome
-
-A public, runnable version of the natural-language filter pattern I've shipped in production, described in the [marketplace search project](/work/marketplace-search). You can try the demo, read the code, and run the evals yourself.
