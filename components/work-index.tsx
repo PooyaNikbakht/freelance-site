@@ -73,7 +73,7 @@ export function WorkIndex({
             download
             className="inline-flex min-h-11 items-center gap-2 font-medium text-accent underline-offset-4 hover:underline"
           >
-            Download my selected work (PDF, 14 pages, 2.7 MB)
+            Download my selected work (PDF, 14 pages, 2.6 MB)
           </a>
         </p>
 
