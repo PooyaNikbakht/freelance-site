@@ -1,0 +1,49 @@
+---
+title: "SEO Optimizer for Shopify"
+summary: >-
+  A Shopify app that scores every product's SEO, writes AI fixes in the store's
+  tone, and applies them only after the merchant approves.
+categories:
+  - ai
+  - dashboards
+stack:
+  - Shopify
+  - Shopify App
+  - SEO
+  - AI
+  - Generative AI
+  - React Router
+  - Cloudflare Workers
+  - Cloudflare D1
+  - Workers AI
+  - GraphQL
+  - Polaris
+  - E-commerce
+tryIt: "Open the demo, select the weakest products, generate fixes, review the before and after, then apply and undo."
+service: mvp-and-feature-builds
+featured: false
+order: 21
+---
+## Problem
+
+SEO Optimizer scans every product in a Shopify store for weak or missing SEO titles, meta descriptions, descriptions and image alt text, and flags duplicate or too-long titles.
+
+## What it does
+
+It scores each product and the whole store from 0 to 100, writes fixes with AI in the store's own voice, and shows a before/after for every field so the merchant decides what goes live.
+
+- **Approval first.** Every change is reviewed before it is applied, and a dry run lets you preview changes without writing anything.
+- **Safe undo.** Undo per product or per batch, and any field the merchant edited after the app wrote it is left alone.
+- **Strict limits.** It edits only SEO title, SEO description, description and image alt, never price, inventory or variants, and it skips products tagged no-ai.
+
+## Outcome
+
+In the demo, fixing 12 products raised the store score from 77 to 90.
+
+## How it's built
+
+Built on React Router on Cloudflare Workers with D1, Workers AI, Shopify Admin GraphQL, App Bridge and Polaris. Free and Pro ($9/month) plans through Shopify billing switch on at public distribution.
+
+## Stack
+
+React Router, TypeScript, Cloudflare Workers, Cloudflare D1, Workers AI, Shopify Admin GraphQL, App Bridge and Polaris.

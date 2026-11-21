@@ -437,6 +437,41 @@ const galleries: Record<string, { title: string; shots: Shot[] }> = {
       },
     ],
   },
+  "seo-optimizer": {
+    title: "A closer look",
+    shots: [
+      {
+        src: "/work/seo-optimizer-dashboard",
+        alt: "The app dashboard: a store score of 77 out of 100 marked Needs work, 40 products with 2 skipped, and a table of issues by type such as Meta description missing and Description too thin.",
+        caption: "Every product and the whole store get a score from 0 to 100.",
+      },
+      {
+        src: "/work/seo-optimizer-review",
+        alt: "The review screen for Trail Hammock Double: SEO title, meta description, description and image alt text, each with a Before box, an After box with the AI fix highlighted, and Approve and Reject buttons.",
+        caption: "A before and after for every field. Nothing goes live until it is approved.",
+      },
+      {
+        src: "/work/seo-optimizer-score",
+        alt: "The dashboard after 12 products were fixed: the store score is 90 out of 100 and marked Good, and the issue counts are lower.",
+        caption: "After fixing 12 products, the store score went from 77 to 90.",
+      },
+      {
+        src: "/work/seo-optimizer-history",
+        alt: "The History page: an undo that restored 12 fields and left one field alone because it was edited after the app wrote it, above an Apply batch of 12 products with Undo buttons.",
+        caption: "Undo per product or per batch. Fields edited since are left alone.",
+      },
+      {
+        src: "/work/seo-optimizer-plans",
+        alt: "The Plans page: Free at $0 with 20 applied products per month, and Pro at $9 a month with unlimited applied products.",
+        caption: "Free and Pro plans through Shopify billing.",
+      },
+      {
+        src: "/work/seo-optimizer-mobile",
+        alt: "Three phone screens: the demo home page headline with a Try the demo button, the Plans page, and the Settings page with writing tone and language.",
+        caption: "The same screens on a phone.",
+      },
+    ],
+  },
   "paperwork-ai": {
     title: "A closer look",
     shots: [
