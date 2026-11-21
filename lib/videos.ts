@@ -16,8 +16,7 @@ export const introVideo = video("intro", "2:17", "Video: a two-minute introducti
 /** Demo walkthroughs, keyed by work entry slug. Lines come from demo-videos/tools/publish-videos.sh. */
 const workVideos: Record<string, Video> = {
   "brightside-cleaning-quotes": video("cleaning-quote-calculator", "2:33", "Video: a walkthrough of a cleaning company's instant quote calculator"),
-  // TODO(video): uncomment once the video is uploaded and the poster exists; replace the duration with the line printed by publish-videos.sh.
-  // "ai-operations-agent": video("ai-operations-agent", "0:00", "Video: a walkthrough of the AI operations agent"),
+  "ai-operations-agent": video("ai-operations-agent", "1:58", "Video: a walkthrough of the AI operations agent"),
   "booking-assistant": video("booking-assistant", "2:11", "Video: a walkthrough of the booking assistant"),
   "customer-assistant": video("customer-assistant", "2:58", "Video: a walkthrough of the customer assistant"),
   "docs-chat": video("website-support-bot", "2:43", "Video: a walkthrough of the website support bot"),
