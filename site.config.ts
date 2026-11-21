@@ -73,14 +73,14 @@ export const siteConfig = {
       admin: { url: "https://maplepaws.pooya.website/admin" },
     },
     "northwind-coffee-website": {
-      liveUrl: "https://coffee.pooya.website",
+      liveUrl: "https://chatbot.pooya.website",
       repoUrl: "https://github.com/PooyaNikbakht/docs-chat",
       localUrl: "http://localhost:3010",
     },
     "northwind-coffee-ordering": {
-      liveUrl: "https://northwind.pooya.website",
+      liveUrl: "https://cafe.pooya.website",
       repoUrl: null,
-      admin: { url: "https://northwind.pooya.website/admin" },
+      admin: { url: "https://cafe.pooya.website/admin" },
     },
     "jollof-house-ordering": {
       liveUrl: "https://restaurant.pooya.website",
@@ -136,7 +136,7 @@ export const siteConfig = {
       repoUrl: "https://github.com/PooyaNikbakht/shop-search",
     },
     "docs-chat": {
-      liveUrl: "https://coffee.pooya.website/try",
+      liveUrl: "https://chatbot.pooya.website/try",
       repoUrl: "https://github.com/PooyaNikbakht/docs-chat",
     },
     "ai-operations-agent": {
